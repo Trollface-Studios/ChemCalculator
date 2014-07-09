@@ -108,105 +108,105 @@ public class Core {
      	listE[12].density =1.738;
      	listE[12].molarmass = 24.31;
 
-     	//neupraveno
+     	
      	listE[13] = new StringData();
-     	listE[13].name = "Mg";
-     	listE[13].electronegativity =1.31;
-     	listE[13].density =1.738;
-     	listE[13].molarmass = 24.31;
+     	listE[13].name = "Al";
+     	listE[13].electronegativity =1.61;
+     	listE[13].density =2.7;
+     	listE[13].molarmass = 26.98;
      	
      	listE[14] = new StringData();
-     	listE[14].name = "Mg";
-     	listE[14].electronegativity =1.31;
-     	listE[14].density =1.738;
-     	listE[14].molarmass = 24.31;
+     	listE[14].name = "Si";
+     	listE[14].electronegativity =1.9;
+     	listE[14].density =2.330;
+     	listE[14].molarmass = 28.09;
      	
      	listE[15] = new StringData();
-     	listE[15].name = "Mg";
-     	listE[15].electronegativity =1.31;
-     	listE[15].density =1.738;
-     	listE[15].molarmass = 24.31;
+     	listE[15].name = "P";
+     	listE[15].electronegativity =2.19;
+     	listE[15].density =1.823;
+     	listE[15].molarmass = 30.97;
      	
      	listE[16] = new StringData();
-     	listE[16].name = "Mg";
-     	listE[16].electronegativity =1.31;
-     	listE[16].density =1.738;
-     	listE[16].molarmass = 24.31;
+     	listE[16].name = "S";
+     	listE[16].electronegativity =2.58;
+     	listE[16].density =1.960;
+     	listE[16].molarmass = 32.07;
 
      	listE[17] = new StringData();
-     	listE[17].name = "Mg";
-     	listE[17].electronegativity =1.31;
-     	listE[17].density =1.738;
-     	listE[17].molarmass = 24.31;
+     	listE[17].name = "Cl";
+     	listE[17].electronegativity =3.16;
+     	listE[17].density =3.214;
+     	listE[17].molarmass = 35.45;
 
      	listE[18] = new StringData();
-     	listE[18].name = "Mg";
-     	listE[18].electronegativity =1.31;
-     	listE[18].density =1.738;
-     	listE[18].molarmass = 24.31;
+     	listE[18].name = "Ar";
+     	listE[18].electronegativity1 ="Unknown";
+     	listE[18].density =1.784;
+     	listE[18].molarmass = 39.95;
 
      	listE[19] = new StringData();
-     	listE[19].name = "Mg";
-     	listE[19].electronegativity =1.31;
-     	listE[19].density =1.738;
-     	listE[19].molarmass = 24.31;
+     	listE[19].name = "K";
+     	listE[19].electronegativity =0.82;
+     	listE[19].density =-0.856;
+     	listE[19].molarmass = 39.10;
      	
      	listE[20] = new StringData();
-     	listE[20].name = "Mg";
-     	listE[20].electronegativity =1.31;
-     	listE[20].density =1.738;
-     	listE[20].molarmass = 24.31;
+     	listE[20].name = "Ca";
+     	listE[20].electronegativity =1;
+     	listE[20].density =1.550;
+     	listE[20].molarmass = 40.08;
 
      	listE[21] = new StringData();
-     	listE[21].name = "Mg";
-     	listE[21].electronegativity =1.31;
-     	listE[21].density =1.738;
-     	listE[21].molarmass = 24.31;
+     	listE[21].name = "Sc";
+     	listE[21].electronegativity =1.36;
+     	listE[21].density =2.985;
+     	listE[21].molarmass = 44.96;
 
      	listE[22] = new StringData();
-     	listE[22].name = "Mg";
-     	listE[22].electronegativity =1.31;
-     	listE[22].density =1.738;
-     	listE[22].molarmass = 24.31;
+     	listE[22].name = "Ti";
+     	listE[22].electronegativity =1.54;
+     	listE[22].density =4.507;
+     	listE[22].molarmass = 47.87;
 
      	listE[23] = new StringData();
-     	listE[23].name = "Mg";
-     	listE[23].electronegativity =1.31;
-     	listE[23].density =1.738;
-     	listE[23].molarmass = 24.31;
+     	listE[23].name = "V";
+     	listE[23].electronegativity =1.63;
+     	listE[23].density =6.110;
+     	listE[23].molarmass = 50.94;
 
      	listE[24] = new StringData();
-     	listE[24].name = "Mg";
-     	listE[24].electronegativity =1.31;
-     	listE[24].density =1.738;
-     	listE[24].molarmass = 24.31;
+     	listE[24].name = "Cr";
+     	listE[24].electronegativity =1.66;
+     	listE[24].density =7.140;
+     	listE[24].molarmass = 52.00;
 
      	listE[25] = new StringData();
-     	listE[25].name = "Mg";
-     	listE[25].electronegativity =1.31;
-     	listE[25].density =1.738;
-     	listE[25].molarmass = 24.31;
+     	listE[25].name = "Mn";
+     	listE[25].electronegativity =1.55;
+     	listE[25].density =7.470;
+     	listE[25].molarmass = 54.94;
 
      	listE[26] = new StringData();
-     	listE[26].name = "Mg";
-     	listE[26].electronegativity =1.31;
-     	listE[26].density =1.738;
-     	listE[26].molarmass = 24.31;
+     	listE[26].name = "Fe";
+     	listE[26].electronegativity =1.83;
+     	listE[26].density =7.874;
+     	listE[26].molarmass = 55.85;
 
      	listE[27] = new StringData();
-     	listE[27].name = "Mg";
-     	listE[27].electronegativity =1.31;
-     	listE[27].density =1.738;
-     	listE[27].molarmass = 24.31;
+     	listE[27].name = "Co";
+     	listE[27].electronegativity =1.88;
+     	listE[27].density =8.900;
+     	listE[27].molarmass = 58.93;
 
      	listE[28] = new StringData();
-     	listE[28].name = "Mg";
-     	listE[28].electronegativity =1.31;
-     	listE[28].density =1.738;
-     	listE[28].molarmass = 24.31;
-
+     	listE[28].name = "Ni";
+     	listE[28].electronegativity =1.91;
+     	listE[28].density =8.908;
+     	listE[28].molarmass = 58.69;
+//neupraveno
      	listE[29] = new StringData();
-     	listE[29].name = "Mg";
+     	listE[29].name = "Cu";
      	listE[29].electronegativity =1.31;
      	listE[29].density =1.738;
      	listE[29].molarmass = 24.31;
@@ -325,10 +325,11 @@ public class Core {
 
     	System.out.println("welcome, select your element.");
     	String n = sc1.nextLine();
+    	boolean found = false;
     	for(int j= 0; j<47;j++){
     		if(listE[j].name.equals(n)){
     			System.out.println("VICTORY");
-    			
+    			found = true;
     			System.out.println("element:  " + listE[j].name);
 	    		System.out.println("molarmass: "+listE[j].molarmass);
 	    		if(listE[j].electronegativity !=0){
@@ -340,6 +341,9 @@ public class Core {
 	    		System.out.println("number of protons: "+j);
     		}
     		
-    		} 
+    		}
+
+		if (!found) System.out.println("SUP, you entered a wrong parameter");
+		System.out.println("Dumb fuck.");
 	}
 }
