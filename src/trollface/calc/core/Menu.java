@@ -25,10 +25,10 @@ public class Menu extends BasicGameState {
 	Color color;
 	int x = 300;
 	int y = 100;
+	StringData[] listE;
+	Image background;
 
 	public void elements() {
-
-		StringData[] listE;
 
 		listE = new StringData[48];
 		listE[0] = new StringData();
@@ -55,166 +55,166 @@ public class Menu extends BasicGameState {
 		listE[3].density = 0.535;
 		listE[3].molarmass = 6.94;
 
-		// listE[4] = new StringData();
-		// listE[4].name = "Be";
-		// listE[4].fullname = "Beryllium";
-		// listE[4].electronegativity =1.57;
-		// listE[4].density =1.85;
-		// listE[4].molarmass = 9.01;
-		//
-		// listE[5] = new StringData();
-		// listE[5].name = "B";
-		// listE[5].fullname = "Boron";
-		// listE[5].electronegativity =2.04;
-		// listE[5].density =2.46;
-		// listE[5].molarmass = 10.81;
-		//
-		// listE[6] = new StringData();
-		// listE[6].name = "C";
-		// listE[6].fullname = "Carbon";
-		// listE[6].electronegativity =2.55;
-		// listE[6].density =2.260;
-		// listE[6].molarmass = 12.01;
-		//
-		// listE[7] = new StringData();
-		// listE[7].name = "N";
-		// listE[7].fullname = "Nitrogen";
-		// listE[7].electronegativity =3.04;
-		// listE[7].density =1.251;
-		// listE[7].molarmass = 14.01;
-		//
-		// listE[8] = new StringData();
-		// listE[8].name = "O";
-		// listE[8].fullname = "Oxygen";
-		// listE[8].electronegativity =3.44;
-		// listE[8].density =1.429;
-		// listE[8].molarmass = 16.00;
-		//
-		// listE[9] = new StringData();
-		// listE[9].name = "F";
-		// listE[9].fullname = "Fluorine";
-		// listE[9].electronegativity =3.98;
-		// listE[9].density =1.696;
-		// listE[9].molarmass = 19.00;
-		//
-		// listE[10] = new StringData();
-		// listE[10].name = "Ne";
-		// listE[10].fullname = "Neon";
-		// listE[10].electronegativity1 ="Unknown";
-		// listE[10].density =0.900;
-		// listE[10].molarmass = 20.18;
-		//
-		// listE[11] = new StringData();
-		// listE[11].name = "Na";
-		// listE[11].fullname = "Na";
-		// listE[11].electronegativity =0.93;
-		// listE[11].density =0.968;
-		// listE[11].molarmass = 22.99;
-		//
-		// listE[12] = new StringData();
-		// listE[12].name = "Mg";
-		// listE[12].electronegativity =1.31;
-		// listE[12].density =1.738;
-		// listE[12].molarmass = 24.31;
-		//
-		// //neupraveno
-		// listE[13] = new StringData();
-		// listE[13].name = "Mg";
-		// listE[13].electronegativity =1.31;
-		// listE[13].density =1.738;
-		// listE[13].molarmass = 24.31;
-		//
-		// listE[14] = new StringData();
-		// listE[14].name = "Mg";
-		// listE[14].electronegativity =1.31;
-		// listE[14].density =1.738;
-		// listE[14].molarmass = 24.31;
-		//
-		// listE[15] = new StringData();
-		// listE[15].name = "Mg";
-		// listE[15].electronegativity =1.31;
-		// listE[15].density =1.738;
-		// listE[15].molarmass = 24.31;
-		//
-		// listE[16] = new StringData();
-		// listE[16].name = "Mg";
-		// listE[16].electronegativity =1.31;
-		// listE[16].density =1.738;
-		// listE[16].molarmass = 24.31;
-		//
-		// listE[17] = new StringData();
-		// listE[17].name = "Mg";
-		// listE[17].electronegativity =1.31;
-		// listE[17].density =1.738;
-		// listE[17].molarmass = 24.31;
-		//
-		// listE[18] = new StringData();
-		// listE[18].name = "Mg";
-		// listE[18].electronegativity =1.31;
-		// listE[18].density =1.738;
-		// listE[18].molarmass = 24.31;
-		//
-		// listE[19] = new StringData();
-		// listE[19].name = "Mg";
-		// listE[19].electronegativity =1.31;
-		// listE[19].density =1.738;
-		// listE[19].molarmass = 24.31;
-		//
-		// listE[20] = new StringData();
-		// listE[20].name = "Mg";
-		// listE[20].electronegativity =1.31;
-		// listE[20].density =1.738;
-		// listE[20].molarmass = 24.31;
-		//
-		// listE[21] = new StringData();
-		// listE[21].name = "Mg";
-		// listE[21].electronegativity =1.31;
-		// listE[21].density =1.738;
-		// listE[21].molarmass = 24.31;
-		//
-		// listE[22] = new StringData();
-		// listE[22].name = "Mg";
-		// listE[22].electronegativity =1.31;
-		// listE[22].density =1.738;
-		listE[22].molarmass = 24.31;
+		listE[4] = new StringData();
+		listE[4].name = "Be";
+		listE[4].fullname = "Beryllium";
+		listE[4].electronegativity = 1.57;
+		listE[4].density = 1.85;
+		listE[4].molarmass = 9.01;
+
+		listE[5] = new StringData();
+		listE[5].name = "B";
+		listE[5].fullname = "Boron";
+		listE[5].electronegativity = 2.04;
+		listE[5].density = 2.46;
+		listE[5].molarmass = 10.81;
+
+		listE[6] = new StringData();
+		listE[6].name = "C";
+		listE[6].fullname = "Carbon";
+		listE[6].electronegativity = 2.55;
+		listE[6].density = 2.260;
+		listE[6].molarmass = 12.01;
+
+		listE[7] = new StringData();
+		listE[7].name = "N";
+		listE[7].fullname = "Nitrogen";
+		listE[7].electronegativity = 3.04;
+		listE[7].density = 1.251;
+		listE[7].molarmass = 14.01;
+
+		listE[8] = new StringData();
+		listE[8].name = "O";
+		listE[8].fullname = "Oxygen";
+		listE[8].electronegativity = 3.44;
+		listE[8].density = 1.429;
+		listE[8].molarmass = 16.00;
+
+		listE[9] = new StringData();
+		listE[9].name = "F";
+		listE[9].fullname = "Fluorine";
+		listE[9].electronegativity = 3.98;
+		listE[9].density = 1.696;
+		listE[9].molarmass = 19.00;
+
+		listE[10] = new StringData();
+		listE[10].name = "Ne";
+		listE[10].fullname = "Neon";
+		listE[10].electronegativity1 = "Unknown";
+		listE[10].density = 0.900;
+		listE[10].molarmass = 20.18;
+
+		listE[11] = new StringData();
+		listE[11].name = "Na";
+		listE[11].fullname = "Na";
+		listE[11].electronegativity = 0.93;
+		listE[11].density = 0.968;
+		listE[11].molarmass = 22.99;
+
+		listE[12] = new StringData();
+		listE[12].name = "Mg";
+		listE[12].electronegativity = 1.31;
+		listE[12].density = 1.738;
+		listE[12].molarmass = 24.31;
+
+		listE[13] = new StringData();
+		listE[13].name = "Al";
+		listE[13].electronegativity = 1.61;
+		listE[13].density = 2.7;
+		listE[13].molarmass = 26.98;
+
+		listE[14] = new StringData();
+		listE[14].name = "Si";
+		listE[14].electronegativity = 1.9;
+		listE[14].density = 2.330;
+		listE[14].molarmass = 28.09;
+
+		listE[15] = new StringData();
+		listE[15].name = "P";
+		listE[15].electronegativity = 2.19;
+		listE[15].density = 1.823;
+		listE[15].molarmass = 30.97;
+
+		listE[16] = new StringData();
+		listE[16].name = "S";
+		listE[16].electronegativity = 2.58;
+		listE[16].density = 1.960;
+		listE[16].molarmass = 32.07;
+
+		listE[17] = new StringData();
+		listE[17].name = "Cl";
+		listE[17].electronegativity = 3.16;
+		listE[17].density = 3.214;
+		listE[17].molarmass = 35.45;
+
+		listE[18] = new StringData();
+		listE[18].name = "Ar";
+		listE[18].electronegativity1 = "Unknown";
+		listE[18].density = 1.784;
+		listE[18].molarmass = 39.95;
+
+		listE[19] = new StringData();
+		listE[19].name = "K";
+		listE[19].electronegativity = 0.82;
+		listE[19].density = -0.856;
+		listE[19].molarmass = 39.10;
+
+		listE[20] = new StringData();
+		listE[20].name = "Ca";
+		listE[20].electronegativity = 1;
+		listE[20].density = 1.550;
+		listE[20].molarmass = 40.08;
+
+		listE[21] = new StringData();
+		listE[21].name = "Sc";
+		listE[21].electronegativity = 1.36;
+		listE[21].density = 2.985;
+		listE[21].molarmass = 44.96;
+
+		listE[22] = new StringData();
+		listE[22].name = "Ti";
+		listE[22].electronegativity = 1.54;
+		listE[22].density = 4.507;
+		listE[22].molarmass = 47.87;
 
 		listE[23] = new StringData();
-		listE[23].name = "Mg";
-		listE[23].electronegativity = 1.31;
-		listE[23].density = 1.738;
-		listE[23].molarmass = 24.31;
+		listE[23].name = "V";
+		listE[23].electronegativity = 1.63;
+		listE[23].density = 6.110;
+		listE[23].molarmass = 50.94;
 
 		listE[24] = new StringData();
-		listE[24].name = "Mg";
-		listE[24].electronegativity = 1.31;
-		listE[24].density = 1.738;
-		listE[24].molarmass = 24.31;
+		listE[24].name = "Cr";
+		listE[24].electronegativity = 1.66;
+		listE[24].density = 7.140;
+		listE[24].molarmass = 52.00;
 
 		listE[25] = new StringData();
-		listE[25].name = "Mg";
-		listE[25].electronegativity = 1.31;
-		listE[25].density = 1.738;
-		listE[25].molarmass = 24.31;
+		listE[25].name = "Mn";
+		listE[25].electronegativity = 1.55;
+		listE[25].density = 7.470;
+		listE[25].molarmass = 54.94;
+
 		listE[26] = new StringData();
-		listE[26].name = "Mg";
-		listE[26].electronegativity = 1.31;
-		listE[26].density = 1.738;
-		listE[26].molarmass = 24.31;
+		listE[26].name = "Fe";
+		listE[26].electronegativity = 1.83;
+		listE[26].density = 7.874;
+		listE[26].molarmass = 55.85;
 
 		listE[27] = new StringData();
-		listE[27].name = "Mg";
-		listE[27].electronegativity = 1.31;
-		listE[27].density = 1.738;
-		listE[27].molarmass = 24.31;
+		listE[27].name = "Co";
+		listE[27].electronegativity = 1.88;
+		listE[27].density = 8.900;
+		listE[27].molarmass = 58.93;
 
 		listE[28] = new StringData();
-		listE[28].name = "Mg";
-		listE[28].electronegativity = 1.31;
-		listE[28].density = 1.738;
-		listE[28].molarmass = 24.31;
-
+		listE[28].name = "Ni";
+		listE[28].electronegativity = 1.91;
+		listE[28].density = 8.908;
+		listE[28].molarmass = 58.69;
+		// neupraveno
 		listE[29] = new StringData();
-		listE[29].name = "Mg";
+		listE[29].name = "Cu";
 		listE[29].electronegativity = 1.31;
 		listE[29].density = 1.738;
 		listE[29].molarmass = 24.31;
@@ -331,6 +331,9 @@ public class Menu extends BasicGameState {
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
 
+		background = new Image("src/images/calc/core/images.jpg");
+
+		elements();
 		font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 				java.awt.Font.ITALIC, 26));
 		textField = new TextField(c, c.getDefaultFont(), 200, 50, x, y,
@@ -338,12 +341,36 @@ public class Menu extends BasicGameState {
 
 					@Override
 					public void componentActivated(AbstractComponent source) {
-						System.out
-								.println("NEKDO KLIKNUL NA TENTO POSRANEJ VEC.");
+						TextField field = (TextField) source;
+						String text = field.getText();
+						for (int i = 0; i < 47; i++) {
+							if (text.equals(listE[i].name)) {
+								System.out.println("Name: " + listE[i].fullname
+										+ "  Molarmass " + listE[i].molarmass
+										+ "  electronegativity: "
+										+ listE[1].electronegativity);
+							}
+						}
+						for (int i = 0; i < text.length(); i++) {
+							char c = text.charAt(i);
+							if (Character.isDigit(c)) {
 
+								int a = Character.digit(c, 10);
+								System.out.println("debug " + a);
+								String newText = text.substring(0,
+										text.length() - 1);
+								System.out.println(newText);
+								for (int j = 0; j < 47; j++) {
+									if (newText.equals(listE[j].name)) {
+										double x = (double) (listE[j].molarmass * a);
+										System.out.println("molar mass: " + x);
+									}
+								}
+							}
+						}
 					}
 				});
-		textField.setBorderColor(color.green);
+		textField.setBorderColor(color.black);
 		textField.setBackgroundColor(color.darkGray);
 
 	}
@@ -351,15 +378,12 @@ public class Menu extends BasicGameState {
 	public void update(GameContainer c, StateBasedGame game, int delta)
 			throws SlickException {
 		Input input = c.getInput();
-		if (input.isKeyDown(Input.KEY_ENTER)) {
 
-			y = y - 10;
-
-		}
 	}
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
+		// background.draw();
 		textField.render(c, g);
 
 	}
