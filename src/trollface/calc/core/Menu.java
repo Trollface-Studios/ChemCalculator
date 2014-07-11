@@ -331,7 +331,7 @@ public class Menu extends BasicGameState {
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
 
-		background = new Image("src/images/calc/core/images.jpg");
+		background = new Image("src/images/calc/core/mathbackground.png");
 
 		elements();
 		font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
@@ -343,35 +343,57 @@ public class Menu extends BasicGameState {
 					public void componentActivated(AbstractComponent source) {
 						TextField field = (TextField) source;
 						String text = field.getText();
+						int counter = 0;
 						for (int i = 0; i < 47; i++) {
-							if (text.equals(listE[i].name)) {
+							if (text.contains(listE[i].name)) {
 								System.out.println("Name: " + listE[i].fullname
-										+ "  Molarmass " + listE[i].molarmass
-										+ "  electronegativity: "
-										+ listE[1].electronegativity);
+										+ "  Molarmass " + listE[i].molarmass);
+								counter++;
+								String text1 = text.replaceAll(listE[i].name,
+										"jeej");
+								System.out.println(text1);
+								System.out.println("The compound contains "
+										+ counter + " elements.");
 							}
+						
 						}
+
 						for (int i = 0; i < text.length(); i++) {
 							char c = text.charAt(i);
 							if (Character.isDigit(c)) {
 
 								int a = Character.digit(c, 10);
 								System.out.println("debug " + a);
-								String newText = text.substring(0,
-										text.length() - 1);
-								System.out.println(newText);
-								for (int j = 0; j < 47; j++) {
-									if (newText.equals(listE[j].name)) {
-										double x = (double) (listE[j].molarmass * a);
-										System.out.println("molar mass: " + x);
-									}
-								}
+
+								// String b = String.valueOf(a);
+								// char[] dst = new char[b.length()];
+								// char[] as=new char[text.length()];
+								// b.getChars(0, b.length(), dst, 0);
+								// text.getChars(0, text.length(), as, 0);
+								//
+								//
+								//
+								// System.out.println(b);
+								//
+								// String newText = text.substring(0,
+								// text.length() - a );
+								// System.out.println(newText);
+								// for (int j = 0; j < 47; j++) {
+								//
+								// if(text.contains(listE[j].name)){
+								// System.out.println(listE[j].name);
+								// }
+								// if (newText.equals(listE[j].name)) {
+								// double x = (double) (listE[j].molarmass * a);
+								// System.out.println("molar mass: " + x);
+								// }
+								// }
 							}
 						}
 					}
 				});
 		textField.setBorderColor(color.black);
-		textField.setBackgroundColor(color.darkGray);
+		textField.setBackgroundColor(color.lightGray);
 
 	}
 
@@ -383,7 +405,7 @@ public class Menu extends BasicGameState {
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
-		// background.draw();
+		background.draw();
 		textField.render(c, g);
 
 	}
