@@ -27,6 +27,7 @@ public class Menu extends BasicGameState {
 	int y = 100;
 	StringData[] listE;
 	Image background;
+	boolean colorText = false;
 
 	public void elements() {
 
@@ -349,13 +350,23 @@ public class Menu extends BasicGameState {
 								System.out.println("Name: " + listE[i].fullname
 										+ "  Molarmass " + listE[i].molarmass);
 								counter++;
-								String text1 = text.replaceAll(listE[i].name,
-										"jeej");
-								System.out.println(text1);
+								colorText = false;
 								System.out.println("The compound contains "
 										+ counter + " elements.");
+							}if(!text.contains(listE[i].name)){
+								colorText = true;
+								
+								
+							}else{
+								colorText = false;
+								
 							}
 						
+						}
+						if(colorText ==true){
+							textField.setTextColor(color.red);
+						}if(colorText == false){
+							textField.setTextColor(color.white);
 						}
 
 						for (int i = 0; i < text.length(); i++) {
@@ -363,37 +374,50 @@ public class Menu extends BasicGameState {
 							if (Character.isDigit(c)) {
 
 								int a = Character.digit(c, 10);
-								System.out.println("debug " + a);
+								//System.out.println("debug " + a);
 
-								// String b = String.valueOf(a);
-								// char[] dst = new char[b.length()];
-								// char[] as=new char[text.length()];
-								// b.getChars(0, b.length(), dst, 0);
-								// text.getChars(0, text.length(), as, 0);
-								//
-								//
-								//
-								// System.out.println(b);
-								//
-								// String newText = text.substring(0,
-								// text.length() - a );
-								// System.out.println(newText);
-								// for (int j = 0; j < 47; j++) {
-								//
-								// if(text.contains(listE[j].name)){
-								// System.out.println(listE[j].name);
-								// }
-								// if (newText.equals(listE[j].name)) {
-								// double x = (double) (listE[j].molarmass * a);
-								// System.out.println("molar mass: " + x);
-								// }
-								// }
+								 String b = String.valueOf(a);
+								
+								text.indexOf(b);
+								String[]mnam = text.split("(?!^)");
+								for(int j=0;j<mnam.length;j++){
+									if(mnam[j].equals(b)){
+										for(int n=0;n<47;n++){
+											if(mnam[j-1].equals(listE[n].name)){
+												System.out.println(mnam[j-1]);
+												System.out.println(listE[n].molarmass*a);
+										
+									}	
+								}
+								}
+								}
+								
+//								char[] hamm =new char[text.length()];
+//								String newText = text.substring(0, text.length()- text.indexOf(b));
+//								
+//								 System.out.println(text.indexOf(b));
+//								 System.out.println(newText);
+								
+//								 String newText = text.substring(0,
+//								 text.length() - a );
+//								 System.out.println(newText);
+//								 for (int j = 0; j < 47; j++) {
+//								
+//								 if(text.contains(listE[j].name)){
+//								 System.out.println(listE[j].name);
+//								 }
+//								 if (newText.equals(listE[j].name)) {
+//								 double x = (double) (listE[j].molarmass * a);
+//								 System.out.println("molar mass: " + x);
+//								 }
+								 //}
 							}
 						}
 					}
 				});
 		textField.setBorderColor(color.black);
 		textField.setBackgroundColor(color.lightGray);
+		
 
 	}
 
