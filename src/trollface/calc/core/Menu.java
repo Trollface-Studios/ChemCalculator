@@ -69,11 +69,7 @@ public class Menu extends BasicGameState {
 		System.out.println(posX + "   " + posY);
 		if ((posX > 220 && posY > 90) && (posX < 400 && posY < 135)) {
 			glowactive = true;
-			if (input.isMousePressed(1)) {
-
-				game.enterState(1);
-			}
-
+			
 		} else {
 			glowactive = false;
 		}
