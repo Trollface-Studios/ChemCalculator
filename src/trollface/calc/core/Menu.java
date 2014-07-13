@@ -26,8 +26,13 @@ public class Menu extends BasicGameState {
 	TextField textField;
 	MouseListener listener;
 	Color color;
+	Base game;
 	boolean glowactive = false, glowactive1 = false, glowactive2 = false,
 			glowactive3 = false;
+
+	public Menu(Base game) {
+		this.game = game;
+	}
 
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
@@ -124,4 +129,20 @@ public class Menu extends BasicGameState {
 		return 0;
 	}
 
+	public void mouseClicked(int button, int x, int y, int clickCount) {
+
+		if (glowactive == true) {
+			app.exit();
+		}
+		if (glowactive1 == true) {
+			game.enterState(1);
+		}
+		if (glowactive2 == true) {
+			game.enterState(2);
+		}
+		if (glowactive3 == true) {
+			game.enterState(3);
+		}
+
+	}
 }

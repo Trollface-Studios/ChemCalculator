@@ -42,20 +42,16 @@ public class Base extends StateBasedGame {
 	}
 
 	public void initStatesList(GameContainer c) throws SlickException {
-		addState(new Menu());
-//		addState(new Info());
-//		addState(new Settings());
-//		addState(new Calculations());
+		addState(new Menu(this));
+		addState(new Info());
+		addState(new Settings());
+		addState(new Calculations());
 
 	}
 
 	public void ChangeState() {
 
 	}
-
-	
-	public void mouseClicked(int button, int x, int y, int clickCount) {
-		System.out.println("sup nigga");}
 
 	
 }
