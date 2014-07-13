@@ -27,8 +27,8 @@ public class Calculations extends BasicGameState {
 	int x = 300;
 	int y = 100;
 	StringData[] listE;
-	Image background, sipka, sipkaglow;
-	boolean colorText = false, glowactive = false;
+	Image background, sipka, sipkaglow, clickbox, clickedjej;
+	boolean colorText = false, glowactive = false, clicked = false, clicked1 = false,unclicked = true;
 	Base game;
 	
 	public Calculations(Base game) {
@@ -341,13 +341,15 @@ public class Calculations extends BasicGameState {
 		background = new Image("src/images/calc/core/chemBackground.png");
 		sipka = new Image("src/images/calc/core/gobackbutton1.png");
 		sipkaglow = new Image("src/images/calc/core/gobackbutton.png");
+		clickbox = new Image("src/images/calc/core/clickbox.png");
+		clickedjej = new Image("src/images/calc/core/clicked.png");
 
 
 
 		elements();
 		font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 				java.awt.Font.ITALIC, 26));
-		textField = new TextField(c, c.getDefaultFont(), 200, 50, x, y,
+		textField = new TextField(c, c.getDefaultFont(), 170, 150, x, y,
 				new ComponentListener() {
 
 					@Override
@@ -446,8 +448,14 @@ public class Calculations extends BasicGameState {
 		} else {
 			glowactive = false;
 		}
+		if ((posX > 80 && posY > 160) && (posX < 103 && posY < 180)) {
+			clicked = true;
+			
+		} else {
+			clicked = false;
+		}
 
-
+//80 103  180 160
 	}
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
@@ -455,10 +463,16 @@ public class Calculations extends BasicGameState {
 		background.draw();
 		textField.render(c, g);
 		sipka.draw(10, 420);
+		clickbox.draw(80, 300);
+		g.drawString("molar mass", 115, 300);
 		
 		if(glowactive==true){
 			sipkaglow.draw(10,420);
 		}
+		if(clicked1==true){
+			clickedjej.draw(80,300);
+		}
+		
 
 	}
 public void mouseClicked(int button, int x, int y, int clickCount) {
@@ -466,6 +480,11 @@ if(glowactive==true){
 		
 		game.enterState(0);
 	}
+if(clicked == true){
+	clicked1 =true;
+}else{
+	clicked1 = false;
+}
 	}
 
 	public int GetID() {
