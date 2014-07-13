@@ -5,6 +5,7 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.state.GameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.util.Log;
 
@@ -42,15 +43,19 @@ public class Base extends StateBasedGame {
 
 	public void initStatesList(GameContainer c) throws SlickException {
 		addState(new Menu());
-//		addState(new ListOfElements());
-		//addState(new Options());
-		// addState(new Exit());
+//		addState(new Info());
+//		addState(new Settings());
+//		addState(new Calculations());
 
 	}
 
 	public void ChangeState() {
 
 	}
+
+	
+	public void mouseClicked(int button, int x, int y, int clickCount) {
+		System.out.println("sup nigga");}
 
 	
 }
