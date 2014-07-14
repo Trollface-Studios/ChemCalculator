@@ -27,8 +27,8 @@ public class Calculations extends BasicGameState {
 	int x = 300;
 	int y = 100;
 	StringData[] listE;
-	Image background, sipka, sipkaglow, clickbox, clickedjej;
-	boolean colorText = false, glowactive = false, clicked = false, clicked1 = false,unclicked = true;
+	Image background, sipka, sipkaglow, clickbox, clickedjej, settings;
+	boolean colorText = false, glowactive = false, clicked = false, outofSet=false, clicked1 = false,unclicked = true,settingsThere=true;
 	Base game;
 	
 	public Calculations(Base game) {
@@ -343,12 +343,14 @@ public class Calculations extends BasicGameState {
 		sipkaglow = new Image("src/images/calc/core/gobackbutton.png");
 		clickbox = new Image("src/images/calc/core/clickbox.png");
 		clickedjej = new Image("src/images/calc/core/clicked.png");
+		settings = new Image("src/images/calc/core/CalSet.png");
 
 
 
 		elements();
 		font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 				java.awt.Font.ITALIC, 26));
+		//if(settingsThere==false){
 		textField = new TextField(c, c.getDefaultFont(), 170, 150, x, y,
 				new ComponentListener() {
 
@@ -427,11 +429,12 @@ public class Calculations extends BasicGameState {
 						}
 					}
 				});
+		
 		textField.setBorderColor(color.black);
 		textField.setBackgroundColor(color.lightGray);
-		
-
 	}
+
+	//}
 
 	public void update(GameContainer c, StateBasedGame game, int delta)
 			throws SlickException {
@@ -441,7 +444,7 @@ public class Calculations extends BasicGameState {
 		int posY = Mouse.getY();
 
 		System.out.println(posX+" "+posY);
-		//10, 78  60 18
+		
 		if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
 			glowactive = true;
 			
@@ -454,14 +457,23 @@ public class Calculations extends BasicGameState {
 		} else {
 			clicked = false;
 		}
+//		if((posX<123 && posY>53)&&(posX>55&&posY<94)){
+//			outofSet = true;
+//		}else{
+//			outofSet = false;
+//		}
+//		System.out.println(outofSet+" "+settingsThere);
 
-//80 103  180 160
+
 	}
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
+		
 		background.draw();
+	//	if(settingsThere==false){
 		textField.render(c, g);
+	//	}
 		sipka.draw(10, 420);
 		clickbox.draw(80, 300);
 		g.drawString("molar mass", 115, 300);
@@ -472,20 +484,28 @@ public class Calculations extends BasicGameState {
 		if(clicked1==true){
 			clickedjej.draw(80,300);
 		}
+	//	if(settingsThere==true){
+		//settings.draw();
+		//}
+	//	sipka.draw(55, 387);
 		
 
 	}
-public void mouseClicked(int button, int x, int y, int clickCount) {
-if(glowactive==true){
+	public void mouseClicked(int button, int x, int y, int clickCount) {
+		if(glowactive==true){
 		
-		game.enterState(0);
-	}
-if(clicked == true){
-	clicked1 =true;
-}else{
-	clicked1 = false;
-}
-	}
+			game.enterState(0);
+		}
+		if(clicked == true){
+			clicked1 =true;
+		}else{
+			clicked1 = false;
+		}
+//		if(outofSet ==true){
+//			settingsThere=false;
+//		}
+
+		}	
 
 	public int GetID() {
 		return 1;
