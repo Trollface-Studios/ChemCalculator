@@ -27,13 +27,23 @@ public class Calculations extends BasicGameState {
 	int x = 300;
 	int y = 100;
 	StringData[] listE;
-	Image background, sipka, sipkaglow, clickbox, clickedjej, settings;
-	boolean colorText = false, glowactive = false, clicked = false, outofSet=false, clicked1 = false,unclicked = true,settingsThere=true;
+	Image background, sipka, sipkaglow, plusbutton, clickbox, clickedjej,
+			settings;
+	boolean colorText = false, glowactive = false, clicked = false,
+			outofSet = false, clicked1 = false, unclicked = true,
+			settingsThere = true;
 	Base game;
-	
+
+	// boolean [] a;
+
 	public Calculations(Base game) {
 		this.game = game;
 	}
+
+	// public void clickBox(){
+	// a = new boolean[3];
+	// a[0] = new boolean();
+	// }
 
 	public void elements() {
 
@@ -344,14 +354,13 @@ public class Calculations extends BasicGameState {
 		clickbox = new Image("src/images/calc/core/clickbox.png");
 		clickedjej = new Image("src/images/calc/core/clicked.png");
 		settings = new Image("src/images/calc/core/CalSet.png");
-
-
+		plusbutton = new Image("src/images/calc/core/plusbutton.png");
 
 		elements();
 		font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 				java.awt.Font.ITALIC, 26));
-		//if(settingsThere==false){
-		textField = new TextField(c, c.getDefaultFont(), 170, 150, x, y,
+		// if(settingsThere==false){
+		textField = new TextField(c, c.getDefaultFont(), 170, 150, 100, 25,
 				new ComponentListener() {
 
 					@Override
@@ -367,19 +376,20 @@ public class Calculations extends BasicGameState {
 								colorText = false;
 								System.out.println("The compound contains "
 										+ counter + " elements.");
-							}if(!text.contains(listE[i].name)){
-								colorText = true;
-								
-								
-							}else{
-								colorText = false;
-								
 							}
-						
+							if (!text.contains(listE[i].name)) {
+								colorText = true;
+
+							} else {
+								colorText = false;
+
+							}
+
 						}
-						if(colorText ==true){
+						if (colorText == true) {
 							textField.setTextColor(color.red);
-						}if(colorText == false){
+						}
+						if (colorText == false) {
 							textField.setTextColor(color.white);
 						}
 
@@ -388,124 +398,118 @@ public class Calculations extends BasicGameState {
 							if (Character.isDigit(c)) {
 
 								int a = Character.digit(c, 10);
-								//System.out.println("debug " + a);
+								// System.out.println("debug " + a);
 
-								 String b = String.valueOf(a);
-								
+								String b = String.valueOf(a);
+
 								text.indexOf(b);
-								String[]mnam = text.split("(?!^)");
-								for(int j=0;j<mnam.length;j++){
-									if(mnam[j].equals(b)){
-										for(int n=0;n<47;n++){
-											if(mnam[j-1].equals(listE[n].name)){
-												System.out.println(mnam[j-1]);
-												System.out.println(listE[n].molarmass*a);
-										
-									}	
+								String[] mnam = text.split("(?!^)");
+								for (int j = 0; j < mnam.length; j++) {
+									if (mnam[j].equals(b)) {
+										for (int n = 0; n < 47; n++) {
+											if (mnam[j - 1]
+													.equals(listE[n].name)) {
+												System.out.println(mnam[j - 1]);
+												System.out
+														.println(listE[n].molarmass
+																* a);
+
+											}
+										}
+									}
 								}
-								}
-								}
-								
-//								char[] hamm =new char[text.length()];
-//								String newText = text.substring(0, text.length()- text.indexOf(b));
-//								
-//								 System.out.println(text.indexOf(b));
-//								 System.out.println(newText);
-								
-//								 String newText = text.substring(0,
-//								 text.length() - a );
-//								 System.out.println(newText);
-//								 for (int j = 0; j < 47; j++) {
-//								
-//								 if(text.contains(listE[j].name)){
-//								 System.out.println(listE[j].name);
-//								 }
-//								 if (newText.equals(listE[j].name)) {
-//								 double x = (double) (listE[j].molarmass * a);
-//								 System.out.println("molar mass: " + x);
-//								 }
-								 //}
+
+								// char[] hamm =new char[text.length()];
+								// String newText = text.substring(0,
+								// text.length()- text.indexOf(b));
+								//
+								// System.out.println(text.indexOf(b));
+								// System.out.println(newText);
+
+								// String newText = text.substring(0,
+								// text.length() - a );
+								// System.out.println(newText);
+								// for (int j = 0; j < 47; j++) {
+								//
+								// if(text.contains(listE[j].name)){
+								// System.out.println(listE[j].name);
+								// }
+								// if (newText.equals(listE[j].name)) {
+								// double x = (double) (listE[j].molarmass * a);
+								// System.out.println("molar mass: " + x);
+								// }
+								// }
 							}
 						}
 					}
 				});
-		
+
 		textField.setBorderColor(color.black);
 		textField.setBackgroundColor(color.lightGray);
 	}
 
-	//}
+	// }
 
 	public void update(GameContainer c, StateBasedGame game, int delta)
 			throws SlickException {
 		Input input = c.getInput();
-		
+
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
 
-		System.out.println(posX+" "+posY);
-		
+		System.out.println(posX + " " + posY);
+
 		if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
 			glowactive = true;
-			
+
 		} else {
 			glowactive = false;
 		}
 		if ((posX > 80 && posY > 160) && (posX < 103 && posY < 180)) {
 			clicked = true;
-			
+
 		} else {
 			clicked = false;
 		}
-//		if((posX<123 && posY>53)&&(posX>55&&posY<94)){
-//			outofSet = true;
-//		}else{
-//			outofSet = false;
-//		}
-//		System.out.println(outofSet+" "+settingsThere);
-
+		// if((posX<123 && posY>53)&&(posX>55&&posY<94)){
+		// outofSet = true;
+		// }else{
+		// outofSet = false;
+		// }
+		// System.out.println(outofSet+" "+settingsThere);
 
 	}
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
-		
+
 		background.draw();
-	//	if(settingsThere==false){
 		textField.render(c, g);
-	//	}
 		sipka.draw(10, 420);
 		clickbox.draw(80, 300);
+		clickbox.draw(80, 340);
+		clickbox.draw(80, 380);
 		g.drawString("molar mass", 115, 300);
-		
-		if(glowactive==true){
-			sipkaglow.draw(10,420);
+
+		if (glowactive == true) {
+			sipkaglow.draw(10, 420);
 		}
-		if(clicked1==true){
-			clickedjej.draw(80,300);
+		if (clicked1 == true) {
+			clickedjej.draw(80, 300);
 		}
-	//	if(settingsThere==true){
-		//settings.draw();
-		//}
-	//	sipka.draw(55, 387);
-		
 
 	}
+
 	public void mouseClicked(int button, int x, int y, int clickCount) {
-		if(glowactive==true){
-		
+		if (glowactive == true) {
+
 			game.enterState(0);
 		}
-		if(clicked == true){
-			clicked1 =true;
-		}else{
-			clicked1 = false;
+		if (clicked == true) {
+			clicked1 = !clicked1;
 		}
-//		if(outofSet ==true){
-//			settingsThere=false;
-//		}
 
-		}	
+	}
 
 	public int GetID() {
 		return 1;
@@ -516,6 +520,4 @@ public class Calculations extends BasicGameState {
 		return 1;
 	}
 
-	 
 }
-

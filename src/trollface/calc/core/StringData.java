@@ -7,7 +7,7 @@ public class StringData {
 	int number;
 	double electronegativity;
 	double density;
-	boolean exist;
+	boolean exist, isClicked;
 	
 	
 
