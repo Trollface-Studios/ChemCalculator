@@ -26,7 +26,7 @@ public class Calculations extends BasicGameState {
 	Color color;
 	int x = 300;
 	int y = 100;
-	StringData[] listE;
+	StringData[] listE, click;
 	Image background, sipka, sipkaglow, plusbutton, clickbox, clickedjej,
 			settings;
 	boolean colorText = false, glowactive = false, clicked = false,
@@ -40,10 +40,11 @@ public class Calculations extends BasicGameState {
 		this.game = game;
 	}
 
-	// public void clickBox(){
-	// a = new boolean[3];
-	// a[0] = new boolean();
-	// }
+	 public void clickBox(){
+	 click= new StringData[10];
+	 click[0] = new StringData();
+	 click[0].isClicked = false;
+	 }
 
 	public void elements() {
 
@@ -368,22 +369,21 @@ public class Calculations extends BasicGameState {
 						TextField field = (TextField) source;
 						String text = field.getText();
 						int counter = 0;
+						
+						colorText = true;
 						for (int i = 0; i < 47; i++) {
 							if (text.contains(listE[i].name)) {
 								System.out.println("Name: " + listE[i].fullname
 										+ "  Molarmass " + listE[i].molarmass);
 								counter++;
-								colorText = false;
+								
 								System.out.println("The compound contains "
 										+ counter + " elements.");
 							}
-							if (!text.contains(listE[i].name)) {
-								colorText = true;
-
-							} else {
+							if (text.contains(listE[i].name)) {
 								colorText = false;
 
-							}
+							} 
 
 						}
 						if (colorText == true) {
@@ -403,6 +403,7 @@ public class Calculations extends BasicGameState {
 								String b = String.valueOf(a);
 
 								text.indexOf(b);
+								double franta = 0;
 								String[] mnam = text.split("(?!^)");
 								for (int j = 0; j < mnam.length; j++) {
 									if (mnam[j].equals(b)) {
@@ -410,6 +411,7 @@ public class Calculations extends BasicGameState {
 											if (mnam[j - 1]
 													.equals(listE[n].name)) {
 												System.out.println(mnam[j - 1]);
+												franta = franta+listE[n].molarmass*a;
 												System.out
 														.println(listE[n].molarmass
 																* a);
@@ -418,6 +420,7 @@ public class Calculations extends BasicGameState {
 										}
 									}
 								}
+System.out.println("Collective molar mass: "+ franta);								
 
 								// char[] hamm =new char[text.length()];
 								// String newText = text.substring(0,
@@ -457,7 +460,7 @@ public class Calculations extends BasicGameState {
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
 
-		System.out.println(posX + " " + posY);
+		//System.out.println(posX + " " + posY);
 
 		if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
 			glowactive = true;
