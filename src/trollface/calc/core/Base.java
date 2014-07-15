@@ -1,6 +1,5 @@
 package trollface.calc.core;
 
-
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
@@ -25,14 +24,20 @@ public class Base extends StateBasedGame {
 		app.setSmoothDeltas(true);
 		app.setTargetFrameRate(60);
 		app.setVSync(true);
-
+		try {
+			app.setDisplayMode(1200, 700, false);
+		} catch (SlickException e1) {
+		System.out.println("Setting resolution failed, reverting to basics: ");
+			e1.printStackTrace();
+		}
 		app.setVerbose(false);
 		app.setShowFPS(true);
 
 		try {
 			app.start();
 		} catch (SlickException e) {
-			// TODO Auto-generated catch block
+			System.out.println("App didn't start for some goddamn reason. ");
+			System.out.println("Here, catch this trace: ");
 			e.printStackTrace();
 		}
 	}
@@ -52,9 +57,5 @@ public class Base extends StateBasedGame {
 	public void ChangeState() {
 
 	}
-	
 
-	
 }
-
-
