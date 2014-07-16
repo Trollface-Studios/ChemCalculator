@@ -33,6 +33,8 @@ public class Calculations extends BasicGameState {
 			outofSet = false, clicked1 = false, unclicked = true,
 			settingsThere = true;
 	Base game;
+	
+	
 
 	// boolean [] a;
 
@@ -44,6 +46,15 @@ public class Calculations extends BasicGameState {
 	 click= new StringData[10];
 	 click[0] = new StringData();
 	 click[0].isClicked = false;
+	 //single compound
+	 click[1] = new StringData();
+	 click[1].isClicked = false;
+	 //more compounds 
+	 click[2] = new StringData();
+	 click[2].isClicked = false;
+	 
+	 click[3] = new StringData();
+	 click[3].isClicked = false;
 	 }
 
 	public void elements() {
@@ -348,6 +359,8 @@ public class Calculations extends BasicGameState {
 
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
+		
+		clickBox();
 
 		background = new Image("src/images/calc/core/chemBackground.png");
 		sipka = new Image("src/images/calc/core/gobackbutton1.png");
@@ -455,6 +468,8 @@ System.out.println("Collective molar mass: "+ franta);
 
 	public void update(GameContainer c, StateBasedGame game, int delta)
 			throws SlickException {
+		
+		
 		Input input = c.getInput();
 
 		int posX = Mouse.getX();
@@ -480,11 +495,12 @@ System.out.println("Collective molar mass: "+ franta);
 		// outofSet = false;
 		// }
 		// System.out.println(outofSet+" "+settingsThere);
-
+		System.out.println(click[0].isClicked+" "+clicked);
 	}
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
+		
 
 		background.draw();
 		textField.render(c, g);
@@ -497,19 +513,22 @@ System.out.println("Collective molar mass: "+ franta);
 		if (glowactive == true) {
 			sipkaglow.draw(10, 420);
 		}
-		if (clicked1 == true) {
+		if (click[0].isClicked == true) {
 			clickedjej.draw(80, 300);
 		}
 
 	}
 
 	public void mouseClicked(int button, int x, int y, int clickCount) {
+		
+		clickBox();
 		if (glowactive == true) {
 
 			game.enterState(0);
 		}
 		if (clicked == true) {
-			clicked1 = !clicked1;
+			
+			click[0].isClicked = !click[0].isClicked;
 		}
 
 	}
