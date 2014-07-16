@@ -33,8 +33,6 @@ public class Calculations extends BasicGameState {
 			outofSet = false, clicked1 = false, unclicked = true,
 			settingsThere = true;
 	Base game;
-	
-	
 
 	// boolean [] a;
 
@@ -42,20 +40,20 @@ public class Calculations extends BasicGameState {
 		this.game = game;
 	}
 
-	 public void clickBox(){
-	 click= new StringData[10];
-	 click[0] = new StringData();
-	 click[0].isClicked = false;
-	 //single compound
-	 click[1] = new StringData();
-	 click[1].isClicked = false;
-	 //more compounds 
-	 click[2] = new StringData();
-	 click[2].isClicked = false;
-	 
-	 click[3] = new StringData();
-	 click[3].isClicked = false;
-	 }
+	public void clickBox() {
+		click = new StringData[10];
+		click[0] = new StringData();
+		click[0].isClicked = false;
+		// single compound
+		click[1] = new StringData();
+		click[1].isClicked = false;
+		// more compounds
+		click[2] = new StringData();
+		click[2].isClicked = false;
+
+		click[3] = new StringData();
+		click[3].isClicked = false;
+	}
 
 	public void elements() {
 
@@ -359,7 +357,7 @@ public class Calculations extends BasicGameState {
 
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
-		
+
 		clickBox();
 
 		background = new Image("src/images/calc/core/chemBackground.png");
@@ -382,21 +380,21 @@ public class Calculations extends BasicGameState {
 						TextField field = (TextField) source;
 						String text = field.getText();
 						int counter = 0;
-						
+
 						colorText = true;
 						for (int i = 0; i < 47; i++) {
 							if (text.contains(listE[i].name)) {
 								System.out.println("Name: " + listE[i].fullname
 										+ "  Molarmass " + listE[i].molarmass);
 								counter++;
-								
+
 								System.out.println("The compound contains "
 										+ counter + " elements.");
 							}
 							if (text.contains(listE[i].name)) {
 								colorText = false;
 
-							} 
+							}
 
 						}
 						if (colorText == true) {
@@ -424,7 +422,9 @@ public class Calculations extends BasicGameState {
 											if (mnam[j - 1]
 													.equals(listE[n].name)) {
 												System.out.println(mnam[j - 1]);
-												franta = franta+listE[n].molarmass*a;
+												franta = franta
+														+ listE[n].molarmass
+														* a;
 												System.out
 														.println(listE[n].molarmass
 																* a);
@@ -433,7 +433,8 @@ public class Calculations extends BasicGameState {
 										}
 									}
 								}
-System.out.println("Collective molar mass: "+ franta);								
+								System.out.println("Collective molar mass: "
+										+ franta);
 
 								// char[] hamm =new char[text.length()];
 								// String newText = text.substring(0,
@@ -464,43 +465,35 @@ System.out.println("Collective molar mass: "+ franta);
 		textField.setBackgroundColor(color.lightGray);
 	}
 
-	// }
-
 	public void update(GameContainer c, StateBasedGame game, int delta)
 			throws SlickException {
-		
-		
+
 		Input input = c.getInput();
 
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
 
-		//System.out.println(posX + " " + posY);
+		// System.out.println(posX + " " + posY);
 
+		// Glow
 		if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
 			glowactive = true;
 
 		} else {
 			glowactive = false;
 		}
-		if ((posX > 80 && posY > 160) && (posX < 103 && posY < 180)) {
-			clicked = true;
 
-		} else {
-			clicked = false;
-		}
 		// if((posX<123 && posY>53)&&(posX>55&&posY<94)){
 		// outofSet = true;
 		// }else{
 		// outofSet = false;
 		// }
 		// System.out.println(outofSet+" "+settingsThere);
-		System.out.println(click[0].isClicked+" "+clicked);
+
 	}
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
-		
 
 		background.draw();
 		textField.render(c, g);
@@ -516,19 +509,41 @@ System.out.println("Collective molar mass: "+ franta);
 		if (click[0].isClicked == true) {
 			clickedjej.draw(80, 300);
 		}
+		if (click[1].isClicked == true) {
+			clickedjej.draw(80, 340);
+		}
+		if (click[2].isClicked == true) {
+			clickedjej.draw(80, 380);
+		}
 
 	}
 
 	public void mouseClicked(int button, int x, int y, int clickCount) {
-		
-		clickBox();
+
+		int posX = Mouse.getX();
+		int posY = Mouse.getY();
 		if (glowactive == true) {
 
 			game.enterState(0);
 		}
-		if (clicked == true) {
-			
+
+		// Checkboxes, phew, finally
+		if ((posX > 80 && posY > 160) && (posX < 103 && posY < 180)
+				&& button == Input.MOUSE_LEFT_BUTTON) {
+
 			click[0].isClicked = !click[0].isClicked;
+		}
+
+		if ((posX > 80 && posY > 120) && (posX < 103 && posY < 140)
+				&& button == Input.MOUSE_LEFT_BUTTON) {
+
+			click[1].isClicked = !click[1].isClicked;
+		}
+
+		if ((posX > 80 && posY > 80) && (posX < 103 && posY < 100)
+				&& button == Input.MOUSE_LEFT_BUTTON) {
+
+			click[2].isClicked = !click[2].isClicked;
 		}
 
 	}
