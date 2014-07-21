@@ -489,6 +489,7 @@ public class Calculations extends BasicGameState {
 		// outofSet = false;
 		// }
 		// System.out.println(outofSet+" "+settingsThere);
+		System.out.println(click[0].isClicked);
 
 	}
 
@@ -501,7 +502,7 @@ public class Calculations extends BasicGameState {
 		clickbox.draw(80, 300);
 		clickbox.draw(80, 340);
 		clickbox.draw(80, 380);
-		g.drawString("molar mass", 115, 300);
+		g.drawString("single compound", 115, 300);
 
 		if (glowactive == true) {
 			sipkaglow.draw(10, 420);
