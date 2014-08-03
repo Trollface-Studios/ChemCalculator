@@ -12,6 +12,7 @@ public class Base extends StateBasedGame {
 
 	private AppGameContainer container;
 	private static AppGameContainer app;
+	public static boolean renderingSmall;
 
 	public static void main(String[] args) {
 		try {
@@ -24,12 +25,13 @@ public class Base extends StateBasedGame {
 		app.setSmoothDeltas(true);
 		app.setTargetFrameRate(60);
 		app.setVSync(true);
-		 try {
-		 app.setDisplayMode(1200, 700, false);
-		 } catch (SlickException e1) {
-		 System.out.println("Setting resolution failed, reverting to basics: ");
-		 e1.printStackTrace();
-		 }
+		try {
+			app.setDisplayMode(1200, 700, false);
+		} catch (SlickException e1) {
+			System.out
+					.println("Setting resolution failed, reverting to basics: ");
+			e1.printStackTrace();
+		}
 		app.setVerbose(false);
 		app.setShowFPS(true);
 

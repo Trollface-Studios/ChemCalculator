@@ -495,26 +495,30 @@ public class Calculations extends BasicGameState {
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
+		if (((Base) game).renderingSmall) {
+			background.draw();
+			textField.render(c, g);
+			sipka.draw(10, 420);
+			clickbox.draw(80, 300);
+			clickbox.draw(80, 340);
+			clickbox.draw(80, 380);
+			g.drawString("single compound", 115, 300);
 
-		background.draw();
-		textField.render(c, g);
-		sipka.draw(10, 420);
-		clickbox.draw(80, 300);
-		clickbox.draw(80, 340);
-		clickbox.draw(80, 380);
-		g.drawString("single compound", 115, 300);
+			if (glowactive == true) {
+				sipkaglow.draw(10, 420);
+			}
+			if (click[0].isClicked == true) {
+				clickedjej.draw(80, 300);
+			}
+			if (click[1].isClicked == true) {
+				clickedjej.draw(80, 340);
+			}
+			if (click[2].isClicked == true) {
+				clickedjej.draw(80, 380);
+			}
+		} else {
+			// TADY TO SAMY ALE S VELKYM ROZLISENIM - MEN TY (X, Y) a obrazky
 
-		if (glowactive == true) {
-			sipkaglow.draw(10, 420);
-		}
-		if (click[0].isClicked == true) {
-			clickedjej.draw(80, 300);
-		}
-		if (click[1].isClicked == true) {
-			clickedjej.draw(80, 340);
-		}
-		if (click[2].isClicked == true) {
-			clickedjej.draw(80, 380);
 		}
 
 	}

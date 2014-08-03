@@ -69,7 +69,7 @@ public class Menu extends BasicGameState {
 		System.out.println(posX + "   " + posY);
 		if ((posX > 220 && posY > 90) && (posX < 400 && posY < 135)) {
 			glowactive = true;
-			
+
 		} else {
 			glowactive = false;
 		}
@@ -94,23 +94,29 @@ public class Menu extends BasicGameState {
 	// 331, 283 265 220
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
-		background.draw();
-		buttonCal.draw(220, 140);
-		buttonInfo.draw(220, 205);
-		buttonSet.draw(220, 270);
-		buttonExit.draw(220, 335);
 
-		if (glowactive == true) {
-			buttonExitglow.draw(220, 335);
-		}
-		if (glowactive1 == true) {
-			buttonCalglow.draw(220, 140);
-		}
-		if (glowactive2 == true) {
-			buttonInfoglow.draw(220, 205);
-		}
-		if (glowactive3 == true) {
-			buttonSetglow.draw(220, 270);
+		if (((Base) game).renderingSmall) {
+			background.draw();
+			buttonCal.draw(220, 140);
+			buttonInfo.draw(220, 205);
+			buttonSet.draw(220, 270);
+			buttonExit.draw(220, 335);
+
+			if (glowactive == true) {
+				buttonExitglow.draw(220, 335);
+			}
+			if (glowactive1 == true) {
+				buttonCalglow.draw(220, 140);
+			}
+			if (glowactive2 == true) {
+				buttonInfoglow.draw(220, 205);
+			}
+			if (glowactive3 == true) {
+				buttonSetglow.draw(220, 270);
+			}
+		} else {
+
+			// TADY VELKEJ RENDER
 		}
 
 	}
