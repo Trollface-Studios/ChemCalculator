@@ -9,7 +9,7 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.util.Log;
 
 public class Base extends StateBasedGame {
-	public static boolean renderingSmall = true;
+	public static boolean renderingSmall = false;
 
 	private AppGameContainer container;
 	private static AppGameContainer app;

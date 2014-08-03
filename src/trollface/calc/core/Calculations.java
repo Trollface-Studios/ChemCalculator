@@ -27,7 +27,7 @@ public class Calculations extends BasicGameState {
 	int x = 300;
 	int y = 100;
 	StringData[] listE, click;
-	Image background, sipka, sipkaglow, plusbutton, clickbox, clickedjej,
+	Image background, sipka, sipkaglow, plusbutton, clickbox, clickedjej, background3,
 			settings;
 	boolean colorText = false, glowactive = false, clicked = false,
 			outofSet = false, clicked1 = false, unclicked = true,
@@ -367,7 +367,8 @@ public class Calculations extends BasicGameState {
 		clickedjej = new Image("src/images/calc/core/clicked.png");
 		settings = new Image("src/images/calc/core/CalSet.png");
 		plusbutton = new Image("src/images/calc/core/plusbutton.png");
-
+		background3 = new Image ("src/images/calc/core/chemBackground3.png");
+				
 		elements();
 		font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 				java.awt.Font.ITALIC, 26));
@@ -517,8 +518,26 @@ public class Calculations extends BasicGameState {
 				clickedjej.draw(80, 380);
 			}
 		} else {
-			// TADY TO SAMY ALE S VELKYM ROZLISENIM - MEN TY (X, Y) a obrazky
+			background3.draw();
+			textField.render(c, g);
+			sipka.draw(50, 600);
+			clickbox.draw(400, 300);
+			clickbox.draw(400, 340);
+			clickbox.draw(400, 380);
+			g.drawString("single compound", 435, 300);
 
+			if (glowactive == true) {
+				sipkaglow.draw(50, 600);
+			}
+			if (click[0].isClicked == true) {
+				clickedjej.draw(400, 300);
+			}
+			if (click[1].isClicked == true) {
+				clickedjej.draw(400, 340);
+			}
+			if (click[2].isClicked == true) {
+				clickedjej.draw(400, 380);
+			}
 		}
 
 	}

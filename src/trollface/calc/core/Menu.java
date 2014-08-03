@@ -21,7 +21,7 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Menu extends BasicGameState {
 	private static AppGameContainer app;
 	Image background, buttonCal, buttonInfo, buttonSet, buttonExit,
-			buttonExitglow, buttonCalglow, buttonInfoglow, buttonSetglow;
+			buttonExitglow, buttonCalglow, buttonInfoglow, buttonSetglow, background3;
 	Font font;
 	TextField textField;
 	MouseListener listener;
@@ -47,6 +47,7 @@ public class Menu extends BasicGameState {
 				"src/images/calc/core/buttonCalculationsglow.png");
 		buttonInfoglow = new Image("src/images/calc/core/buttonInfoglow.png");
 		buttonSetglow = new Image("src/images/calc/core/buttonSetglow.png");
+		background3 = new Image ("src/images/calc/core/chemBackground3.png");
 		// font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 		// java.awt.Font.ITALIC, 26));
 		// textField = new TextField(c, c.getDefaultFont(), 200, 50, x, y,
@@ -116,9 +117,31 @@ public class Menu extends BasicGameState {
 			}
 		} else {
 
-			// TADY VELKEJ RENDER
+			background3.draw();
+			buttonCal.draw(520, 170);
+			buttonInfo.draw(520, 270);
+			buttonSet.draw(520, 340);
+			buttonExit.draw(520, 410);
+
+			if (glowactive == true) {
+				buttonExitglow.draw(520, 410);
+			}
+			if (glowactive1 == true) {
+				buttonCalglow.draw(520, 170);
+			}
+			if (glowactive2 == true) {
+				buttonInfoglow.draw(520, 270);
+			}
+			if (glowactive3 == true) {
+				buttonSetglow.draw(520, 340);
+			}
 		}
 
+	}
+
+	private void scale(int i, int j) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	public int GetID() {
