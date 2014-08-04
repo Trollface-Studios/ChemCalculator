@@ -21,7 +21,7 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Menu extends BasicGameState {
 	private static AppGameContainer app;
 	Image background, buttonCal, buttonInfo, buttonSet, buttonExit,
-			buttonExitglow, buttonCalglow, buttonInfoglow, buttonSetglow, background3, backgroundM1;
+			buttonExitglow, buttonCalglow, buttonInfoglow, buttonSetglow, backgroundM1;
 	Font font;
 	TextField textField;
 	MouseListener listener;
@@ -46,7 +46,6 @@ public class Menu extends BasicGameState {
 		buttonCalglow = new Image("src/images/calc/core/buttonCalculationsglow.png");
 		buttonInfoglow = new Image("src/images/calc/core/buttonInfoglow.png");
 		buttonSetglow = new Image("src/images/calc/core/buttonSetglow.png");
-		background3 = new Image ("src/images/calc/core/chemBackground3.png");
 		backgroundM1 = new Image ("src/images/calc/core/chemBackgroundM1.png");
 		// font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 		// java.awt.Font.ITALIC, 26));

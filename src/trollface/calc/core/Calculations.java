@@ -27,7 +27,7 @@ public class Calculations extends BasicGameState {
 	int x = 300;
 	int y = 100;
 	StringData[] listE, click;
-	Image background, sipka, sipkaglow, plusbutton, clickbox, clickedjej, background3,
+	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedjej, background3,
 			settings;
 	boolean colorText = false, glowactive = false, clicked = false,
 			outofSet = false, clicked1 = false, unclicked = true,
@@ -363,7 +363,7 @@ public class Calculations extends BasicGameState {
 		background = new Image("src/images/calc/core/chemBackground.png");
 		sipka = new Image("src/images/calc/core/gobackbutton1.png");
 		sipkaglow = new Image("src/images/calc/core/gobackbutton.png");
-		clickbox = new Image("src/images/calc/core/clickbox.png");
+		clickboxM = new Image("src/images/calc/core/clickboxM.png");
 		clickedjej = new Image("src/images/calc/core/clicked.png");
 		settings = new Image("src/images/calc/core/CalSet.png");
 		plusbutton = new Image("src/images/calc/core/plusbutton.png");
@@ -505,9 +505,9 @@ public class Calculations extends BasicGameState {
 			background.draw();
 			textField.render(c, g);
 			sipka.draw(10, 420);
-			clickbox.draw(80, 300);
-			clickbox.draw(80, 340);
-			clickbox.draw(80, 380);
+			clickboxM.draw(80, 300);
+			clickboxM.draw(80, 340);
+			clickboxM.draw(80, 380);
 			g.drawString("single compound", 115, 300);
 
 			if (glowactive == true) {
@@ -526,9 +526,9 @@ public class Calculations extends BasicGameState {
 			background3.draw();
 			textField.render(c, g);
 			sipka.draw(50, 600);
-			clickbox.draw(400, 300);
-			clickbox.draw(400, 340);
-			clickbox.draw(400, 380);
+			clickboxM.draw(400, 300);
+			clickboxM.draw(400, 340);
+			clickboxM.draw(400, 380);
 			g.drawString("single compound", 435, 300);
 
 			if (glowactive == true) {
