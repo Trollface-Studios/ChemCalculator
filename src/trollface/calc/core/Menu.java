@@ -21,7 +21,7 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Menu extends BasicGameState {
 	private static AppGameContainer app;
 	Image background, buttonCal, buttonInfo, buttonSet, buttonExit,
-			buttonExitglow, buttonCalglow, buttonInfoglow, buttonSetglow, background3;
+			buttonExitglow, buttonCalglow, buttonInfoglow, buttonSetglow, background3, backgroundM1;
 	Font font;
 	TextField textField;
 	MouseListener listener;
@@ -43,11 +43,11 @@ public class Menu extends BasicGameState {
 		buttonSet = new Image("src/images/calc/core/buttonSet.png");
 		buttonExit = new Image("src/images/calc/core/buttonExit.png");
 		buttonExitglow = new Image("src/images/calc/core/buttonExitglow.png");
-		buttonCalglow = new Image(
-				"src/images/calc/core/buttonCalculationsglow.png");
+		buttonCalglow = new Image("src/images/calc/core/buttonCalculationsglow.png");
 		buttonInfoglow = new Image("src/images/calc/core/buttonInfoglow.png");
 		buttonSetglow = new Image("src/images/calc/core/buttonSetglow.png");
 		background3 = new Image ("src/images/calc/core/chemBackground3.png");
+		backgroundM1 = new Image ("src/images/calc/core/chemBackgroundM1.png");
 		// font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 		// java.awt.Font.ITALIC, 26));
 		// textField = new TextField(c, c.getDefaultFont(), 200, 50, x, y,
@@ -66,32 +66,56 @@ public class Menu extends BasicGameState {
 
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
-
+		
 		System.out.println(posX + "   " + posY);
-		if ((posX > 220 && posY > 90) && (posX < 400 && posY < 135)) {
-			glowactive = true;
+		if (((Base) game).renderingSmall) {
+			if ((posX > 220 && posY > 90) && (posX < 400 && posY < 135)) {
+				glowactive = true;
 
-		} else {
-			glowactive = false;
-		}
-		if ((posX > 220 && posY < 331) && (posX < 400 && posY > 283)) {
-			glowactive1 = true;
-		} else {
-			glowactive1 = false;
-		}
-		if ((posX > 220 && posY < 265) && (posX < 400 && posY > 220)) {
-			glowactive2 = true;
-		} else {
-			glowactive2 = false;
-		}
-		if ((posX > 220 && posY < 201) && (posX < 400 && posY > 153)) {
-			glowactive3 = true;
-		} else {
+			} else {
+				glowactive = false;
+			}
+			if ((posX > 220 && posY < 331) && (posX < 400 && posY > 283)) {
+				glowactive1 = true;
+			} else {
+				glowactive1 = false;
+			}
+			if ((posX > 220 && posY < 265) && (posX < 400 && posY > 220)) {
+				glowactive2 = true;
+			} else {
+				glowactive2 = false;
+			}
+			if ((posX > 220 && posY < 201) && (posX < 400 && posY > 153)) {
+				glowactive3 = true;
+			} else {
 			glowactive3 = false;
-		}
-		System.out.println(glowactive);
-	}
+			}
+			System.out.println(glowactive);
+	} else {
+			if ((posX > 520 && posY < 280) && (posX < 700 && posY > 235)) {
+				glowactive = true;
 
+			} else {
+				glowactive = false;
+			}
+			if ((posX > 520 && posY < 520) && (posX < 700 && posY > 475)) {
+				glowactive1 = true;
+			} else {
+				glowactive1 = false;
+			}
+			if ((posX > 520 && posY < 420) && (posX < 700 && posY > 375)) {
+				glowactive2 = true;
+			} else {
+				glowactive2 = false;
+			}
+			if ((posX > 520 && posY < 340) && (posX < 700 && posY > 295)) {
+				glowactive3 = true;
+			} else {
+				glowactive3 = false;
+			}	
+			System.out.println(glowactive);}
+	}
+	
 	// 331, 283 265 220
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
@@ -117,7 +141,7 @@ public class Menu extends BasicGameState {
 			}
 		} else {
 
-			background3.draw();
+			backgroundM1.draw();
 			buttonCal.draw(520, 170);
 			buttonInfo.draw(520, 270);
 			buttonSet.draw(520, 340);

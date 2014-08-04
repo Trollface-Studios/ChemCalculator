@@ -46,13 +46,22 @@ public class Info extends BasicGameState {
 
 		System.out.println(posX + " " + posY);
 		// 10, 78 60 18
-		if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
-			glowactive = true;
+		if (((Base) game).renderingSmall) {
+			if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
+				glowactive = true;
 
+			} else {
+				glowactive = false;
+			}
 		} else {
-			glowactive = false;
+			if ((posX > 50 && posY < 100) && (posX < 120 && posY > 60)) {
+				glowactive = true;
+
+			} else {
+				glowactive = false;
+			}	
 		}
-	}
+	}	
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {

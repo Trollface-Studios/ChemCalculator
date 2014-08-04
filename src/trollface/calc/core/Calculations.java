@@ -477,13 +477,18 @@ public class Calculations extends BasicGameState {
 		// System.out.println(posX + " " + posY);
 
 		// Glow
-		if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
-			glowactive = true;
+		if (((Base) game).renderingSmall) {
+			if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
+				glowactive = true;
 
+			} else {
+				glowactive = false;
+			}
 		} else {
-			glowactive = false;
+			if ((posX > 50 && posY < 100) && (posX < 120 && posY > 60)) {
+				glowactive = true;		
 		}
-
+	}
 		// if((posX<123 && posY>53)&&(posX>55&&posY<94)){
 		// outofSet = true;
 		// }else{
@@ -552,24 +557,43 @@ public class Calculations extends BasicGameState {
 		}
 
 		// Checkboxes, phew, finally
-		if ((posX > 80 && posY > 160) && (posX < 103 && posY < 180)
-				&& button == Input.MOUSE_LEFT_BUTTON) {
+		if (((Base) game).renderingSmall) {
+			if ((posX > 80 && posY > 160) && (posX < 103 && posY < 180)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
 
-			click[0].isClicked = !click[0].isClicked;
+				click[0].isClicked = !click[0].isClicked;
+			}
+
+			if ((posX > 80 && posY > 120) && (posX < 103 && posY < 140)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+
+				click[1].isClicked = !click[1].isClicked;
+			}
+
+			if ((posX > 80 && posY > 80) && (posX < 103 && posY < 100)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+
+				click[2].isClicked = !click[2].isClicked;
+			}
+		} else {
+			if ((posX > 400 && posY < 400) && (posX < 423 && posY > 380)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+
+				click[0].isClicked = !click[0].isClicked;
+			}
+
+			if ((posX > 400 && posY < 360) && (posX < 423 && posY > 340)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+
+				click[1].isClicked = !click[1].isClicked;
+			}
+
+			if ((posX > 400 && posY < 320) && (posX < 423 && posY > 300)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+
+				click[2].isClicked = !click[2].isClicked;
+			}
 		}
-
-		if ((posX > 80 && posY > 120) && (posX < 103 && posY < 140)
-				&& button == Input.MOUSE_LEFT_BUTTON) {
-
-			click[1].isClicked = !click[1].isClicked;
-		}
-
-		if ((posX > 80 && posY > 80) && (posX < 103 && posY < 100)
-				&& button == Input.MOUSE_LEFT_BUTTON) {
-
-			click[2].isClicked = !click[2].isClicked;
-		}
-
 	}
 
 	public int GetID() {
