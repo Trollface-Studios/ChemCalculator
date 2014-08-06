@@ -28,7 +28,7 @@ public class Calculations extends BasicGameState {
 	int y = 100;
 	StringData[] listE, click;
 	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedjej, background3,
-			settings;
+			settings, backgroundM;
 	boolean colorText = false, glowactive = false, clicked = false,
 			outofSet = false, clicked1 = false, unclicked = true,
 			settingsThere = true;
@@ -368,7 +368,8 @@ public class Calculations extends BasicGameState {
 		settings = new Image("src/images/calc/core/CalSet.png");
 		plusbutton = new Image("src/images/calc/core/plusbutton.png");
 		background3 = new Image ("src/images/calc/core/chemBackground3.png");
-				
+		backgroundM = new Image ("src/images/calc/core/chemBackgroundM.png");
+		
 		elements();
 		font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 				java.awt.Font.ITALIC, 26));
@@ -523,7 +524,7 @@ public class Calculations extends BasicGameState {
 				clickedjej.draw(80, 380);
 			}
 		} else {
-			background3.draw();
+			backgroundM.draw();
 			textField.render(c, g);
 			sipka.draw(50, 600);
 			clickboxM.draw(400, 300);
