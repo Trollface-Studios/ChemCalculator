@@ -14,7 +14,7 @@ public class Settings extends BasicGameState {
 
 	private static AppGameContainer app;
 
-	Image background, sipka, sipkaglow, background3;
+	Image background, sipka, sipkaglow, backgroundM;
 	boolean glowactive = false;
 	Base game;
 
@@ -28,7 +28,7 @@ public class Settings extends BasicGameState {
 		background = new Image("src/images/calc/core/chemBackground.png");
 		sipka = new Image("src/images/calc/core/gobackbutton1.png");
 		sipkaglow = new Image("src/images/calc/core/gobackbutton.png");
-		background3 = new Image ("src/images/calc/core/chemBackground3.png");
+		backgroundM = new Image ("src/images/calc/core/chemBackgroundM.png");
 	}
 
 	public void update(GameContainer c, StateBasedGame game, int delta)
@@ -67,7 +67,7 @@ public class Settings extends BasicGameState {
 				sipkaglow.draw(10, 420);
 			}
 		} else {
-			background3.draw();
+			backgroundM.draw();
 			sipka.draw(50, 600);
 			if (glowactive == true) {
 				sipkaglow.draw(50, 600);
