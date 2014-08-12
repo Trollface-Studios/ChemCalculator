@@ -27,7 +27,7 @@ public class Calculations extends BasicGameState {
 	int x = 300;
 	int y = 100;
 	StringData[] listE, click;
-	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedjej, background3,
+	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedM, background3,
 			settings, backgroundM;
 	boolean colorText = false, glowactive = false, clicked = false,
 			outofSet = false, clicked1 = false, unclicked = true,
@@ -364,7 +364,7 @@ public class Calculations extends BasicGameState {
 		sipka = new Image("src/images/calc/core/gobackbutton1.png");
 		sipkaglow = new Image("src/images/calc/core/gobackbutton.png");
 		clickboxM = new Image("src/images/calc/core/clickboxM.png");
-		clickedjej = new Image("src/images/calc/core/clicked.png");
+		clickedM = new Image("src/images/calc/core/clickedM.png");
 		settings = new Image("src/images/calc/core/CalSet.png");
 		plusbutton = new Image("src/images/calc/core/plusbutton.png");
 		background3 = new Image ("src/images/calc/core/chemBackground3.png");
@@ -515,13 +515,13 @@ public class Calculations extends BasicGameState {
 				sipkaglow.draw(10, 420);
 			}
 			if (click[0].isClicked == true) {
-				clickedjej.draw(80, 300);
+				clickedM.draw(80, 300);
 			}
 			if (click[1].isClicked == true) {
-				clickedjej.draw(80, 340);
+				clickedM.draw(80, 340);
 			}
 			if (click[2].isClicked == true) {
-				clickedjej.draw(80, 380);
+				clickedM.draw(80, 380);
 			}
 		} else {
 			backgroundM.draw();
@@ -536,13 +536,13 @@ public class Calculations extends BasicGameState {
 				sipkaglow.draw(50, 600);
 			}
 			if (click[0].isClicked == true) {
-				clickedjej.draw(400, 300);
+				clickedM.draw(400, 300);
 			}
 			if (click[1].isClicked == true) {
-				clickedjej.draw(400, 340);
+				clickedM.draw(400, 340);
 			}
 			if (click[2].isClicked == true) {
-				clickedjej.draw(400, 380);
+				clickedM.draw(400, 380);
 			}
 		}
 
