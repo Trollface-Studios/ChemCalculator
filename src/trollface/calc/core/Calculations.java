@@ -21,17 +21,18 @@ public class Calculations extends BasicGameState {
 	private static AppGameContainer app;
 
 	Font font;
-	TextField textField, answer;
+	TextField textField;
 	InputListener listener;
 	Color color;
 	int x = 300;
 	int y = 100;
+	int answer;
 	StringData[] listE, click;
 	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedM, background3,
 			settings, backgroundM;
 	boolean colorText = false, glowactive = false, clicked = false,
 			outofSet = false, clicked1 = false, unclicked = true,
-			settingsThere = true;
+			settingsThere = true,showMolarMass = false;
 	Base game;
 
 	// boolean [] a;
@@ -47,12 +48,13 @@ public class Calculations extends BasicGameState {
 		// single compound
 		click[1] = new StringData();
 		click[1].isClicked = false;
-		// more compounds
+		// molar mass
 		click[2] = new StringData();
 		click[2].isClicked = false;
-
+		// n
 		click[3] = new StringData();
 		click[3].isClicked = false;
+		// mass
 	}
 
 	public void elements() {
@@ -359,6 +361,8 @@ public class Calculations extends BasicGameState {
 			throws SlickException {
 
 		clickBox();
+		
+		
 
 		background = new Image("src/images/calc/core/chemBackground.png");
 		sipka = new Image("src/images/calc/core/gobackbutton1.png");
@@ -427,9 +431,15 @@ public class Calculations extends BasicGameState {
 												franta = franta
 														+ listE[n].molarmass
 														* a;
+												if(click[1].isClicked ==true){
+													showMolarMass = true;
+												}else{
+													showMolarMass =false;
+												}
 												System.out
 														.println(listE[n].molarmass
 																* a);
+												listE[n].molarmass*a = answer;
 
 											}
 										}
@@ -438,26 +448,6 @@ public class Calculations extends BasicGameState {
 								System.out.println("Collective molar mass: "
 										+ franta);
 
-								// char[] hamm =new char[text.length()];
-								// String newText = text.substring(0,
-								// text.length()- text.indexOf(b));
-								//
-								// System.out.println(text.indexOf(b));
-								// System.out.println(newText);
-
-								// String newText = text.substring(0,
-								// text.length() - a );
-								// System.out.println(newText);
-								// for (int j = 0; j < 47; j++) {
-								//
-								// if(text.contains(listE[j].name)){
-								// System.out.println(listE[j].name);
-								// }
-								// if (newText.equals(listE[j].name)) {
-								// double x = (double) (listE[j].molarmass * a);
-								// System.out.println("molar mass: " + x);
-								// }
-								// }
 							}
 						}
 					}
@@ -508,6 +498,9 @@ public class Calculations extends BasicGameState {
 		if (((Base) game).renderingSmall) {
 			background.draw();
 			textField.render(c, g);
+			if(showMolarMass == true){
+				g.drawString("", x, y);
+			}
 			sipka.draw(10, 420);
 			clickboxM.draw(80, 300);
 			clickboxM.draw(80, 340);
@@ -533,7 +526,9 @@ public class Calculations extends BasicGameState {
 			sipka.draw(50, 600);
 			clickboxM.draw(400, 300);
 			clickboxM.draw(400, 340);
+			g.drawString("Molar mass", 435, 340);
 			clickboxM.draw(400, 380);
+			g.drawString("n", 435, 380);
 			g.drawString("single compound", 435, 300);
 
 			if (glowactive == true) {
