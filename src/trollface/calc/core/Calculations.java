@@ -21,7 +21,7 @@ public class Calculations extends BasicGameState {
 	private static AppGameContainer app;
 
 	Font font;
-	TextField textField;
+	TextField textField, answer;
 	InputListener listener;
 	Color color;
 	int x = 300;
@@ -60,7 +60,7 @@ public class Calculations extends BasicGameState {
 		listE = new StringData[48];
 		listE[0] = new StringData();
 		listE[0].name = "DOES NOT EXIST";
-
+		
 		listE[1] = new StringData();
 		listE[1].name = "H";
 		listE[1].fullname = "Hydrogen";
@@ -373,7 +373,7 @@ public class Calculations extends BasicGameState {
 		elements();
 		font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 				java.awt.Font.ITALIC, 26));
-		// if(settingsThere==false){
+		
 		textField = new TextField(c, c.getDefaultFont(), 170, 150, 100, 25,
 				new ComponentListener() {
 
@@ -488,6 +488,8 @@ public class Calculations extends BasicGameState {
 		} else {
 			if ((posX > 50 && posY < 100) && (posX < 120 && posY > 60)) {
 				glowactive = true;		
+		}else{
+			glowactive = false;
 		}
 	}
 		// if((posX<123 && posY>53)&&(posX>55&&posY<94)){
@@ -496,7 +498,8 @@ public class Calculations extends BasicGameState {
 		// outofSet = false;
 		// }
 		// System.out.println(outofSet+" "+settingsThere);
-		System.out.println(click[0].isClicked);
+	//	System.out.println(click[0].isClicked);
+		System.out.println(glowactive);
 
 	}
 
@@ -526,6 +529,7 @@ public class Calculations extends BasicGameState {
 		} else {
 			backgroundM.draw();
 			textField.render(c, g);
+			
 			sipka.draw(50, 600);
 			clickboxM.draw(400, 300);
 			clickboxM.draw(400, 340);
@@ -545,6 +549,7 @@ public class Calculations extends BasicGameState {
 				clickedM.draw(400, 380);
 			}
 		}
+		System.out.println(glowactive);
 
 	}
 
