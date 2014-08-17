@@ -21,7 +21,7 @@ public class Calculations extends BasicGameState {
 	private static AppGameContainer app;
 
 	Font font;
-	TextField textField;
+	TextField textField, mass;
 	InputListener listener;
 	Color color;
 	int x = 300;
@@ -378,6 +378,21 @@ public class Calculations extends BasicGameState {
 		font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 				java.awt.Font.ITALIC, 26));
 		
+		mass = new TextField(c, c.getDefaultFont(), 170, 230, 100, 25, 
+				new ComponentListener(){
+
+					@Override
+					public void componentActivated(AbstractComponent source) {
+						// TODO Auto-generated method stub
+						TextField mass = (TextField)source;
+						String text1 = mass.getText();
+						
+						int textnumber = Integer.parseInt(text1); 
+						System.out.println(textnumber*2);
+					}
+			
+		});
+		
 		textField = new TextField(c, c.getDefaultFont(), 170, 150, 100, 25,
 				new ComponentListener() {
 
@@ -390,12 +405,11 @@ public class Calculations extends BasicGameState {
 						colorText = true;
 						for (int i = 0; i < 47; i++) {
 							if (text.contains(listE[i].name)) {
-								System.out.println("Name: " + listE[i].fullname
-										+ "  Molarmass " + listE[i].molarmass);
+					//			System.out.println("Name: " + listE[i].fullname
 								counter++;
 
-								System.out.println("The compound contains "
-										+ counter + " elements.");
+					//			System.out.println("The compound contains "
+					//					+ counter + " elements.");
 							}
 							if (text.contains(listE[i].name)) {
 								colorText = false;
@@ -415,7 +429,7 @@ public class Calculations extends BasicGameState {
 							if (Character.isDigit(c)) {
 
 								int a = Character.digit(c, 10);
-								// System.out.println("debug " + a);
+
 
 								String b = String.valueOf(a);
 
@@ -427,26 +441,27 @@ public class Calculations extends BasicGameState {
 										for (int n = 0; n < 47; n++) {
 											if (mnam[j - 1]
 													.equals(listE[n].name)) {
-												System.out.println(mnam[j - 1]);
+										//		System.out.println(mnam[j - 1]);
 												franta = franta
 														+ listE[n].molarmass
 														* a;
 												if(click[1].isClicked ==true){
 													showMolarMass = true;
+													franta = answer;
 												}else{
 													showMolarMass =false;
 												}
-												System.out
-														.println(listE[n].molarmass
-																* a);
-												listE[n].molarmass*a = answer;
+											//	System.out
+												//		.println(listE[n].molarmass
+												//				* a);
+											franta = answer;
 
 											}
 										}
 									}
 								}
-								System.out.println("Collective molar mass: "
-										+ franta);
+						//		System.out.println("Collective molar mass: "
+									//	+ franta);
 
 							}
 						}
@@ -455,6 +470,9 @@ public class Calculations extends BasicGameState {
 
 		textField.setBorderColor(color.black);
 		textField.setBackgroundColor(color.lightGray);
+		
+		mass.setBorderColor(color.red);
+		mass.setBackgroundColor(color.lightGray);
 	}
 
 	public void update(GameContainer c, StateBasedGame game, int delta)
@@ -482,15 +500,8 @@ public class Calculations extends BasicGameState {
 			glowactive = false;
 		}
 	}
-		// if((posX<123 && posY>53)&&(posX>55&&posY<94)){
-		// outofSet = true;
-		// }else{
-		// outofSet = false;
-		// }
-		// System.out.println(outofSet+" "+settingsThere);
-	//	System.out.println(click[0].isClicked);
-		System.out.println(glowactive);
-
+		//	System.out.println(showMolarMass);
+	
 	}
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
@@ -498,8 +509,9 @@ public class Calculations extends BasicGameState {
 		if (((Base) game).renderingSmall) {
 			background.draw();
 			textField.render(c, g);
+			mass.render(c, g);
 			if(showMolarMass == true){
-				g.drawString("", x, y);
+				g.drawString("answer: ", 500, 100);
 			}
 			sipka.draw(10, 420);
 			clickboxM.draw(80, 300);
@@ -544,7 +556,7 @@ public class Calculations extends BasicGameState {
 				clickedM.draw(400, 380);
 			}
 		}
-		System.out.println(glowactive);
+		
 
 	}
 
