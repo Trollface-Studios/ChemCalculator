@@ -21,7 +21,7 @@ public class Calculations extends BasicGameState {
 	private static AppGameContainer app;
 
 	Font font;
-	TextField textField, mass;
+	TextField textField, mass,decimalplace;
 	InputListener listener;
 	Color color;
 	int x = 300;
@@ -375,6 +375,25 @@ public class Calculations extends BasicGameState {
 		backgroundM = new Image ("src/images/calc/core/chemBackgroundM.png");
 		
 		elements();
+		
+		decimalplace = new TextField(c, c.getDefaultFont(), 260, 270, 25, 25,  // if n? => vkladani hmotnosti
+				new ComponentListener(){
+
+					@Override
+					public void componentActivated(AbstractComponent source) {
+						// TODO Auto-generated method stub
+						TextField decimalplace = (TextField)source;
+						String text2 = decimalplace.getText();
+						
+						int decimalplaces = Integer.parseInt(text2); // change number in String into Int
+						System.out.println("n decimal places: "+decimalplaces);
+						if(decimalplaces !=0){
+						double n1= (double)Math.round(n*(10^decimalplaces))/(10^decimalplaces);
+						System.out.println(n1);
+						}
+					}
+			
+		});
 			
 		mass = new TextField(c, c.getDefaultFont(), 170, 230, 100, 25,  // if n? => vkladani hmotnosti
 				new ComponentListener(){
@@ -471,6 +490,9 @@ public class Calculations extends BasicGameState {
 		
 		mass.setBorderColor(color.red);
 		mass.setBackgroundColor(color.lightGray);
+		
+		decimalplace.setBorderColor(color.red);
+		decimalplace.setBackgroundColor(color.lightGray);
 	}
 
 	public void update(GameContainer c, StateBasedGame game, int delta)
@@ -559,6 +581,8 @@ public class Calculations extends BasicGameState {
 			g.drawString("Name: ", 70, 150);
 			if(click[2].isClicked == true){
 				g.drawString("Mass: ",70,230);
+				g.drawString("N of decimal places: ", 70,270);
+				decimalplace.render(c, g);
 			}
 			if(click[3].isClicked == true){
 				g.drawString("N: ",70,230);
