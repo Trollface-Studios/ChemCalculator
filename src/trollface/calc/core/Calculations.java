@@ -26,7 +26,7 @@ public class Calculations extends BasicGameState {
 	Color color;
 	int x = 300;
 	int y = 100;
-	double answer;
+	double answer, overallmolarmass,n;
 	StringData[] listE, click;
 	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedM, background3,
 			settings, backgroundM;
@@ -387,6 +387,8 @@ public class Calculations extends BasicGameState {
 						
 						int textnumber = Integer.parseInt(text1); // change number in String into Int
 						System.out.println(textnumber*2); 
+						n = textnumber/overallmolarmass;
+						System.out.println(n);
 					}
 			
 		});
@@ -440,7 +442,7 @@ public class Calculations extends BasicGameState {
 												franta = franta
 														+ listE[n].molarmass* a;
 												if(click[1].isClicked ==true){
-													showMolarMass = true;
+													
 													answer = franta;
 												}else{
 													showMolarMass =false;
@@ -453,6 +455,8 @@ public class Calculations extends BasicGameState {
 									}
 								}
 								System.out.println("Collective molar mass: "+ franta);
+								overallmolarmass = franta;
+								System.out.println("C.molarmass: "+overallmolarmass);
 
 							}
 						}
@@ -528,12 +532,16 @@ public class Calculations extends BasicGameState {
 			textField.render(c, g);
 			if(click[2].isClicked ==true){
 			mass.render(c, g);
-			}
+			}	
 			//answer (not working yet)
-			if(showMolarMass == true){
+		
+			if(click[1].isClicked == true){
 				g.drawString("answer: "+ answer, 300, 160);
 			}
-			
+			if(click[2].isClicked == true){
+				g.drawString("answer: "+ n, 300, 160);
+			}
+
 			sipka.draw(50, 600);
 			clickboxM.draw(400, 300);
 			clickboxM.draw(400, 340);
@@ -549,12 +557,15 @@ public class Calculations extends BasicGameState {
 			//handles checkboxes
 			if (click[0].isClicked == true) {
 				clickedM.draw(400, 300);
+				
 			}
 			if (click[1].isClicked == true) {
 				clickedM.draw(400, 340);
+				click[2].isClicked = false;
 			}
 			if (click[2].isClicked == true) {
 				clickedM.draw(400, 380);
+				click[1].isClicked = false;
 			}
 		}
 		
