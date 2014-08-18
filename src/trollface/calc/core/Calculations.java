@@ -26,7 +26,7 @@ public class Calculations extends BasicGameState {
 	Color color;
 	int x = 300;
 	int y = 100;
-	double answer, overallmolarmass,n;
+	double answer, overallmolarmass,n,massanswer;
 	StringData[] listE, click;
 	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedM, background3,
 			settings, backgroundM;
@@ -376,7 +376,7 @@ public class Calculations extends BasicGameState {
 		
 		elements();
 			
-		mass = new TextField(c, c.getDefaultFont(), 100, 230, 100, 25,  // if n? => vkladani hmotnosti
+		mass = new TextField(c, c.getDefaultFont(), 170, 230, 100, 25,  // if n? => vkladani hmotnosti
 				new ComponentListener(){
 
 					@Override
@@ -386,9 +386,12 @@ public class Calculations extends BasicGameState {
 						String text1 = mass.getText();
 						
 						int textnumber = Integer.parseInt(text1); // change number in String into Int
-						System.out.println(textnumber*2); 
+						if(click[2].isClicked ==true){
 						n = textnumber/overallmolarmass;
-						System.out.println(n);
+						}
+						if(click[3].isClicked ==true){
+							massanswer = textnumber*overallmolarmass;
+						}
 					}
 			
 		});
@@ -494,7 +497,7 @@ public class Calculations extends BasicGameState {
 			glowactive = false;
 		}
 	}
-		//	System.out.println(showMolarMass);
+		
 	
 	}
 
@@ -511,6 +514,7 @@ public class Calculations extends BasicGameState {
 			clickboxM.draw(80, 300);
 			clickboxM.draw(80, 340);
 			clickboxM.draw(80, 380);
+			clickboxM.draw(80, 420);
 			g.drawString("single compound", 115, 300);
 
 			if (glowactive == true) {
@@ -530,10 +534,10 @@ public class Calculations extends BasicGameState {
 			
 			//textfields
 			textField.render(c, g);
-			if(click[2].isClicked ==true){
+			if(click[2].isClicked ==true || click[3].isClicked ==true){
 			mass.render(c, g);
 			}	
-			//answer (not working yet)
+			//answer
 		
 			if(click[1].isClicked == true){
 				g.drawString("answer: "+ answer, 300, 160);
@@ -541,12 +545,25 @@ public class Calculations extends BasicGameState {
 			if(click[2].isClicked == true){
 				g.drawString("answer: "+ n, 300, 160);
 			}
+			if(click[3].isClicked == true){
+				g.drawString("answer: "+ massanswer, 300, 160);
+			}
 
 			sipka.draw(50, 600);
 			clickboxM.draw(400, 300);
 			clickboxM.draw(400, 340);
-			g.drawString("Molar mass", 435, 340);
 			clickboxM.draw(400, 380);
+			clickboxM.draw(400, 420);
+			g.drawString("Molar mass", 435, 340);
+			g.drawString("Mass", 435, 420);
+			g.drawString("Name: ", 70, 150);
+			if(click[2].isClicked == true){
+				g.drawString("Mass: ",70,230);
+			}
+			if(click[3].isClicked == true){
+				g.drawString("N: ",70,230);
+			}
+			
 			g.drawString("n", 435, 380);
 			g.drawString("single compound", 435, 300);
 
@@ -562,10 +579,17 @@ public class Calculations extends BasicGameState {
 			if (click[1].isClicked == true) {
 				clickedM.draw(400, 340);
 				click[2].isClicked = false;
+				click[3].isClicked = false;
 			}
 			if (click[2].isClicked == true) {
 				clickedM.draw(400, 380);
 				click[1].isClicked = false;
+				click[3].isClicked = false;
+			}
+			if (click[3].isClicked == true) {
+				clickedM.draw(400, 420);
+				click[1].isClicked = false;
+				click[2].isClicked = false;
 			}
 		}
 		
@@ -618,6 +642,13 @@ public class Calculations extends BasicGameState {
 
 				click[2].isClicked = !click[2].isClicked;
 			}
+			
+			if ((posX > 400 && posY < 280) && (posX < 423 && posY > 260)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+
+				click[3].isClicked = !click[3].isClicked;
+			}
+
 		}
 	}
 
