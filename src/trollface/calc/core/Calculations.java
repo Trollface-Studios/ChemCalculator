@@ -627,7 +627,7 @@ public class Calculations extends BasicGameState {
 		int posY = Mouse.getY();
 		if (glowactive == true) {
 
-			game.enterState(0);
+			game.enterState(4);
 		}
 
 		// Checkboxes, phew, finally

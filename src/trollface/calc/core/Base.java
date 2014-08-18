@@ -58,6 +58,7 @@ public class Base extends StateBasedGame {
 		addState(new Info(this));
 		addState(new Settings(this));
 		addState(new Calculations(this));
+		addState(new Crossroad(this));
 
 	}
 

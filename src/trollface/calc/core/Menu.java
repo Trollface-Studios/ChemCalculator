@@ -183,7 +183,7 @@ public class Menu extends BasicGameState {
 			app.exit();
 		}
 		if (glowactive1 == true) {
-			game.enterState(1);
+			game.enterState(4);
 		}
 		if (glowactive2 == true) {
 			game.enterState(2);
