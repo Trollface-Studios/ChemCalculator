@@ -26,7 +26,7 @@ public class Calculations extends BasicGameState {
 	Color color;
 	int x = 300;
 	int y = 100;
-	int answer;
+	double answer;
 	StringData[] listE, click;
 	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedM, background3,
 			settings, backgroundM;
@@ -375,10 +375,8 @@ public class Calculations extends BasicGameState {
 		backgroundM = new Image ("src/images/calc/core/chemBackgroundM.png");
 		
 		elements();
-		font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
-				java.awt.Font.ITALIC, 26));
-		
-		mass = new TextField(c, c.getDefaultFont(), 170, 230, 100, 25, 
+			
+		mass = new TextField(c, c.getDefaultFont(), 100, 230, 100, 25,  // if n? => vkladani hmotnosti
 				new ComponentListener(){
 
 					@Override
@@ -387,13 +385,13 @@ public class Calculations extends BasicGameState {
 						TextField mass = (TextField)source;
 						String text1 = mass.getText();
 						
-						int textnumber = Integer.parseInt(text1); 
-						System.out.println(textnumber*2);
+						int textnumber = Integer.parseInt(text1); // change number in String into Int
+						System.out.println(textnumber*2); 
 					}
 			
 		});
 		
-		textField = new TextField(c, c.getDefaultFont(), 170, 150, 100, 25,
+		textField = new TextField(c, c.getDefaultFont(), 170, 150, 100, 25, //Vkladani nazvu slouceniny
 				new ComponentListener() {
 
 					@Override
@@ -430,38 +428,31 @@ public class Calculations extends BasicGameState {
 
 								int a = Character.digit(c, 10);
 
-
 								String b = String.valueOf(a);
-
 								text.indexOf(b);
 								double franta = 0;
 								String[] mnam = text.split("(?!^)");
 								for (int j = 0; j < mnam.length; j++) {
 									if (mnam[j].equals(b)) {
 										for (int n = 0; n < 47; n++) {
-											if (mnam[j - 1]
-													.equals(listE[n].name)) {
-										//		System.out.println(mnam[j - 1]);
+											if (mnam[j - 1].equals(listE[n].name)) {
+							
 												franta = franta
-														+ listE[n].molarmass
-														* a;
+														+ listE[n].molarmass* a;
 												if(click[1].isClicked ==true){
 													showMolarMass = true;
-													franta = answer;
+													answer = franta;
 												}else{
 													showMolarMass =false;
 												}
-											//	System.out
-												//		.println(listE[n].molarmass
-												//				* a);
-											franta = answer;
+											//	System.out.println(listE[n].molarmass* a);
+									
 
 											}
 										}
 									}
 								}
-						//		System.out.println("Collective molar mass: "
-									//	+ franta);
+								System.out.println("Collective molar mass: "+ franta);
 
 							}
 						}
@@ -483,7 +474,6 @@ public class Calculations extends BasicGameState {
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
 
-		// System.out.println(posX + " " + posY);
 
 		// Glow
 		if (((Base) game).renderingSmall) {
@@ -506,7 +496,7 @@ public class Calculations extends BasicGameState {
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
-		if (((Base) game).renderingSmall) {
+		if (((Base) game).renderingSmall) { // work only in small resolution
 			background.draw();
 			textField.render(c, g);
 			mass.render(c, g);
@@ -531,9 +521,18 @@ public class Calculations extends BasicGameState {
 			if (click[2].isClicked == true) {
 				clickedM.draw(80, 380);
 			}
-		} else {
+		} else {		// render for normal resolution
 			backgroundM.draw();
+			
+			//textfields
 			textField.render(c, g);
+			if(click[2].isClicked ==true){
+			mass.render(c, g);
+			}
+			//answer (not working yet)
+			if(showMolarMass == true){
+				g.drawString("answer: "+ answer, 300, 160);
+			}
 			
 			sipka.draw(50, 600);
 			clickboxM.draw(400, 300);
@@ -545,7 +544,9 @@ public class Calculations extends BasicGameState {
 
 			if (glowactive == true) {
 				sipkaglow.draw(50, 600);
+				
 			}
+			//handles checkboxes
 			if (click[0].isClicked == true) {
 				clickedM.draw(400, 300);
 			}
@@ -560,7 +561,7 @@ public class Calculations extends BasicGameState {
 
 	}
 
-	public void mouseClicked(int button, int x, int y, int clickCount) {
+	public void mouseClicked(int button, int x, int y, int clickCount) {	
 
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
