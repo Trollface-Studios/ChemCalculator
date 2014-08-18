@@ -390,6 +390,7 @@ public class Calculations extends BasicGameState {
 						if(decimalplaces !=0){
 						double n1= (double)Math.round(n*(10^decimalplaces))/(10^decimalplaces);
 						System.out.println(n1);
+						//not sure why it does not work
 						}
 					}
 			
