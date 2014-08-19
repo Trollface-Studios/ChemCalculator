@@ -156,7 +156,7 @@ public class Crossroad extends BasicGameState{
 		
 		
 		if (glowactive2 == true) {
-			//game.enterState(2);
+			game.enterState(5);
 		}
 		
 
