@@ -21,18 +21,18 @@ public class Calculations extends BasicGameState {
 	private static AppGameContainer app;
 
 	Font font;
-	TextField textField, mass,decimalplace;
+	TextField textField, mass, decimalplace;
 	InputListener listener;
 	Color color;
 	int x = 300;
 	int y = 100;
-	double answer, overallmolarmass,n,massanswer;
+	double answer, overallmolarmass, n, massanswer;
 	StringData[] listE, click;
-	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedM, background3,
-			settings, backgroundM;
+	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedM,
+			background3, settings, backgroundM;
 	boolean colorText = false, glowactive = false, clicked = false,
 			outofSet = false, clicked1 = false, unclicked = true,
-			settingsThere = true,showMolarMass = false;
+			settingsThere = true, showMolarMass = false;
 	Base game;
 
 	// boolean [] a;
@@ -62,7 +62,7 @@ public class Calculations extends BasicGameState {
 		listE = new StringData[48];
 		listE[0] = new StringData();
 		listE[0].name = "DOES NOT EXIST";
-		
+
 		listE[1] = new StringData();
 		listE[1].name = "H";
 		listE[1].fullname = "Hydrogen";
@@ -361,8 +361,6 @@ public class Calculations extends BasicGameState {
 			throws SlickException {
 
 		clickBox();
-		
-		
 
 		background = new Image("src/images/calc/core/chemBackground.png");
 		sipka = new Image("src/images/calc/core/gobackbutton1.png");
@@ -371,52 +369,72 @@ public class Calculations extends BasicGameState {
 		clickedM = new Image("src/images/calc/core/clickedM.png");
 		settings = new Image("src/images/calc/core/CalSet.png");
 		plusbutton = new Image("src/images/calc/core/plusbutton.png");
-		background3 = new Image ("src/images/calc/core/chemBackground3.png");
-		backgroundM = new Image ("src/images/calc/core/chemBackgroundM.png");
-		
+		background3 = new Image("src/images/calc/core/chemBackground3.png");
+		backgroundM = new Image("src/images/calc/core/chemBackgroundM.png");
+
 		elements();
-		
-		decimalplace = new TextField(c, c.getDefaultFont(), 260, 270, 25, 25,  // if n? => vkladani hmotnosti
-				new ComponentListener(){
+
+		decimalplace = new TextField(c, c.getDefaultFont(), 260, 270, 25, 25, // if
+																				// n?
+																				// =>
+																				// vkladani
+																				// hmotnosti
+				new ComponentListener() {
 
 					@Override
 					public void componentActivated(AbstractComponent source) {
 						// TODO Auto-generated method stub
-						TextField decimalplace = (TextField)source;
+						TextField decimalplace = (TextField) source;
 						String text2 = decimalplace.getText();
-						
-						int decimalplaces = Integer.parseInt(text2); // change number in String into Int
-						System.out.println("n decimal places: "+decimalplaces);
-						if(decimalplaces !=0){
-						double n1= (double)Math.round(n*(10^decimalplaces))/(10^decimalplaces);
-						System.out.println(n1);
-						//not sure why it does not work
+
+						int decimalplaces = Integer.parseInt(text2); // change
+																		// number
+																		// in
+																		// String
+																		// into
+																		// Int
+						System.out
+								.println("n decimal places: " + decimalplaces);
+						if (decimalplaces != 0) {
+							double n1 = (double) Math.round(n
+									* (10 ^ decimalplaces))
+									/ (10 ^ decimalplaces);
+							System.out.println(n1);
+							// not sure why it does not work
 						}
 					}
-			
-		});
-			
-		mass = new TextField(c, c.getDefaultFont(), 170, 230, 100, 25,  // if n? => vkladani hmotnosti
-				new ComponentListener(){
+
+				});
+
+		mass = new TextField(c, c.getDefaultFont(), 170, 230, 100, 25, // if n?
+																		// =>
+																		// vkladani
+																		// hmotnosti
+				new ComponentListener() {
 
 					@Override
 					public void componentActivated(AbstractComponent source) {
 						// TODO Auto-generated method stub
-						TextField mass = (TextField)source;
+						TextField mass = (TextField) source;
 						String text1 = mass.getText();
-						
-						int textnumber = Integer.parseInt(text1); // change number in String into Int
-						if(click[2].isClicked ==true){
-						n = textnumber/overallmolarmass;
+
+						int textnumber = Integer.parseInt(text1); // change
+																	// number in
+																	// String
+																	// into Int
+						if (click[2].isClicked == true) {
+							n = textnumber / overallmolarmass;
 						}
-						if(click[3].isClicked ==true){
-							massanswer = textnumber*overallmolarmass;
+						if (click[3].isClicked == true) {
+							massanswer = textnumber * overallmolarmass;
 						}
 					}
-			
-		});
-		
-		textField = new TextField(c, c.getDefaultFont(), 170, 150, 100, 25, //Vkladani nazvu slouceniny
+
+				});
+
+		textField = new TextField(c, c.getDefaultFont(), 170, 150, 100, 25, // Vkladani
+																			// nazvu
+																			// slouceniny
 				new ComponentListener() {
 
 					@Override
@@ -428,11 +446,12 @@ public class Calculations extends BasicGameState {
 						colorText = true;
 						for (int i = 0; i < 47; i++) {
 							if (text.contains(listE[i].name)) {
-					//			System.out.println("Name: " + listE[i].fullname
+								// System.out.println("Name: " +
+								// listE[i].fullname
 								counter++;
 
-					//			System.out.println("The compound contains "
-					//					+ counter + " elements.");
+								// System.out.println("The compound contains "
+								// + counter + " elements.");
 							}
 							if (text.contains(listE[i].name)) {
 								colorText = false;
@@ -460,26 +479,30 @@ public class Calculations extends BasicGameState {
 								for (int j = 0; j < mnam.length; j++) {
 									if (mnam[j].equals(b)) {
 										for (int n = 0; n < 47; n++) {
-											if (mnam[j - 1].equals(listE[n].name)) {
-							
+											if (mnam[j - 1]
+													.equals(listE[n].name)) {
+
 												franta = franta
-														+ listE[n].molarmass* a;
-												if(click[1].isClicked ==true){
-													
+														+ listE[n].molarmass
+														* a;
+												if (click[1].isClicked == true) {
+
 													answer = franta;
-												}else{
-													showMolarMass =false;
+												} else {
+													showMolarMass = false;
 												}
-											//	System.out.println(listE[n].molarmass* a);
-									
+												// System.out.println(listE[n].molarmass*
+												// a);
 
 											}
 										}
 									}
 								}
-								System.out.println("Collective molar mass: "+ franta);
+								System.out.println("Collective molar mass: "
+										+ franta);
 								overallmolarmass = franta;
-								System.out.println("C.molarmass: "+overallmolarmass);
+								System.out.println("C.molarmass: "
+										+ overallmolarmass);
 
 							}
 						}
@@ -488,10 +511,10 @@ public class Calculations extends BasicGameState {
 
 		textField.setBorderColor(color.black);
 		textField.setBackgroundColor(color.lightGray);
-		
+
 		mass.setBorderColor(color.red);
 		mass.setBackgroundColor(color.lightGray);
-		
+
 		decimalplace.setBorderColor(color.red);
 		decimalplace.setBackgroundColor(color.lightGray);
 	}
@@ -504,7 +527,6 @@ public class Calculations extends BasicGameState {
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
 
-
 		// Glow
 		if (((Base) game).renderingSmall) {
 			if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
@@ -515,13 +537,12 @@ public class Calculations extends BasicGameState {
 			}
 		} else {
 			if ((posX > 50 && posY < 100) && (posX < 120 && posY > 60)) {
-				glowactive = true;		
-		}else{
-			glowactive = false;
+				glowactive = true;
+			} else {
+				glowactive = false;
+			}
 		}
-	}
-		
-	
+
 	}
 
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
@@ -530,7 +551,7 @@ public class Calculations extends BasicGameState {
 			background.draw();
 			textField.render(c, g);
 			mass.render(c, g);
-			if(showMolarMass == true){
+			if (showMolarMass == true) {
 				g.drawString("answer: ", 500, 100);
 			}
 			sipka.draw(10, 420);
@@ -552,24 +573,24 @@ public class Calculations extends BasicGameState {
 			if (click[2].isClicked == true) {
 				clickedM.draw(80, 380);
 			}
-		} else {		// render for normal resolution
+		} else { // render for normal resolution
 			backgroundM.draw();
-			
-			//textfields
+
+			// textfields
 			textField.render(c, g);
-			if(click[2].isClicked ==true || click[3].isClicked ==true){
-			mass.render(c, g);
-			}	
-			//answer
-		
-			if(click[1].isClicked == true){
-				g.drawString("answer: "+ answer, 300, 160);
+			if (click[2].isClicked == true || click[3].isClicked == true) {
+				mass.render(c, g);
 			}
-			if(click[2].isClicked == true){
-				g.drawString("answer: "+ n, 300, 160);
+			// answer
+
+			if (click[1].isClicked == true) {
+				g.drawString("answer: " + answer, 300, 160);
 			}
-			if(click[3].isClicked == true){
-				g.drawString("answer: "+ massanswer, 300, 160);
+			if (click[2].isClicked == true) {
+				g.drawString("answer: " + n, 300, 160);
+			}
+			if (click[3].isClicked == true) {
+				g.drawString("answer: " + massanswer, 300, 160);
 			}
 
 			sipka.draw(50, 600);
@@ -580,48 +601,42 @@ public class Calculations extends BasicGameState {
 			g.drawString("Molar mass", 435, 340);
 			g.drawString("Mass", 435, 420);
 			g.drawString("Name: ", 70, 150);
-			if(click[2].isClicked == true){
-				g.drawString("Mass: ",70,230);
-				g.drawString("N of decimal places: ", 70,270);
+			if (click[2].isClicked == true) {
+				g.drawString("Mass: ", 70, 230);
+				g.drawString("N of decimal places: ", 70, 270);
 				decimalplace.render(c, g);
 			}
-			if(click[3].isClicked == true){
-				g.drawString("N: ",70,230);
+			if (click[3].isClicked == true) {
+				g.drawString("N: ", 70, 230);
 			}
-			
+
 			g.drawString("n", 435, 380);
 			g.drawString("single compound", 435, 300);
 
 			if (glowactive == true) {
 				sipkaglow.draw(50, 600);
-				
+
 			}
-			//handles checkboxes
+			// handles checkboxes
 			if (click[0].isClicked == true) {
 				clickedM.draw(400, 300);
-				
+
 			}
 			if (click[1].isClicked == true) {
 				clickedM.draw(400, 340);
-				click[2].isClicked = false;
-				click[3].isClicked = false;
+
 			}
 			if (click[2].isClicked == true) {
 				clickedM.draw(400, 380);
-				click[1].isClicked = false;
-				click[3].isClicked = false;
+
 			}
 			if (click[3].isClicked == true) {
 				clickedM.draw(400, 420);
-				click[1].isClicked = false;
-				click[2].isClicked = false;
 			}
 		}
-		
-
 	}
 
-	public void mouseClicked(int button, int x, int y, int clickCount) {	
+	public void mouseClicked(int button, int x, int y, int clickCount) {
 
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
@@ -636,19 +651,35 @@ public class Calculations extends BasicGameState {
 					&& button == Input.MOUSE_LEFT_BUTTON) {
 
 				click[0].isClicked = !click[0].isClicked;
+
 			}
 
 			if ((posX > 80 && posY > 120) && (posX < 103 && posY < 140)
 					&& button == Input.MOUSE_LEFT_BUTTON) {
+				int active = 1;
+				for (int a = 1; a < 4; a++) {
+					if (a == active) {
+						click[a].isClicked = !click[a].isClicked;
+					} else {
 
-				click[1].isClicked = !click[1].isClicked;
+						click[a].isClicked = false;
+					}
+				}
 			}
 
 			if ((posX > 80 && posY > 80) && (posX < 103 && posY < 100)
 					&& button == Input.MOUSE_LEFT_BUTTON) {
+				int active = 2;
+				for (int a = 1; a < 4; a++) {
+					if (a == active) {
+						click[a].isClicked = !click[a].isClicked;
+					} else {
 
-				click[2].isClicked = !click[2].isClicked;
+						click[a].isClicked = false;
+					}
+				}
 			}
+
 		} else {
 			if ((posX > 400 && posY < 400) && (posX < 423 && posY > 380)
 					&& button == Input.MOUSE_LEFT_BUTTON) {
@@ -659,21 +690,41 @@ public class Calculations extends BasicGameState {
 			if ((posX > 400 && posY < 360) && (posX < 423 && posY > 340)
 					&& button == Input.MOUSE_LEFT_BUTTON) {
 
-				click[1].isClicked = !click[1].isClicked;
+				int active = 1;
+				for (int a = 1; a < 4; a++) {
+					if (a == active) {
+						click[a].isClicked = !click[a].isClicked;
+					} else {
+
+						click[a].isClicked = false;
+					}
+				}
 			}
 
 			if ((posX > 400 && posY < 320) && (posX < 423 && posY > 300)
 					&& button == Input.MOUSE_LEFT_BUTTON) {
 
-				click[2].isClicked = !click[2].isClicked;
+				int active = 2;
+				for (int a = 1; a < 4; a++) {
+					if (a == active) {
+						click[a].isClicked = !click[a].isClicked;
+					} else {
+
+						click[a].isClicked = false;
+					}
+				}
 			}
-			
+
 			if ((posX > 400 && posY < 280) && (posX < 423 && posY > 260)
 					&& button == Input.MOUSE_LEFT_BUTTON) {
-
-				click[3].isClicked = !click[3].isClicked;
+				int active = 3;
+				for (int a = 1; a < 4; a++) {
+					if (a == active)
+						click[a].isClicked = !click[a].isClicked;
+					else
+						click[a].isClicked = false;
+				}
 			}
-
 		}
 	}
 
