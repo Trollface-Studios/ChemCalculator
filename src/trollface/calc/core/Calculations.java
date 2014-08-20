@@ -1,5 +1,7 @@
 package trollface.calc.core;
 
+import java.math.BigDecimal;
+
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.Color;
@@ -34,6 +36,7 @@ public class Calculations extends BasicGameState {
 			outofSet = false, clicked1 = false, unclicked = true,
 			settingsThere = true, showMolarMass = false;
 	Base game;
+	int decimalplaces;
 
 	// boolean [] a;
 
@@ -383,24 +386,57 @@ public class Calculations extends BasicGameState {
 
 					@Override
 					public void componentActivated(AbstractComponent source) {
-						// TODO Auto-generated method stub
-						TextField decimalplace = (TextField) source;
-						String text2 = decimalplace.getText();
+						try {
 
-						int decimalplaces = Integer.parseInt(text2); // change
+							TextField decimalplace = (TextField) source;
+							String text2 = decimalplace.getText();
+
+							decimalplaces = Integer.parseInt(text2); // change
 																		// number
 																		// in
 																		// String
 																		// into
 																		// Int
-						System.out
-								.println("n decimal places: " + decimalplaces);
-						if (decimalplaces != 0) {
-							double n1 = (double) Math.round(n
-									* (10 ^ decimalplaces))
-									/ (10 ^ decimalplaces);
-							System.out.println(n1);
-							// not sure why it does not work
+							System.out.println("n decimal places: "
+									+ decimalplaces);
+							if (decimalplaces != 0) {
+
+								BigDecimal dec = new BigDecimal(n)
+										.setScale(decimalplaces,
+												BigDecimal.ROUND_HALF_UP);
+								/*
+								 * double n1 = (double) Math.round(n (10 ^
+								 * decimalplaces)) / (10 ^ decimalplaces);
+								 */
+								System.out.println(dec.toString());
+								// not sure why it does not work
+							}
+						} catch (Exception e) {
+							System.out
+									.println("No decimal value speicfied; defalting to 10");
+							TextField decimalplace = (TextField) source;
+							String text2 = decimalplace.getText();
+
+							decimalplaces = 10; // change
+												// number
+												// in
+												// String
+												// into
+												// Int
+							System.out.println("n decimal places: "
+									+ decimalplaces);
+							if (decimalplaces != 0) {
+
+								BigDecimal dec = new BigDecimal(n)
+										.setScale(decimalplaces,
+												BigDecimal.ROUND_HALF_UP);
+								/*
+								 * double n1 = (double) Math.round(n (10 ^
+								 * decimalplaces)) / (10 ^ decimalplaces);
+								 */
+								System.out.println(dec.toString());
+								// not sure why it does not work
+							}
 						}
 					}
 
