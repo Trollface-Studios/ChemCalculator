@@ -274,7 +274,7 @@ public class Calculations extends BasicGameState {
 		listE[30].fullname = "Zinc";
 		listE[30].electronegativity = 1.65;
 		listE[30].density = 7.140;
-		listE[30].molarmass = 65.380:
+		listE[30].molarmass = 65.380;
 
 		listE[31] = new StringData();
 		listE[31].name = "Ga";
