@@ -20,8 +20,8 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Menu extends BasicGameState {
 	private static AppGameContainer app;
-	Image background, buttonCal, buttonInfo, buttonSet, buttonExit,
-			buttonExitglow, buttonCalglow, buttonInfoglow, buttonSetglow, backgroundM;
+	Image background, buttonCalcM, buttonInfoM, buttonSetM, buttonExitM,
+			buttonExitMglow, buttonCalcMglow, buttonInfoMglow, buttonSetMglow, backgroundM;
 	Font font;
 	TextField textField;
 	MouseListener listener;
@@ -38,14 +38,14 @@ public class Menu extends BasicGameState {
 			throws SlickException {
 
 		background = new Image("src/images/calc/core/chemBackground.png");
-		buttonCal = new Image("src/images/calc/core/buttonCalculations.png");
-		buttonInfo = new Image("src/images/calc/core/buttonInfo.png");
-		buttonSet = new Image("src/images/calc/core/buttonSet.png");
-		buttonExit = new Image("src/images/calc/core/buttonExit.png");
-		buttonExitglow = new Image("src/images/calc/core/buttonExitglow.png");
-		buttonCalglow = new Image("src/images/calc/core/buttonCalculationsglow.png");
-		buttonInfoglow = new Image("src/images/calc/core/buttonInfoglow.png");
-		buttonSetglow = new Image("src/images/calc/core/buttonSetglow.png");
+		buttonCalcM = new Image("src/images/calc/core/buttonCalcM.png");
+		buttonInfoM = new Image("src/images/calc/core/buttonInfoM.png");
+		buttonSetM = new Image("src/images/calc/core/buttonSetM.png");
+		buttonExitM = new Image("src/images/calc/core/buttonExitM.png");
+		buttonExitMglow = new Image("src/images/calc/core/buttonExitMglow.png");
+		buttonCalcMglow = new Image("src/images/calc/core/buttonCalcMglow.png");
+		buttonInfoMglow = new Image("src/images/calc/core/buttonInfoMglow.png");
+		buttonSetMglow = new Image("src/images/calc/core/buttonSetMglow.png");
 		backgroundM = new Image ("src/images/calc/core/chemBackgroundM.png");
 		// font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 		// java.awt.Font.ITALIC, 26));
@@ -91,23 +91,23 @@ public class Menu extends BasicGameState {
 			}
 			System.out.println(glowactive);
 	} else {
-			if ((posX > 520 && posY < 280) && (posX < 700 && posY > 235)) {
+			if ((posX > 1000 && posY < 170) && (posX < 1060 && posY > 137)) {
 				glowactive = true;
 
 			} else {
 				glowactive = false;
 			}
-			if ((posX > 520 && posY < 520) && (posX < 700 && posY > 475)) {
+			if ((posX > 211 && posY < 540) && (posX < 390 && posY > 350)) {
 				glowactive1 = true;
 			} else {
 				glowactive1 = false;
 			}
-			if ((posX > 520 && posY < 420) && (posX < 700 && posY > 375)) {
+			if ((posX > 511 && posY < 540) && (posX < 690 && posY > 350)) {
 				glowactive2 = true;
 			} else {
 				glowactive2 = false;
 			}
-			if ((posX > 520 && posY < 340) && (posX < 700 && posY > 295)) {
+			if ((posX > 811 && posY < 540) && (posX < 990 && posY > 350)) {
 				glowactive3 = true;
 			} else {
 				glowactive3 = false;
@@ -121,42 +121,42 @@ public class Menu extends BasicGameState {
 
 		if (((Base) game).renderingSmall) {
 			background.draw();
-			buttonCal.draw(220, 140);
-			buttonInfo.draw(220, 205);
-			buttonSet.draw(220, 270);
-			buttonExit.draw(220, 335);
+			buttonCalcM.draw(220, 140);
+			buttonInfoM.draw(220, 205);
+			buttonSetM.draw(220, 270);
+			buttonExitM.draw(220, 335);
 
 			if (glowactive == true) {
-				buttonExitglow.draw(220, 335);
+				buttonExitMglow.draw(220, 335);
 			}
 			if (glowactive1 == true) {
-				buttonCalglow.draw(220, 140);
+				buttonCalcMglow.draw(220, 140);
 			}
 			if (glowactive2 == true) {
-				buttonInfoglow.draw(220, 205);
+				buttonInfoMglow.draw(220, 205);
 			}
 			if (glowactive3 == true) {
-				buttonSetglow.draw(220, 270);
+				buttonSetMglow.draw(220, 270);
 			}
 		} else {
 
 			backgroundM.draw();
-			buttonCal.draw(520, 170);
-			buttonInfo.draw(520, 270);
-			buttonSet.draw(520, 340);
-			buttonExit.draw(520, 410);
+			buttonCalcM.draw(211, 160);
+			buttonInfoM.draw(511, 160);
+			buttonSetM.draw(811, 160);
+			buttonExitM.draw(940, 460);
 
 			if (glowactive == true) {
-				buttonExitglow.draw(520, 410);
+				buttonExitMglow.draw(940, 460);
 			}
 			if (glowactive1 == true) {
-				buttonCalglow.draw(520, 170);
+				buttonCalcMglow.draw(211, 160);
 			}
 			if (glowactive2 == true) {
-				buttonInfoglow.draw(520, 270);
+				buttonInfoMglow.draw(511, 160);
 			}
 			if (glowactive3 == true) {
-				buttonSetglow.draw(520, 340);
+				buttonSetMglow.draw(811, 160);
 			}
 		}
 
