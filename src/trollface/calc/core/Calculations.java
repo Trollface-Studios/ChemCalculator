@@ -30,7 +30,7 @@ public class Calculations extends BasicGameState {
 	int x = 300;
 	int y = 100;
 	double answer, overallmolarmass, n, massanswer, c;
-	StringData[] listE, click;
+	StringData[] listE, click, var;
 	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedM,
 			background3, settings, backgroundM;
 	boolean colorText = false, glowactive = false, clicked = false,
@@ -61,6 +61,23 @@ public class Calculations extends BasicGameState {
 		// mass
 	}
 
+	public void ClickBoxVar(){
+		var = new StringData[10];
+		var[0] = new StringData();
+		var[0].isClicked = false;
+		// concentration
+		var[1] = new StringData();
+		var[1].isClicked = false;
+		// molar mass
+		var[2] = new StringData();
+		var[2].isClicked = false;
+		// n
+		var[3] = new StringData();
+		var[3].isClicked = false;
+		// mass
+
+	}
+	
 	public void elements() {
 
 		listE = new StringData[48];
@@ -856,6 +873,7 @@ public class Calculations extends BasicGameState {
 			throws SlickException {
 
 		clickBox();
+		ClickBoxVar();
 
 		background = new Image("src/images/calc/core/chemBackground.png");
 		sipka = new Image("src/images/calc/core/gobackbutton1.png");
@@ -868,6 +886,12 @@ public class Calculations extends BasicGameState {
 		backgroundM = new Image("src/images/calc/core/chemBackgroundM.png");
 
 		elements();
+		
+		for(int o = 0; o<3;o++){
+			
+		}
+		
+		
 
 		decimalplace = new TextField(c, c.getDefaultFont(), 260, 270, 25, 25, // if
 																				// n?
@@ -1126,7 +1150,7 @@ public class Calculations extends BasicGameState {
 				g.drawString("answer: " + massanswer, 300, 160);
 			}
 			if (click[0].isClicked == true) {
-				g.drawString("answer: " + c, 300, 160);
+				g.drawString("answer: ", 300, 160);
 			}
 
 			sipka.draw(50, 600);
