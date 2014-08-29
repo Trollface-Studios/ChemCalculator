@@ -12,6 +12,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.InputListener;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.UnicodeFont;
 import org.newdawn.slick.gui.AbstractComponent;
 import org.newdawn.slick.gui.ComponentListener;
@@ -48,7 +49,7 @@ public class Calculations extends BasicGameState {
 		click = new StringData[10];
 		click[0] = new StringData();
 		click[0].isClicked = false;
-		// single compound
+		// concentration
 		click[1] = new StringData();
 		click[1].isClicked = false;
 		// molar mass
@@ -1133,6 +1134,7 @@ public class Calculations extends BasicGameState {
 			clickboxM.draw(400, 340);
 			clickboxM.draw(400, 380);
 			clickboxM.draw(400, 420);
+			
 			g.drawString("Molar mass", 435, 340);
 			g.drawString("Mass", 435, 420);
 			g.drawString("Name: ", 70, 150);
@@ -1144,9 +1146,10 @@ public class Calculations extends BasicGameState {
 			if (click[3].isClicked == true) {
 				g.drawString("N: ", 70, 230);
 			}
+		
 
-			g.drawString("n", 435, 380);
-			g.drawString("Concetration", 435, 300);
+			g.drawString("n", 435, 380);			
+			g.drawString("Concentration", 435, 300);
 
 			if (glowactive == true) {
 				sipkaglow.draw(50, 600);
@@ -1281,5 +1284,7 @@ public class Calculations extends BasicGameState {
 		// TODO Auto-generated method stub
 		return 1;
 	}
+
+	
 
 }
