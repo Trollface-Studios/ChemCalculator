@@ -36,6 +36,8 @@ public class Calculations extends BasicGameState {
 	boolean colorText = false, glowactive = false, clicked = false,
 			outofSet = false, clicked1 = false, unclicked = true,
 			settingsThere = true, showMolarMass = false;
+	int names = 4;
+	String stringNames;
 	Base game;
 	int decimalplaces;
 
@@ -61,7 +63,7 @@ public class Calculations extends BasicGameState {
 		// mass
 	}
 
-	public void ClickBoxVar(){
+	public void ClickBoxVar() {
 		var = new StringData[10];
 		var[0] = new StringData();
 		var[0].isClicked = false;
@@ -77,7 +79,7 @@ public class Calculations extends BasicGameState {
 		// mass
 
 	}
-	
+
 	public void elements() {
 
 		listE = new StringData[48];
@@ -279,7 +281,7 @@ public class Calculations extends BasicGameState {
 		listE[28].electronegativity = 1.91;
 		listE[28].density = 8.908;
 		listE[28].molarmass = 58.6934;
-		
+
 		listE[29] = new StringData();
 		listE[29].name = "Cu";
 		listE[28].fullname = "Copper";
@@ -411,6 +413,7 @@ public class Calculations extends BasicGameState {
 		listE[47].electronegativity = 1.93;
 		listE[47].density = 10.490;
 		listE[47].molarmass = 107.868;
+<<<<<<< HEAD
 		
 		listE[48] = new StringData();
 		listE[48].name = "Cd";
@@ -909,6 +912,464 @@ public class Calculations extends BasicGameState {
 		listE[118].density = "Unknown";
 		listE[118].molarmass = (294);
 		
+=======
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+		listE[47] = new StringData();
+		listE[47].name = "Ag";
+		listE[47].fullname = "Silver";
+		listE[47].electronegativity = 1.93;
+		listE[47].density = 10.490;
+		listE[47].molarmass = 107.868;
+
+>>>>>>> origin/master
 	}
 
 	public void init(GameContainer c, StateBasedGame game)
@@ -928,17 +1389,15 @@ public class Calculations extends BasicGameState {
 		backgroundM = new Image("src/images/calc/core/chemBackgroundM.png");
 
 		elements();
-		
-		for(int o = 0; o<3;o++){
-			
+
+		for (int o = 0; o < 3; o++) {
+
 		}
-		
-		
 
 		decimalplace = new TextField(c, c.getDefaultFont(), 260, 270, 25, 25, // if
 																				// n?
 																				// =>
-																				// vkladani	
+																				// vkladani
 																				// hmotnosti
 				new ComponentListener() {
 
@@ -1022,8 +1481,8 @@ public class Calculations extends BasicGameState {
 						if (click[3].isClicked == true) {
 							massanswer = textnumber * overallmolarmass;
 						}
-						if(click[0].isClicked == true){
-						//	c = n/v;
+						if (click[0].isClicked == true) {
+							// c = n/v;
 						}
 					}
 
@@ -1176,8 +1635,9 @@ public class Calculations extends BasicGameState {
 
 			// textfields
 			textField.render(c, g);
-			
-			if (click[2].isClicked == true || click[3].isClicked == true ||click[0].isClicked == true) {
+
+			if (click[2].isClicked == true || click[3].isClicked == true
+					|| click[0].isClicked == true) {
 				mass.render(c, g);
 			}
 			// answer
@@ -1200,7 +1660,7 @@ public class Calculations extends BasicGameState {
 			clickboxM.draw(400, 340);
 			clickboxM.draw(400, 380);
 			clickboxM.draw(400, 420);
-			
+
 			g.drawString("Molar mass", 435, 340);
 			g.drawString("Mass", 435, 420);
 			g.drawString("Name: ", 70, 150);
@@ -1212,10 +1672,37 @@ public class Calculations extends BasicGameState {
 			if (click[3].isClicked == true) {
 				g.drawString("N: ", 70, 230);
 			}
-		
 
-			g.drawString("n", 435, 380);			
-			g.drawString("Concentration", 435, 300);
+			g.drawString("n", 435, 380);
+			if (!click[0].isClicked) {
+				g.drawString("Concentration", 435, 300);
+			} else {
+				g.setColor(Color.black);
+				g.drawString("Concentration", 435, 300);
+				g.setColor(Color.white);
+			}
+			
+			//pokus
+			
+//
+//			
+//		
+//		switch(names){
+//			case 0: stringNames = "Concentration";
+//			break;
+//			case 1: stringNames = "Molar mass";
+//			break;
+//			case 2: stringNames = "n";
+//			break;
+//			case 3: stringNames = "Mass";
+//			break;
+//		}
+//			for(int y=0; y<3;y++){
+//				if(click[y].isClicked == true){
+//					g.drawString(stringNames, , y);
+//				}
+			}
+			//konec pokus
 
 			if (glowactive == true) {
 				sipkaglow.draw(50, 600);
@@ -1296,9 +1783,8 @@ public class Calculations extends BasicGameState {
 						click[a].isClicked = false;
 					}
 				}
-			
 
-				//click[0].isClicked = !click[0].isClicked;
+				// click[0].isClicked = !click[0].isClicked;
 			}
 
 			if ((posX > 400 && posY < 360) && (posX < 423 && posY > 340)
@@ -1350,7 +1836,5 @@ public class Calculations extends BasicGameState {
 		// TODO Auto-generated method stub
 		return 1;
 	}
-
-	
 
 }
