@@ -82,7 +82,7 @@ public class Calculations extends BasicGameState {
 
 	public void elements() {
 
-		listE = new StringData[48];
+		listE = new StringData[119];
 		listE[0] = new StringData();
 		listE[0].name = "DOES NOT EXIST";
 
@@ -413,7 +413,7 @@ public class Calculations extends BasicGameState {
 		listE[47].electronegativity = 1.93;
 		listE[47].density = 10.490;
 		listE[47].molarmass = 107.868;
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		
 		listE[48] = new StringData();
 		listE[48].name = "Cd";
@@ -509,7 +509,7 @@ public class Calculations extends BasicGameState {
 		listE[61] = new StringData();
 		listE[61].name = "Pm";
 		listE[61].fullname = "Promethium";
-		listE[61].electronegativity = "Unknown";
+		listE[61].electronegativity1 = "Unknown";
 		listE[61].density = 7.264;
 		listE[61].molarmass = (145);
 		
@@ -523,7 +523,7 @@ public class Calculations extends BasicGameState {
 		listE[63] = new StringData();
 		listE[63].name = "Eu";
 		listE[63].fullname = "Europium";
-		listE[63].electronegativity = "Unknown";
+		listE[63].electronegativity1 = "Unknown";
 		listE[63].density = 5.244;
 		listE[63].molarmass = 151.964;
 		
@@ -537,7 +537,7 @@ public class Calculations extends BasicGameState {
 		listE[65] = new StringData();
 		listE[65].name = "Tb";
 		listE[65].fullname = "Terbium";
-		listE[65].electronegativity = "Unknown";
+		listE[65].electronegativity1 = "Unknown";
 		listE[65].density = 8.219;
 		listE[65].molarmass = 158.920;
 		
@@ -572,7 +572,7 @@ public class Calculations extends BasicGameState {
 		listE[70] = new StringData();
 		listE[70].name = "Yb";
 		listE[70].fullname = "Ytterbium";
-		listE[70].electronegativity = "Unknown";
+		listE[70].electronegativity1 = "Unknown";
 		listE[70].density = 6.570;
 		listE[70].molarmass = 173.054;
 		
@@ -678,13 +678,13 @@ public class Calculations extends BasicGameState {
 		listE[85].name = "At";
 		listE[85].fullname = "Astatine";
 		listE[85].electronegativity = 2.20;
-		listE[85].density = "Unknown";
+		listE[85].density1 = "Unknown";
 		listE[85].molarmass = (210);
 		
 		listE[86] = new StringData();
 		listE[86].name = "Rn";
 		listE[86].fullname = "Radon";
-		listE[86].electronegativity = "Unknown";
+		listE[86].electronegativity1 = "Unknown";
 		listE[86].density = 0.00973;
 		listE[86].molarmass = (222);
 		
@@ -692,7 +692,7 @@ public class Calculations extends BasicGameState {
 		listE[87].name = "Fr";
 		listE[87].fullname = "Francium";
 		listE[87].electronegativity = 0.70;
-		listE[87].density = "Unknown";
+		listE[87].density1 = "Unknown";
 		listE[87].molarmass = (223);
 		
 		listE[88] = new StringData();
@@ -748,7 +748,7 @@ public class Calculations extends BasicGameState {
 		listE[95].name = "Am";
 		listE[95].fullname = "Americium";
 		listE[95].electronegativity = 1.30;
-		listE[95].density = "Unknown";
+		listE[95].density1 = "Unknown";
 		listE[95].molarmass = (243);
 		
 		listE[96] = new StringData();
@@ -776,144 +776,144 @@ public class Calculations extends BasicGameState {
 		listE[99].name = "Es";
 		listE[99].fullname = "Einsteinium";
 		listE[99].electronegativity = 1.30;
-		listE[99].density = "Unknown";
+		listE[99].density1 = "Unknown";
 		listE[99].molarmass = (252);
 		
 		listE[100] = new StringData();
 		listE[100].name = "Fm";
 		listE[100].fullname = "Fermium";
 		listE[100].electronegativity = 1.30;
-		listE[100].density = "Unknown";
+		listE[100].density1 = "Unknown";
 		listE[100].molarmass = (257);
 		
 		listE[101] = new StringData();
 		listE[101].name = "Md";
 		listE[101].fullname = "Mendelevium";
 		listE[101].electronegativity = 1.30;
-		listE[101].density = "Unknown";
+		listE[101].density1 = "Unknown";
 		listE[101].molarmass = (258);
 		
 		listE[102] = new StringData();
 		listE[102].name = "No";
 		listE[102].fullname = "Nobelium";
 		listE[102].electronegativity = 1.30;
-		listE[102].density = "Unknown";
+		listE[102].density1 = "Unknown";
 		listE[102].molarmass = (259);
 		
 		listE[103] = new StringData();
 		listE[103].name = "Lr";
 		listE[103].fullname = "Lawrencium";
-		listE[103].electronegativity = "Unknown";
-		listE[103].density = "Unknown";
+		listE[103].electronegativity1 = "Unknown";
+		listE[103].density1 = "Unknown";
 		listE[103].molarmass = (262);
 		
 		listE[104] = new StringData();
 		listE[104].name = "Rf";
 		listE[104].fullname = "Rutherfodium";
-		listE[104].electronegativity = "Unknown";
-		listE[104].density = "Unknown";
+		listE[104].electronegativity1 = "Unknown";
+		listE[104].density1 = "Unknown";
 		listE[104].molarmass = (267);
 		
 		listE[105] = new StringData();
 		listE[105].name = "Db";
 		listE[105].fullname = "Dubnium";
-		listE[105].electronegativity = "Unknown";
-		listE[105].density = "Unknown";
+		listE[105].electronegativity1 = "Unknown";
+		listE[105].density1 = "Unknown";
 		listE[105].molarmass = (268);
 		
 		listE[106] = new StringData();
 		listE[106].name = "Sg";
 		listE[106].fullname = "Seaborgium";
-		listE[106].electronegativity = "Unknown";
-		listE[106].density = "Unknown";
+		listE[106].electronegativity1 = "Unknown";
+		listE[106].density1 = "Unknown";
 		listE[106].molarmass = (271);
 		
 		listE[107] = new StringData();
 		listE[107].name = "Bh";
 		listE[107].fullname = "Bohrium";
-		listE[107].electronegativity = "Unknown";
-		listE[107].density = "Unknown";
+		listE[107].electronegativity1 = "Unknown";
+		listE[107].density1 = "Unknown";
 		listE[107].molarmass = (272);
 		
 		listE[108] = new StringData();
 		listE[108].name = "Hs";
 		listE[108].fullname = "Hassium";
-		listE[108].electronegativity = "Unknown";
-		listE[108].density = "Unknown";
+		listE[108].electronegativity1 = "Unknown";
+		listE[108].density1 = "Unknown";
 		listE[108].molarmass = (270);
 		
 		listE[109] = new StringData();
 		listE[109].name = "Mt";
 		listE[109].fullname = "Meitnerium";
-		listE[109].electronegativity = "Unknown";
-		listE[109].density = "Unknown";
+		listE[109].electronegativity1 = "Unknown";
+		listE[109].density1 = "Unknown";
 		listE[109].molarmass = (276);
 		
 		listE[110] = new StringData();
 		listE[110].name = "Ds";
 		listE[110].fullname = "Darmstadtium";
-		listE[110].electronegativity = "Unknown";
-		listE[110].density = "Unknown";
+		listE[110].electronegativity1 = "Unknown";
+		listE[110].density1 = "Unknown";
 		listE[110].molarmass = (281);
 		
 		listE[111] = new StringData();
 		listE[111].name = "Rg";
 		listE[111].fullname = "Roentgenium";
-		listE[111].electronegativity = "Unknown";
-		listE[111].density = "Unknown";
+		listE[111].electronegativity1 = "Unknown";
+		listE[111].density1 = "Unknown";
 		listE[111].molarmass = (280);
 		
 		listE[112] = new StringData();
 		listE[112].name = "Cn";
 		listE[112].fullname = "Copernicium";
-		listE[112].electronegativity = "Unknown";
-		listE[112].density = "Unknown";
+		listE[112].electronegativity1 = "Unknown";
+		listE[112].density1 = "Unknown";
 		listE[112].molarmass = (285);
 		
 		listE[113] = new StringData();
 		listE[113].name = "Uut";
 		listE[113].fullname = "Ununtium";
-		listE[113].electronegativity = "Unknown";
-		listE[113].density = "Unknown";
+		listE[113].electronegativity1 = "Unknown";
+		listE[113].density1 = "Unknown";
 		listE[113].molarmass = (284);
 		
 		listE[114] = new StringData();
 		listE[114].name = "Fl";
 		listE[114].fullname = "Flerovium";
-		listE[114].electronegativity = "Unknown";
-		listE[114].density = "Unknown";
+		listE[114].electronegativity1 = "Unknown";
+		listE[114].density1 = "Unknown";
 		listE[114].molarmass = (289);
 		
 		listE[115] = new StringData();
 		listE[115].name = "Uup";
 		listE[115].fullname = "Ununpentium";
-		listE[115].electronegativity = "Unknown";
-		listE[115].density = "Unknown";
+		listE[115].electronegativity1 = "Unknown";
+		listE[115].density1 = "Unknown";
 		listE[115].molarmass = (288);
 		
 		listE[116] = new StringData();
 		listE[116].name = "Lv";
 		listE[116].fullname = "Livemorium";
-		listE[116].electronegativity = "Unknown";
-		listE[116].density = "Unknown";
+		listE[116].electronegativity1 = "Unknown";
+		listE[116].density1 = "Unknown";
 		listE[116].molarmass = (293);
 		
 		listE[117] = new StringData();
 		listE[117].name = "Uus";
 		listE[117].fullname = "Unuseptium";
-		listE[117].electronegativity = "Unknown";
-		listE[117].density = "Unknown";
+		listE[117].electronegativity1 = "Unknown";
+		listE[117].density1 = "Unknown";
 		listE[117].molarmass = (294);
 		
 		listE[118] = new StringData();
 		listE[118].name = "Uuo";
 		listE[118].fullname = "Roentgenium";
-		listE[118].electronegativity = "Unknown";
-		listE[118].density = "Unknown";
+		listE[118].electronegativity1 = "Unknown";
+		listE[118].density1 = "Unknown";
 		listE[118].molarmass = (294);
 		
-=======
-
+//=======
+/*
 		listE[47] = new StringData();
 		listE[47].name = "Ag";
 		listE[47].fullname = "Silver";
@@ -1368,8 +1368,8 @@ public class Calculations extends BasicGameState {
 		listE[47].electronegativity = 1.93;
 		listE[47].density = 10.490;
 		listE[47].molarmass = 107.868;
-
->>>>>>> origin/master
+*/
+//>>>>>>> origin/master
 	}
 
 	public void init(GameContainer c, StateBasedGame game)
@@ -1725,7 +1725,7 @@ public class Calculations extends BasicGameState {
 				clickedM.draw(400, 420);
 			}
 		}
-	}
+	
 
 	public void mouseClicked(int button, int x, int y, int clickCount) {
 
