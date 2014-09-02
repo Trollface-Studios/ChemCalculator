@@ -1372,6 +1372,13 @@ public class Calculations extends BasicGameState {
 //>>>>>>> origin/master
 	}
 
+	
+	public void textFields(GameContainer c, StateBasedGame gamae){
+		
+		
+	}
+	
+	
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
 
@@ -1656,10 +1663,18 @@ public class Calculations extends BasicGameState {
 			}
 
 			sipka.draw(50, 600);
+			
+			// C,n,mass, etc
 			clickboxM.draw(400, 300);
 			clickboxM.draw(400, 340);
 			clickboxM.draw(400, 380);
 			clickboxM.draw(400, 420);
+			
+			//var
+			clickboxM.draw(700, 300);
+			clickboxM.draw(700, 340);
+			clickboxM.draw(700, 380);
+			clickboxM.draw(700, 420);
 
 			g.drawString("Molar mass", 435, 340);
 			g.drawString("Mass", 435, 420);
