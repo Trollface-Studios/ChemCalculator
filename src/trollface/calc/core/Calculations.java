@@ -1276,7 +1276,7 @@ public class Calculations extends BasicGameState {
 
 					@Override
 					public void componentActivated(AbstractComponent source) {
-						// TODO Auto-generated method stub
+
 						TextField mass = (TextField) source;
 						String text1 = mass.getText();
 
@@ -1700,13 +1700,9 @@ public class Calculations extends BasicGameState {
 			c = cForm.charAt(i);
 
 			if (Character.isUpperCase(c)) {
-
 				ch = String.valueOf(c);
-
 				s[a] = ch;
-
 				i++;
-
 			}
 
 			// If exists, second letter has to be lowercase
@@ -1714,13 +1710,9 @@ public class Calculations extends BasicGameState {
 			c = cForm.charAt(i);
 
 			if (Character.isLowerCase(c)) {
-
 				ch = String.valueOf(c);
-
 				s[a] = s[a] + ch; // The symbol of the element is obtained
-
 				i++;
-
 			}
 
 			// Then could be a number (digit)
@@ -1728,11 +1720,8 @@ public class Calculations extends BasicGameState {
 			c = cForm.charAt(i);
 
 			if (Character.isDigit(c)) {
-
 				coefficient = String.valueOf(c);
-
 				i++;
-
 			}
 
 			// Could be again a number
@@ -1740,11 +1729,8 @@ public class Calculations extends BasicGameState {
 			c = cForm.charAt(i);
 
 			if (Character.isDigit(c)) {
-
 				coefficient = coefficient + String.valueOf(c);
-
 				i++;
-
 			}
 
 			// Then could be a dot if it is a real number
@@ -1752,11 +1738,8 @@ public class Calculations extends BasicGameState {
 			c = cForm.charAt(i);
 
 			if (c == '.') {
-
 				coefficient = coefficient + ".";
-
 				i++;
-
 			}
 
 			// Then could be a digit (first decimal)
@@ -1764,11 +1747,8 @@ public class Calculations extends BasicGameState {
 			c = cForm.charAt(i);
 
 			if (Character.isDigit(c)) {
-
 				coefficient = coefficient + String.valueOf(c);
-
 				i++;
-
 			}
 
 			// Then could be again a digit (second decimal)
@@ -1776,11 +1756,8 @@ public class Calculations extends BasicGameState {
 			c = cForm.charAt(i);
 
 			if (Character.isDigit(c)) {
-
 				coefficient = coefficient + String.valueOf(c);
-
 				i++;
-
 			}
 
 			c = cForm.charAt(i);
@@ -1808,9 +1785,10 @@ public class Calculations extends BasicGameState {
 		System.out.println(molmas);
 
 		System.out.println();
-		System.out.println(coeff[0]+" | " + coeff[1] +" | "+ coeff[2]+" | "+ coeff[3]);
+		System.out.println(coeff[0] + " | " + coeff[1] + " | " + coeff[2]
+				+ " | " + coeff[3]);
 		System.out.println(cForm);
-		System.out.println(s[0]+" | "+s[1]+" | "+s[2]+" | "+s[3]);
+		System.out.println(s[0] + " | " + s[1] + " | " + s[2] + " | " + s[3]);
 	}
 
 	float result() {
