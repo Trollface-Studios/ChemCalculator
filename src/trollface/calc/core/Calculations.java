@@ -30,7 +30,9 @@ public class Calculations extends BasicGameState {
 	int x = 300;
 	int y = 100;
 	double answer, overallmolarmass, n, massanswer, c;
-	StringData[] listE, click, var;
+	StringData[] listE, click;
+
+	Textbox[] var;
 	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedM,
 			background3, settings, backgroundM;
 	boolean colorText = false, glowactive = false, clicked = false,
@@ -65,19 +67,14 @@ public class Calculations extends BasicGameState {
 	}
 
 	public void ClickBoxVar() {
-		var = new StringData[10];
-		var[0] = new StringData();
-		var[0].isClicked = false;
-		// concentration
-		var[1] = new StringData();
-		var[1].isClicked = false;
-		// molar mass
-		var[2] = new StringData();
-		var[2].isClicked = false;
-		// n
-		var[3] = new StringData();
-		var[3].isClicked = false;
-		// mass
+		var = new Textbox[4];
+		var[0] = new Textbox("molarmass");
+
+		var[1] = new Textbox("mass");
+
+		var[2] = new Textbox("n");
+
+		var[3] = new Textbox("concentration");
 
 	}
 
@@ -1467,11 +1464,29 @@ public class Calculations extends BasicGameState {
 			clickboxM.draw(400, 380);
 			clickboxM.draw(400, 420);
 
-			// var
-			clickboxM.draw(700, 300);
-			clickboxM.draw(700, 340);
-			clickboxM.draw(700, 380);
-			clickboxM.draw(700, 420);
+			// ADDITIONAL VARIABLES BEGIN
+			try {
+				// var - checkboxes
+				int varInitX = 700, varInitY = 300;
+				for (int a = 0; a < 4; a++) {
+
+					if (!var[a].isClicked) { // draw unchecked boxes
+						clickboxM.draw(varInitX, varInitY + (a * 40));
+					} else { // draw checked boxes
+						clickedM.draw(varInitX, varInitY + (a * 40));
+					}
+					// draw labels
+					g.drawString(var[a].name, varInitX + 50, varInitY
+							+ (a * 40));
+				}
+
+				// var - textboxes
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			// ADDITIONAL VARIABLES END
 
 			g.drawString("Molar mass", 435, 340);
 			g.drawString("Mass", 435, 420);

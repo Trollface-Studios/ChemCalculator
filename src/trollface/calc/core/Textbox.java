@@ -4,7 +4,7 @@ public class Textbox {
 	
 	String name, units;
 	int poradi;
-	
+	public boolean isClicked; 
 	public Textbox(String Type){
 		switch(Type){
 		case "molarmass":
