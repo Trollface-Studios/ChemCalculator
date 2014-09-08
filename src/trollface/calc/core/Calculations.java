@@ -40,6 +40,7 @@ public class Calculations extends BasicGameState {
 	String stringNames;
 	Base game;
 	int decimalplaces;
+	float molmass_result;
 
 	// boolean [] a;
 
@@ -1177,10 +1178,6 @@ public class Calculations extends BasicGameState {
 		// >>>>>>> origin/master
 	}
 
-	public void textFields(GameContainer c, StateBasedGame gamae) {
-
-	}
-
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
 
@@ -1363,13 +1360,11 @@ public class Calculations extends BasicGameState {
 										}
 									}
 								}
-								System.out.println("Collective molar mass: "
-										+ franta);
-								overallmolarmass = franta;
-								System.out.println("C.molarmass: "
-										+ overallmolarmass);
 
 							}
+							double ans = parseEquationMolarMass(text);
+							answer = ans;
+							System.out.println(ans + " is the answer!");
 						}
 					}
 				});
@@ -1544,7 +1539,7 @@ public class Calculations extends BasicGameState {
 	}
 
 	public void mouseClicked(int button, int x, int y, int clickCount) {
-		analysis("H2O");
+
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
 		if (glowactive == true) {
@@ -1649,14 +1644,17 @@ public class Calculations extends BasicGameState {
 	}
 
 	public int getID() {
-		// TODO Auto-generated method stub
+
 		return 1;
 	}
 
 	public void parseEquation(String original) {
 
-		// element_name is: capital letter followed by optional lower-case
-		// count is: empty string (so the count is 1), or a set of digits
+	}
+
+	public float parseEquationMolarMass(String original) {
+		analysis(original);
+		return molmas;
 
 	}
 
@@ -1795,13 +1793,4 @@ public class Calculations extends BasicGameState {
 		return molmas;
 	}
 
-	/*
-	 * String element_pat = Pattern.compile("([A-Z][a-z]?)(\d*)");
-	 * 
-	 * all_elements = [] for (element_name, count) in
-	 * element_pat.findall("CH3COOH"): if count == "": count = 1 else: count =
-	 * int(count) all_elements.extend([element_name] * count)
-	 * 
-	 * print all_elements
-	 */
 }
