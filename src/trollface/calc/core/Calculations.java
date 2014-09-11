@@ -69,13 +69,16 @@ public class Calculations extends BasicGameState {
 	public void ClickBoxVar() {
 		var = new Textbox[4];
 		var[0] = new Textbox("molarmass");
+		var[0].isClicked = false;
 
 		var[1] = new Textbox("mass");
-
+		var[1].isClicked = false;
+		
 		var[2] = new Textbox("n");
-
+		var[2].isClicked = false;
+		
 		var[3] = new Textbox("concentration");
-
+		var[3].isClicked = false;
 	}
 
 	public void elements() {
@@ -1383,6 +1386,7 @@ public class Calculations extends BasicGameState {
 
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
+		System.out.println("mouseX: "+posX + "mouseY: "+posY);
 
 		// Glow
 		if (((Base) game).renderingSmall) {
@@ -1466,6 +1470,8 @@ public class Calculations extends BasicGameState {
 
 			// ADDITIONAL VARIABLES BEGIN
 			try {
+				for(int k=0; k<5; k++){
+				if(click[k].isClicked ==true){
 				// var - checkboxes
 				int varInitX = 700, varInitY = 300;
 				for (int a = 0; a < 4; a++) {
@@ -1473,14 +1479,21 @@ public class Calculations extends BasicGameState {
 					if (!var[a].isClicked) { // draw unchecked boxes
 						clickboxM.draw(varInitX, varInitY + (a * 40));
 					} else { // draw checked boxes
+						clickboxM.draw(varInitX, varInitY + (a * 40));
 						clickedM.draw(varInitX, varInitY + (a * 40));
 					}
 					// draw labels
 					g.drawString(var[a].name, varInitX + 50, varInitY
 							+ (a * 40));
+					System.out.println("varX: "+ varInitX +"varY: "+ varInitY);
+					System.out.println( "Var isClicked: "+var[a].isClicked);
+					
+				}
+				}
 				}
 
 				// var - textboxes
+				
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -1652,6 +1665,101 @@ public class Calculations extends BasicGameState {
 				}
 			}
 		}
+		//varbox
+		
+		//not working
+		if (((Base) game).renderingSmall) {
+			if ((posX > 80 && posY > 160) && (posX < 103 && posY < 180)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+
+				var[0].isClicked = !var[0].isClicked;
+
+			}
+
+			if ((posX > 80 && posY > 120) && (posX < 103 && posY < 140)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+				int active = 1;
+				for (int a = 1; a < 4; a++) {
+					if (a == active) {
+						click[a].isClicked = !click[a].isClicked;
+					} else {
+
+						click[a].isClicked = false;
+					}
+				}
+			}
+
+			if ((posX > 80 && posY > 80) && (posX < 103 && posY < 100)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+				int active = 2;
+				for (int a = 1; a < 4; a++) {
+					if (a == active) {
+						click[a].isClicked = !click[a].isClicked;
+					} else {
+
+						click[a].isClicked = false;
+					}
+				}
+			}
+
+		} else {
+			if ((posX > 700 && posY < 397) && (posX < 723 && posY > 377)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+				int active1 = 0;
+				for (int a = 0; a < 4; a++) {
+					if (a == active1) {
+						var[a].isClicked = !var[a].isClicked;
+					} else {
+
+						var[a].isClicked = false;
+					}
+				}
+
+			
+			}
+
+			if ((posX > 700 && posY < 360) && (posX < 723 && posY > 340)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+
+				int active1 = 1;
+				for (int a = 0; a < 4; a++) {
+					if (a == active1) {
+						var[a].isClicked = !var[a].isClicked;
+					} else {
+
+						var[a].isClicked = false;
+					}
+				}
+			}
+
+			if ((posX > 700 && posY < 320) && (posX < 723 && posY > 300)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+
+				int active1 = 2;
+				for (int a = 0; a < 4; a++) {
+					if (a == active1) {
+						var[a].isClicked = !var[a].isClicked;
+					} else {
+
+						var[a].isClicked = false;
+					}
+				}
+			}
+
+			if ((posX > 700 && posY < 280) && (posX < 723 && posY > 260)
+					&& button == Input.MOUSE_LEFT_BUTTON) {
+				int active1 = 3;
+				for (int a = 0; a < 4; a++) {
+					if (a == active1)
+						var[a].isClicked = !var[a].isClicked;
+					else
+						var[a].isClicked = false;
+				}
+			}
+		}
+		
+		
+		
 	}
 
 	public int GetID() {
