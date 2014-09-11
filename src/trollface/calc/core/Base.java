@@ -10,6 +10,8 @@ import org.newdawn.slick.util.Log;
 
 public class Base extends StateBasedGame {
 	public static boolean renderingSmall = false;
+	public static boolean printErrors = false;
+	public static boolean printRoutineDebug = false;
 
 	private AppGameContainer container;
 	private static AppGameContainer app;
@@ -19,7 +21,11 @@ public class Base extends StateBasedGame {
 			app = new AppGameContainer(new Base("calculator"));
 		} catch (SlickException e) {
 
-			e.printStackTrace();
+			if (Base.printErrors) {
+				if (Base.printErrors) {
+					e.printStackTrace();
+				}
+			}
 		}
 
 		app.setSmoothDeltas(true);
@@ -45,7 +51,13 @@ public class Base extends StateBasedGame {
 		} catch (SlickException e) {
 			System.out.println("App didn't start for some goddamn reason. ");
 			System.out.println("Here, catch this trace: ");
-			e.printStackTrace();
+			if (Base.printErrors) {
+				if (Base.printErrors) {
+					if (Base.printErrors) {
+						e.printStackTrace();
+					}
+				}
+			}
 		}
 	}
 

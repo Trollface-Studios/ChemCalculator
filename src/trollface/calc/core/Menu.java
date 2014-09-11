@@ -21,7 +21,8 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Menu extends BasicGameState {
 	private static AppGameContainer app;
 	Image background, buttonCalcM, buttonInfoM, buttonSetM, buttonExitM,
-			buttonExitMglow, buttonCalcMglow, buttonInfoMglow, buttonSetMglow, backgroundM;
+			buttonExitMglow, buttonCalcMglow, buttonInfoMglow, buttonSetMglow,
+			backgroundM;
 	Font font;
 	TextField textField;
 	MouseListener listener;
@@ -46,7 +47,7 @@ public class Menu extends BasicGameState {
 		buttonCalcMglow = new Image("src/images/calc/core/buttonCalcMglow.png");
 		buttonInfoMglow = new Image("src/images/calc/core/buttonInfoMglow.png");
 		buttonSetMglow = new Image("src/images/calc/core/buttonSetMglow.png");
-		backgroundM = new Image ("src/images/calc/core/chemBackgroundM.png");
+		backgroundM = new Image("src/images/calc/core/chemBackgroundM.png");
 		// font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 		// java.awt.Font.ITALIC, 26));
 		// textField = new TextField(c, c.getDefaultFont(), 200, 50, x, y,
@@ -65,8 +66,12 @@ public class Menu extends BasicGameState {
 
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
-		
-		System.out.println(posX + "   " + posY);
+
+		if (Base.printRoutineDebug) {
+
+			System.out.println(posX + "   " + posY);
+		}
+
 		if (((Base) game).renderingSmall) {
 			if ((posX > 220 && posY > 90) && (posX < 400 && posY < 135)) {
 				glowactive = true;
@@ -87,10 +92,12 @@ public class Menu extends BasicGameState {
 			if ((posX > 220 && posY < 201) && (posX < 400 && posY > 153)) {
 				glowactive3 = true;
 			} else {
-			glowactive3 = false;
+				glowactive3 = false;
 			}
-			System.out.println(glowactive);
-	} else {
+			if (Base.printRoutineDebug) {
+				System.out.println(glowactive);
+			}
+		} else {
 			if ((posX > 1000 && posY < 170) && (posX < 1060 && posY > 137)) {
 				glowactive = true;
 
@@ -111,10 +118,13 @@ public class Menu extends BasicGameState {
 				glowactive3 = true;
 			} else {
 				glowactive3 = false;
-			}	
-			System.out.println(glowactive);}
+			}
+			if (Base.printRoutineDebug) {
+				System.out.println(glowactive);
+			}
+		}
 	}
-	
+
 	// 331, 283 265 220
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
@@ -164,7 +174,7 @@ public class Menu extends BasicGameState {
 
 	private void scale(int i, int j) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public int GetID() {

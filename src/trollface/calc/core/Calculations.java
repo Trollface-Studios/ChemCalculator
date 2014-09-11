@@ -55,6 +55,7 @@ public class Calculations extends BasicGameState {
 		click = new VarChoice[10];
 		click[0] = new VarChoice("Concentration");
 		click[0].isClicked = false;
+		System.out.println("sup . creating varchoice");
 		// concentration
 		click[1] = new VarChoice("Molarmass");
 		click[1].isClicked = false;
@@ -74,10 +75,10 @@ public class Calculations extends BasicGameState {
 
 		var[1] = new Textbox("mass");
 		var[1].isClicked = false;
-		
+
 		var[2] = new Textbox("n");
 		var[2].isClicked = false;
-		
+
 		var[3] = new Textbox("concentration");
 		var[3].isClicked = false;
 	}
@@ -1183,6 +1184,7 @@ public class Calculations extends BasicGameState {
 			throws SlickException {
 
 		clickBox();
+		System.out.println("Creating clickBox");
 		ClickBoxVar();
 
 		background = new Image("src/images/calc/core/chemBackground.png");
@@ -1388,7 +1390,6 @@ public class Calculations extends BasicGameState {
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
 
-
 		// Glow
 		if (((Base) game).renderingSmall) {
 			if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
@@ -1471,32 +1472,32 @@ public class Calculations extends BasicGameState {
 
 			// ADDITIONAL VARIABLES BEGIN
 			try {
-				for(int k=0; k<5; k++){
-				if(click[k].isClicked ==true){
-				// var - checkboxes
-				int varInitX = 700, varInitY = 300;
-				for (int a = 0; a < 4; a++) {
+				for (int k = 0; k < 5; k++) {
+					if (click[k].isClicked == true) {
+						// var - checkboxes
+						int varInitX = 700, varInitY = 300;
+						for (int a = 0; a < 4; a++) {
 
-					if (!var[a].isClicked) { // draw unchecked boxes
-						clickboxM.draw(varInitX, varInitY + (a * 40));
-					} else { // draw checked boxes
-						clickboxM.draw(varInitX, varInitY + (a * 40));
-						clickedM.draw(varInitX, varInitY + (a * 40));
+							if (!var[a].isClicked) { // draw unchecked boxes
+								clickboxM.draw(varInitX, varInitY + (a * 40));
+							} else { // draw checked boxes
+								clickboxM.draw(varInitX, varInitY + (a * 40));
+								clickedM.draw(varInitX, varInitY + (a * 40));
+							}
+							// draw labels
+							g.drawString(var[a].name, varInitX + 50, varInitY
+									+ (a * 40));
+
+						}
 					}
-					// draw labels
-					g.drawString(var[a].name, varInitX + 50, varInitY
-							+ (a * 40));
-				
+					// System.out.println(click[0].isClicked);
 				}
-				}
-				System.out.println(click[0].isClicked);
-				}
-				
+
 				// var - textboxes
-				
 
 			} catch (Exception e) {
-				e.printStackTrace();
+				if (Base.printErrors) {
+					e.printStackTrace();}
 			}
 
 			// ADDITIONAL VARIABLES END
@@ -1665,9 +1666,9 @@ public class Calculations extends BasicGameState {
 				}
 			}
 		}
-		//varbox
-		
-		//not working
+		// varbox
+
+		// not working
 		if (((Base) game).renderingSmall) {
 			if ((posX > 80 && posY > 160) && (posX < 103 && posY < 180)
 					&& button == Input.MOUSE_LEFT_BUTTON) {
@@ -1715,7 +1716,6 @@ public class Calculations extends BasicGameState {
 					}
 				}
 
-			
 			}
 
 			if ((posX > 700 && posY < 360) && (posX < 723 && posY > 340)
@@ -1757,9 +1757,7 @@ public class Calculations extends BasicGameState {
 				}
 			}
 		}
-		
-		
-		
+
 	}
 
 	public int GetID() {
