@@ -8,7 +8,7 @@ public class VarChoice {
 	public VarChoice(String name){
 	switch(name){
 		case "Concentration":
-			while(isClicked == true){
+			if(isClicked == true){
 			
 			System.out.println("AHOOOOJJ");
 			//n, V, M, n, name
