@@ -2,14 +2,17 @@ package trollface.calc.core;
 
 public class VarChoice {
 	
+	boolean isClicked;
 	String [] Vars = {"volume","concentration","molarmass","name","mass","n"};
 	
 	public VarChoice(String name){
 	switch(name){
 		case "Concentration":
-			for(int l =0; l<5; l++){
-			System.out.println(Vars[l]);
+			while(isClicked == true){
+			
+			System.out.println("AHOOOOJJ");
 			//n, V, M, n, name
+			
 			}
 			break;
 		case "Molarmass":

@@ -30,9 +30,10 @@ public class Calculations extends BasicGameState {
 	int x = 300;
 	int y = 100;
 	double answer, overallmolarmass, n, massanswer, c;
-	StringData[] listE, click;
+	StringData[] listE;
 
 	Textbox[] var;
+	VarChoice[] click;
 	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedM,
 			background3, settings, backgroundM;
 	boolean colorText = false, glowactive = false, clicked = false,
@@ -51,17 +52,17 @@ public class Calculations extends BasicGameState {
 	}
 
 	public void clickBox() {
-		click = new StringData[10];
-		click[0] = new StringData();
+		click = new VarChoice[10];
+		click[0] = new VarChoice("Concentration");
 		click[0].isClicked = false;
 		// concentration
-		click[1] = new StringData();
+		click[1] = new VarChoice("Molarmass");
 		click[1].isClicked = false;
 		// molar mass
-		click[2] = new StringData();
+		click[2] = new VarChoice("n");
 		click[2].isClicked = false;
 		// n
-		click[3] = new StringData();
+		click[3] = new VarChoice("Mass");
 		click[3].isClicked = false;
 		// mass
 	}
@@ -1386,7 +1387,7 @@ public class Calculations extends BasicGameState {
 
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
-		System.out.println("mouseX: "+posX + "mouseY: "+posY);
+
 
 		// Glow
 		if (((Base) game).renderingSmall) {
@@ -1485,13 +1486,12 @@ public class Calculations extends BasicGameState {
 					// draw labels
 					g.drawString(var[a].name, varInitX + 50, varInitY
 							+ (a * 40));
-					System.out.println("varX: "+ varInitX +"varY: "+ varInitY);
-					System.out.println( "Var isClicked: "+var[a].isClicked);
-					
+				
 				}
 				}
+				System.out.println(click[0].isClicked);
 				}
-
+				
 				// var - textboxes
 				
 
