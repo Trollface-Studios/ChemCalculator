@@ -32,7 +32,6 @@ public class Calculations extends BasicGameState {
 	double answer, overallmolarmass, n, massanswer, c;
 	StringData[] listE;
 
-	Textbox[] var;
 	VarChoice[] click;
 	Image background, sipka, sipkaglow, plusbutton, clickboxM, clickedM,
 			background3, settings, backgroundM;
@@ -95,27 +94,11 @@ public class Calculations extends BasicGameState {
 		// mass
 	}
 
-	public void ClickBoxVar() {
-		var = new Textbox[4];
-		var[0] = new Textbox("molarmass");
-		var[0].isClicked = false;
-
-		var[1] = new Textbox("mass");
-		var[1].isClicked = false;
-
-		var[2] = new Textbox("n");
-		var[2].isClicked = false;
-
-		var[3] = new Textbox("concentration");
-		var[3].isClicked = false;
-	}
-
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
 
 		clickBox();
 		System.out.println("Creating clickBox");
-		ClickBoxVar();
 
 		background = new Image("src/images/calc/core/chemBackground.png");
 		sipka = new Image("src/images/calc/core/gobackbutton1.png");
@@ -624,8 +607,6 @@ public class Calculations extends BasicGameState {
 			if ((posX > 80 && posY > 160) && (posX < 103 && posY < 180)
 					&& button == Input.MOUSE_LEFT_BUTTON) {
 
-				var[0].isClicked = !var[0].isClicked;
-
 			}
 
 			if ((posX > 80 && posY > 120) && (posX < 103 && posY < 140)
@@ -654,61 +635,24 @@ public class Calculations extends BasicGameState {
 				}
 			}
 
-		} else {
-			if ((posX > 700 && posY < 397) && (posX < 723 && posY > 377)
-					&& button == Input.MOUSE_LEFT_BUTTON) {
-				int active1 = 0;
-				for (int a = 0; a < 4; a++) {
-					if (a == active1) {
-						var[a].isClicked = !var[a].isClicked;
-					} else {
-
-						var[a].isClicked = false;
+		} else if (button == Input.MOUSE_LEFT_BUTTON) {
+			// declare inital positions
+			int initPosX = 700, initPosX2 = 723, initPosY = 397, initPosY2 = 377;
+			try {
+				for (int a = 0; a < activeVars.length; a++) {
+					if (posX < initPosX && posX < initPosX2
+							&& posY < initPosY - (a * 40)
+							&& posY > initPosY2 - (a * 40)) {
+						activeVars[a].isClicked = !activeVars[a].isClicked;
+						System.out.println("toggling " + a);
 					}
 				}
-
+			} catch (Exception e) {
+				if (Base.printErrors)
+					e.printStackTrace();
 			}
 
-			if ((posX > 700 && posY < 360) && (posX < 723 && posY > 340)
-					&& button == Input.MOUSE_LEFT_BUTTON) {
-
-				int active1 = 1;
-				for (int a = 0; a < 4; a++) {
-					if (a == active1) {
-						var[a].isClicked = !var[a].isClicked;
-					} else {
-
-						var[a].isClicked = false;
-					}
-				}
-			}
-
-			if ((posX > 700 && posY < 320) && (posX < 723 && posY > 300)
-					&& button == Input.MOUSE_LEFT_BUTTON) {
-
-				int active1 = 2;
-				for (int a = 0; a < 4; a++) {
-					if (a == active1) {
-						var[a].isClicked = !var[a].isClicked;
-					} else {
-
-						var[a].isClicked = false;
-					}
-				}
-			}
-
-			if ((posX > 700 && posY < 280) && (posX < 723 && posY > 260)
-					&& button == Input.MOUSE_LEFT_BUTTON) {
-				int active1 = 3;
-				for (int a = 0; a < 4; a++) {
-					if (a == active1)
-						var[a].isClicked = !var[a].isClicked;
-					else
-						var[a].isClicked = false;
-				}
-			}
 		}
-
 	}
 
 	// ----------------------------------------------------------------------------------
