@@ -24,11 +24,13 @@ public class Calculations extends BasicGameState {
 	private static AppGameContainer app;
 
 	Font font;
-	TextField textField, mass, decimalplace;
+	TextField textField, mass, decimalplace,textfield;
 	InputListener listener;
 	Color color;
 	int x = 300;
 	int y = 100;
+	int tfx = 150;
+	int tfy = 500;	
 	double answer, overallmolarmass, n, massanswer, c;
 	StringData[] listE;
 
@@ -80,12 +82,9 @@ public class Calculations extends BasicGameState {
 			System.out
 					.println("Wrong parameter specified for the variable switch: "
 							+ target);
-
+			
 		}
-		System.out.println(activeVars.length);
-		
 	}
-	public void Textfields(){}
 
 	public void clickBox() {
 		click = new VarChoice[10];
@@ -125,6 +124,19 @@ public class Calculations extends BasicGameState {
 		for (int o = 0; o < 3; o++) {
 
 		}
+		textfield = new TextField(c, c.getDefaultFont(), tfx, tfy, 100, 25, 
+				
+				new ComponentListener() {
+
+@Override
+				public void componentActivated(AbstractComponent source) {
+
+					TextField textfield = (TextField) source;
+					String text1 = textfield.getText();
+
+}
+
+});
 
 		decimalplace = new TextField(c, c.getDefaultFont(), 260, 270, 25, 25, // if
 																				// n?
@@ -418,6 +430,21 @@ public class Calculations extends BasicGameState {
 					e.printStackTrace();
 			}
 
+			try{
+			
+			for(int a =0; a<activeVars.length; a++){
+				if(!activeVars[a].isClicked){
+				}else{
+					tfy = tfy+(a*50);
+					textfield.render(c, g);
+					System.out.println(tfy);
+					
+				}
+			}
+			}catch(Exception e) {
+				if (Base.printErrors)
+					e.printStackTrace();
+			}
 			/*
 			 * OLD METHOD: try { for (int k = 0; k < 5; k++) { if
 			 * (click[k].isClicked == true) { int varInitX = 700, varInitY =
