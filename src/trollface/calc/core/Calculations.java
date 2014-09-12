@@ -58,6 +58,9 @@ public class Calculations extends BasicGameState {
 		switch (target) {
 		case "concentration":
 			activeVars[0] = new Textbox("molarmass");
+			activeVars[1] = new Textbox("molarmass");
+			activeVars[2] = new Textbox("molarmass");
+			activeVars[3] = new Textbox("molarmass");
 			break;
 		case "molarmass":
 			activeVars[0] = new Textbox("mass");
@@ -640,11 +643,17 @@ public class Calculations extends BasicGameState {
 			int initPosX = 700, initPosX2 = 723, initPosY = 397, initPosY2 = 377;
 			try {
 				for (int a = 0; a < activeVars.length; a++) {
-					if (posX < initPosX && posX < initPosX2
+					if (activeVars[a] != null && Base.printRoutineDebug) {
+						System.out.println(a + ": " + posX + " > " + initPosX
+								+ " || " + posX + " < " + initPosX2 + " || "
+								+ posY + " < " + (initPosY - (a * 40)) + " || "
+								+ posY + " > " + (initPosY2 - (a * 40)));
+					}
+					if (posX > initPosX && posX < initPosX2
 							&& posY < initPosY - (a * 40)
 							&& posY > initPosY2 - (a * 40)) {
 						activeVars[a].isClicked = !activeVars[a].isClicked;
-						System.out.println("toggling " + a);
+
 					}
 				}
 			} catch (Exception e) {
