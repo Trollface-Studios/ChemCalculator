@@ -1,12 +1,13 @@
 package trollface.calc.core;
 
 public class Textbox {
-	
+
 	String name, units;
 	int poradi;
-	public boolean isClicked; 
-	public Textbox(String Type){
-		switch(Type){
+	public boolean isClicked;
+
+	public Textbox(String Type) {
+		switch (Type) {
 		case "molarmass":
 			name = "Molar mass";
 			units = "g/mol";
@@ -22,10 +23,13 @@ public class Textbox {
 			units = "mol";
 			poradi = 3;
 			break;
-		case "concetration":
+		case "concentration":
 			name = "Concentration";
 			units = "mol/l";
 			poradi = 4;
+			break;
+		default:
+			System.out.println("Wrong textbox type specified: " + Type);
 		}
 	}
 

@@ -1494,7 +1494,7 @@ public class Calculations extends BasicGameState {
 				}
 
 				// var - textboxes
-				
+
 			} catch (Exception e) {
 				if (Base.printErrors) {
 					e.printStackTrace();}
