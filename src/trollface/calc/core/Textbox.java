@@ -28,6 +28,10 @@ public class Textbox {
 			units = "mol/l";
 			poradi = 4;
 			break;
+		case "volume":
+			name = "Volume";
+			units = "l";
+			poradi = 5;
 		default:
 			System.out.println("Wrong textbox type specified: " + Type);
 		}

@@ -53,23 +53,27 @@ public class Calculations extends BasicGameState {
 		System.out.println("Switching to " + target);
 		for (int a = 0; a < activeVars.length; a++) {
 			activeVars[a] = null;
+			System.out.println(activeVars[a]);
 		}
 
 		switch (target) {
 		case "concentration":
 			activeVars[0] = new Textbox("molarmass");
-			activeVars[1] = new Textbox("molarmass");
-			activeVars[2] = new Textbox("molarmass");
-			activeVars[3] = new Textbox("molarmass");
+			activeVars[1] = new Textbox("n");
+			activeVars[2] = new Textbox("volume");
 			break;
 		case "molarmass":
 			activeVars[0] = new Textbox("mass");
+			activeVars[1] = new Textbox("n");
 			break;
 		case "n":
 			activeVars[0] = new Textbox("concentration");
+			activeVars[1] = new Textbox("molarmass");
+			activeVars[2] = new Textbox("mass");
 			break;
 		case "mass":
 			activeVars[0] = new Textbox("n");
+			activeVars[1] = new Textbox("molarmass");
 			break;
 
 		default:
@@ -78,7 +82,10 @@ public class Calculations extends BasicGameState {
 							+ target);
 
 		}
+		System.out.println(activeVars.length);
+		
 	}
+	public void Textfields(){}
 
 	public void clickBox() {
 		click = new VarChoice[10];
