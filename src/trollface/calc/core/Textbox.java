@@ -36,6 +36,7 @@ public class Textbox {
 			name = "Volume";
 			units = "l";
 			poradi = 5;
+			break;
 		default:
 			System.out.println("Wrong textbox type specified: " + Type);
 		}

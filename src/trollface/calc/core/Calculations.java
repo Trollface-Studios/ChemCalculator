@@ -23,6 +23,7 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Calculations extends BasicGameState {
 	private static AppGameContainer app;
 	public static GameContainer con;
+	static String varsEnabled = "off";
 	Font font;
 	TextField textField, mass, decimalplace, textfield;
 	InputListener listener;
@@ -52,45 +53,52 @@ public class Calculations extends BasicGameState {
 
 	public void switchVars(String target) {
 
-		System.out.println("Switching to " + target);
-		for (int a = 0; a < activeVars.length; a++) {
-			activeVars[a] = null;
+		if (!varsEnabled.contentEquals(target)) {
+			System.out.println("Switching to " + target);
+			varsEnabled = target;
+			for (int a = 0; a < activeVars.length; a++) {
+				activeVars[a] = null;
 
-		}
-
-		switch (target) {
-		case "concentration":
-			activeVars[0] = new Textbox("molarmass");
-			activeVars[1] = new Textbox("n");
-			activeVars[2] = new Textbox("volume");
-			break;
-		case "molarmass":
-			activeVars[0] = new Textbox("mass");
-			activeVars[1] = new Textbox("n");
-			break;
-		case "n":
-			activeVars[0] = new Textbox("concentration");
-			activeVars[1] = new Textbox("molarmass");
-			activeVars[2] = new Textbox("mass");
-			break;
-		case "mass":
-			activeVars[0] = new Textbox("n");
-			activeVars[1] = new Textbox("molarmass");
-			break;
-
-		default:
-			System.out
-					.println("Wrong parameter specified for the variable switch: "
-							+ target);
-
-		}
-		int initX = 50, initY = 120, count = 0;
-		for (int a = 0; a < activeVars.length; a++) {
-			if (activeVars[a] != null) {
-				activeVars[a].field.setLocation(initX, initY + (count * 40));
-				count++;
 			}
+
+			switch (target) {
+			case "concentration":
+				activeVars[0] = new Textbox("molarmass");
+				activeVars[1] = new Textbox("n");
+				activeVars[2] = new Textbox("volume");
+				break;
+			case "molarmass":
+				activeVars[0] = new Textbox("mass");
+				activeVars[1] = new Textbox("n");
+				break;
+			case "n":
+				activeVars[0] = new Textbox("concentration");
+				activeVars[1] = new Textbox("molarmass");
+				activeVars[2] = new Textbox("mass");
+				break;
+			case "mass":
+				activeVars[0] = new Textbox("n");
+				activeVars[1] = new Textbox("molarmass");
+				break;
+
+			default:
+				System.out
+						.println("Wrong parameter specified for the variable switch: "
+								+ target);
+
+			}
+			int initX = 210, initY = 350, count = 0;
+			for (int a = 0; a < activeVars.length; a++) {
+				if (activeVars[a] != null) {
+					activeVars[a].field
+							.setLocation(initX, initY + (count * 40));
+					count++;
+				}
+			}
+		} else {
+			System.out.println("The type " + target + " is already selected!");
 		}
+
 	}
 
 	public void clickBox() {
@@ -407,12 +415,6 @@ public class Calculations extends BasicGameState {
 
 			sipka.draw(50, 600);
 
-			// C,n,mass, etc
-			clickboxM.draw(400, 300);
-			clickboxM.draw(400, 340);
-			clickboxM.draw(400, 380);
-			clickboxM.draw(400, 420);
-
 			// ADDITIONAL VARIABLES BEGIN
 
 			try {
@@ -423,7 +425,7 @@ public class Calculations extends BasicGameState {
 						if (!activeVars[a].isClicked) {
 							clickboxM.draw(varInitX, varInitY + (counter * 40));
 						} else {
-							clickboxM.draw(varInitX, varInitY + (a * 40));
+
 							clickedM.draw(varInitX, varInitY + (a * 40));
 						}
 						g.drawString(activeVars[a].name, varInitX + 50,
@@ -440,13 +442,17 @@ public class Calculations extends BasicGameState {
 			try {
 
 				for (int a = 0; a < activeVars.length; a++) {
+
 					if (!activeVars[a].isClicked) {
 					} else {
 						// tfy = tfy+(a*50);
-						textfield.setLocation(tfx, tfy + (50 * a));
-						textfield.render(c, g);
-
-						System.out.println(tfy);
+						activeVars[a].field.render(c, g);
+						g.drawString(activeVars[a].name,
+								activeVars[a].field.getX() - 135,
+								activeVars[a].field.getY() + 5);
+						g.drawString(activeVars[a].units,
+								activeVars[a].field.getX() + 105,
+								activeVars[a].field.getY() + 5);
 
 					}
 				}
@@ -522,21 +528,33 @@ public class Calculations extends BasicGameState {
 			sipkaglow.draw(50, 600);
 
 		}
-		// handles checkboxes
-		if (click[0].isClicked == true) {
-			clickedM.draw(400, 300);
 
-		}
-		if (click[1].isClicked == true) {
-			clickedM.draw(400, 340);
+		// checkboxes - dynamic version
+		int leftInitX = 400, leftInitY = 300;
+		for (int a = 0; a < click.length; a++) {
+			if (click[a] != null) {
+				if (click[a].isClicked) {
+					clickedM.draw(leftInitX, leftInitY + (a * 40));
+				} else {
+					clickboxM.draw(leftInitX, leftInitY + (a * 40));
+				}
 
-		}
-		if (click[2].isClicked == true) {
-			clickedM.draw(400, 380);
+			}
 
-		}
-		if (click[3].isClicked == true) {
-			clickedM.draw(400, 420);
+			// checkboxes - old version
+			// handles checkboxes
+			/*
+			 * if (click[0].isClicked == true) { clickedM.draw(400, 300);
+			 * 
+			 * } if (click[1].isClicked == true) { clickedM.draw(400, 340);
+			 * 
+			 * } if (click[2].isClicked == true) { clickedM.draw(400, 380);
+			 * 
+			 * } if (click[3].isClicked == true) { clickedM.draw(400, 420); }
+			 * 
+			 * // C,n,mass, etc clickboxM.draw(400, 300); clickboxM.draw(400,
+			 * 340); clickboxM.draw(400, 380); clickboxM.draw(400, 420);
+			 */
 		}
 	}
 
@@ -589,12 +607,12 @@ public class Calculations extends BasicGameState {
 		} else {
 			if ((posX > 400 && posY < 400) && (posX < 423 && posY > 380)
 					&& button == Input.MOUSE_LEFT_BUTTON) {
+				System.out.println("First. Called.");
 				int active = 0;
 				for (int a = 0; a < 4; a++) {
 					if (a == active) {
-						click[a].isClicked = !click[a].isClicked;
+						click[a].isClicked = true;
 					} else {
-
 						click[a].isClicked = false;
 					}
 				}
@@ -609,7 +627,7 @@ public class Calculations extends BasicGameState {
 				int active = 1;
 				for (int a = 0; a < 4; a++) {
 					if (a == active) {
-						click[a].isClicked = !click[a].isClicked;
+						click[a].isClicked = true;
 					} else {
 
 						click[a].isClicked = false;
@@ -624,7 +642,7 @@ public class Calculations extends BasicGameState {
 				int active = 2;
 				for (int a = 0; a < 4; a++) {
 					if (a == active) {
-						click[a].isClicked = !click[a].isClicked;
+						click[a].isClicked = true;
 					} else {
 
 						click[a].isClicked = false;
@@ -638,7 +656,7 @@ public class Calculations extends BasicGameState {
 				int active = 3;
 				for (int a = 0; a < 4; a++) {
 					if (a == active)
-						click[a].isClicked = !click[a].isClicked;
+						click[a].isClicked = true;
 					else
 						click[a].isClicked = false;
 				}
@@ -704,6 +722,12 @@ public class Calculations extends BasicGameState {
 					e.printStackTrace();
 			}
 
+		}
+		if (button == Input.MOUSE_RIGHT_BUTTON && Base.printRoutineDebug) {
+			System.out.println(click[0].isClicked);
+			System.out.println(click[1].isClicked);
+			System.out.println(click[2].isClicked);
+			System.out.println(click[3].isClicked);
 		}
 	}
 
