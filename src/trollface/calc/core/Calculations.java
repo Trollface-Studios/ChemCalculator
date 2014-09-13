@@ -342,6 +342,7 @@ public class Calculations extends BasicGameState {
 			}
 		}
 		// System.out.println(click[0].isClicked);
+		
 
 	}
 
@@ -435,10 +436,12 @@ public class Calculations extends BasicGameState {
 			for(int a =0; a<activeVars.length; a++){
 				if(!activeVars[a].isClicked){
 				}else{
-					tfy = tfy+(a*50);
+					//tfy = tfy+(a*50);
+					textfield.setLocation(tfx, tfy+(50*a));
 					textfield.render(c, g);
-					System.out.println(tfy);
 					
+					System.out.println(tfy);
+				
 				}
 			}
 			}catch(Exception e) {
