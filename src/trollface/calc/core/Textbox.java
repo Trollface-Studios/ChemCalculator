@@ -1,10 +1,14 @@
 package trollface.calc.core;
 
+import org.newdawn.slick.gui.TextField;
+
 public class Textbox {
 
 	String name, units;
 	int poradi;
 	public boolean isClicked;
+
+	public TextField field;
 
 	public Textbox(String Type) {
 		switch (Type) {
@@ -35,6 +39,8 @@ public class Textbox {
 		default:
 			System.out.println("Wrong textbox type specified: " + Type);
 		}
+		field = new TextField(Calculations.con,
+				Calculations.con.getDefaultFont(), 0, 0, 100, 25);
 	}
 
 }

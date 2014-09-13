@@ -22,15 +22,15 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Calculations extends BasicGameState {
 	private static AppGameContainer app;
-
+	public static GameContainer con;
 	Font font;
-	TextField textField, mass, decimalplace,textfield;
+	TextField textField, mass, decimalplace, textfield;
 	InputListener listener;
 	Color color;
 	int x = 300;
 	int y = 100;
 	int tfx = 150;
-	int tfy = 500;	
+	int tfy = 500;
 	double answer, overallmolarmass, n, massanswer, c;
 	StringData[] listE;
 
@@ -55,7 +55,7 @@ public class Calculations extends BasicGameState {
 		System.out.println("Switching to " + target);
 		for (int a = 0; a < activeVars.length; a++) {
 			activeVars[a] = null;
-			System.out.println(activeVars[a]);
+
 		}
 
 		switch (target) {
@@ -82,7 +82,14 @@ public class Calculations extends BasicGameState {
 			System.out
 					.println("Wrong parameter specified for the variable switch: "
 							+ target);
-			
+
+		}
+		int initX = 50, initY = 120, count = 0;
+		for (int a = 0; a < activeVars.length; a++) {
+			if (activeVars[a] != null) {
+				activeVars[a].field.setLocation(initX, initY + (count * 40));
+				count++;
+			}
 		}
 	}
 
@@ -105,7 +112,7 @@ public class Calculations extends BasicGameState {
 
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
-
+		con = c;
 		clickBox();
 		System.out.println("Creating clickBox");
 
@@ -124,19 +131,19 @@ public class Calculations extends BasicGameState {
 		for (int o = 0; o < 3; o++) {
 
 		}
-		textfield = new TextField(c, c.getDefaultFont(), tfx, tfy, 100, 25, 
-				
-				new ComponentListener() {
+		textfield = new TextField(c, c.getDefaultFont(), tfx, tfy, 100, 25,
 
-@Override
-				public void componentActivated(AbstractComponent source) {
+		new ComponentListener() {
 
-					TextField textfield = (TextField) source;
-					String text1 = textfield.getText();
+			@Override
+			public void componentActivated(AbstractComponent source) {
 
-}
+				TextField textfield = (TextField) source;
+				String text1 = textfield.getText();
 
-});
+			}
+
+		});
 
 		decimalplace = new TextField(c, c.getDefaultFont(), 260, 270, 25, 25, // if
 																				// n?
@@ -342,7 +349,6 @@ public class Calculations extends BasicGameState {
 			}
 		}
 		// System.out.println(click[0].isClicked);
-		
 
 	}
 
@@ -431,20 +437,20 @@ public class Calculations extends BasicGameState {
 					e.printStackTrace();
 			}
 
-			try{
-			
-			for(int a =0; a<activeVars.length; a++){
-				if(!activeVars[a].isClicked){
-				}else{
-					//tfy = tfy+(a*50);
-					textfield.setLocation(tfx, tfy+(50*a));
-					textfield.render(c, g);
-					
-					System.out.println(tfy);
-				
+			try {
+
+				for (int a = 0; a < activeVars.length; a++) {
+					if (!activeVars[a].isClicked) {
+					} else {
+						// tfy = tfy+(a*50);
+						textfield.setLocation(tfx, tfy + (50 * a));
+						textfield.render(c, g);
+
+						System.out.println(tfy);
+
+					}
 				}
-			}
-			}catch(Exception e) {
+			} catch (Exception e) {
 				if (Base.printErrors)
 					e.printStackTrace();
 			}
