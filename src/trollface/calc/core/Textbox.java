@@ -1,5 +1,7 @@
 package trollface.calc.core;
 
+import org.newdawn.slick.gui.AbstractComponent;
+import org.newdawn.slick.gui.ComponentListener;
 import org.newdawn.slick.gui.TextField;
 
 public class Textbox {
@@ -42,6 +44,15 @@ public class Textbox {
 		}
 		field = new TextField(Calculations.con,
 				Calculations.con.getDefaultFont(), 0, 0, 100, 25);
+		field.addListener(new ComponentListener() {
+
+			@Override
+			public void componentActivated(AbstractComponent arg0) {
+				TextField field = (TextField) arg0;
+				System.out.println("Activated." + field.getText());
+
+			}
+		});
 	}
 
 }

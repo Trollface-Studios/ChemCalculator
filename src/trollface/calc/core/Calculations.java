@@ -728,6 +728,9 @@ public class Calculations extends BasicGameState {
 			System.out.println(click[1].isClicked);
 			System.out.println(click[2].isClicked);
 			System.out.println(click[3].isClicked);
+			System.out.println();
+			System.out.println(activeVars[0].field);
+			
 		}
 	}
 
