@@ -12,7 +12,8 @@ public class Textbox {
 
 	public TextField field;
 
-	public Textbox(String Type) {
+	public Textbox(String Type) { 
+
 		switch (Type) {
 		case "molarmass":
 			name = "Molar mass";
@@ -46,13 +47,26 @@ public class Textbox {
 				Calculations.con.getDefaultFont(), 0, 0, 100, 25);
 		field.addListener(new ComponentListener() {
 
+
 			@Override
 			public void componentActivated(AbstractComponent arg0) {
+ 
 				TextField field = (TextField) arg0;
-				System.out.println("Activated." + field.getText());
+				
 
 			}
 		});
+		field.setConsumeEvents(false);
+	}
+
+	/**
+	 * 
+	 */
+	public void destroyField() { 
+		field.setAcceptingInput(false);
+		field = null;
+		
+
 	}
 
 }

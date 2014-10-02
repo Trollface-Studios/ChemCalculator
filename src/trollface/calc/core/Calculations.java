@@ -57,6 +57,11 @@ public class Calculations extends BasicGameState {
 			System.out.println("Switching to " + target);
 			varsEnabled = target;
 			for (int a = 0; a < activeVars.length; a++) {
+				try {
+					activeVars[a].destroyField();
+				} catch (Exception e) {
+					;
+				}
 				activeVars[a] = null;
 
 			}
@@ -447,6 +452,7 @@ public class Calculations extends BasicGameState {
 					} else {
 						// tfy = tfy+(a*50);
 						activeVars[a].field.render(c, g);
+
 						g.drawString(activeVars[a].name,
 								activeVars[a].field.getX() - 135,
 								activeVars[a].field.getY() + 5);
@@ -730,7 +736,7 @@ public class Calculations extends BasicGameState {
 			System.out.println(click[3].isClicked);
 			System.out.println();
 			System.out.println(activeVars[0].field);
-			
+
 		}
 	}
 
