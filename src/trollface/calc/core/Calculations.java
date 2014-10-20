@@ -130,8 +130,8 @@ public class Calculations extends BasicGameState {
 		System.out.println("Creating clickBox");
 
 		background = new Image("src/images/calc/core/chemBackground.png");
-		sipka = new Image("src/images/calc/core/gobackbutton1.png");
-		sipkaglow = new Image("src/images/calc/core/gobackbutton.png");
+		sipka = new Image("src/images/calc/core/gobackbuttonM.jpg");
+		sipkaglow = new Image("src/images/calc/core/gobackbuttonMglow.jpg");
 		clickboxM = new Image("src/images/calc/core/clickboxM.png");
 		clickedM = new Image("src/images/calc/core/clickedM.png");
 		settings = new Image("src/images/calc/core/CalSet.png");

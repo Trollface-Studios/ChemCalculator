@@ -26,8 +26,8 @@ public class Settings extends BasicGameState {
 			throws SlickException {
 
 		background = new Image("src/images/calc/core/chemBackground.png");
-		sipka = new Image("src/images/calc/core/gobackbutton1.png");
-		sipkaglow = new Image("src/images/calc/core/gobackbutton.png");
+		sipka = new Image("src/images/calc/core/gobackbuttonM.jpg");
+		sipkaglow = new Image("src/images/calc/core/gobackbuttonMglow.jpg");
 		backgroundM = new Image ("src/images/calc/core/chemBackgroundM.png");
 	}
 

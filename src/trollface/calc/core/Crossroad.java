@@ -31,8 +31,8 @@ public class Crossroad extends BasicGameState {
 		buttontwo = new Image("src/images/calc/core/equationsbutton.png");
 		buttontwoglow = new Image(
 				"src/images/calc/core/equationsbuttonglow.png");
-		sipka = new Image("src/images/calc/core/gobackbutton1.png");
-		sipkaglow = new Image("src/images/calc/core/gobackbutton.png");
+		sipka = new Image("src/images/calc/core/gobackbuttonM.jpg");
+		sipkaglow = new Image("src/images/calc/core/gobackbuttonMglow.jpg");
 
 	}
 

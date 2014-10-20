@@ -23,8 +23,8 @@ public class Calculations2 extends BasicGameState{
 			throws SlickException {
 		
 		backgroundM = new Image ("src/images/calc/core/chemBackgroundM.png");
-		sipka = new Image("src/images/calc/core/gobackbutton1.png");
-		sipkaglow = new Image("src/images/calc/core/gobackbutton.png");
+		sipka = new Image("src/images/calc/core/gobackbuttonM.jpg");
+		sipkaglow = new Image("src/images/calc/core/gobackbuttonMglow.jpg");
 	}
 	public void update(GameContainer c, StateBasedGame game, int delta)
 			throws SlickException {
