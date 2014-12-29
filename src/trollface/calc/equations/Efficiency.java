@@ -1,12 +1,17 @@
 package trollface.calc.equations;
 
 public class Efficiency extends Equation {
-	static String friendlyName = "Efficiency (performance)";
 
-	static String[][] modes = {
-			{ "% efficiency", "Energy Input", "Useful Energy Output" },
-			{ "Output", "Energy Input", "Efficiency (in %)" },
-			{ "Input", "Useful Energy Output", "Efficiency (in %)" } };
+	public Efficiency() {
+		friendlyName = "Efficiency (performance)";
+
+		modes = new Properties[][] {
+				{ Properties.Efficiency, Properties.Input, Properties.Output },
+				{ Properties.Output, Properties.Input, Properties.Efficiency,
+						Properties.Output },
+				{ Properties.Input, Properties.Output, Properties.Efficiency } };
+
+	}
 
 	@Override
 	public double calculate(int mode, double... arguments) {

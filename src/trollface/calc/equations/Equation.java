@@ -1,7 +1,9 @@
 package trollface.calc.equations;
 
 public class Equation implements EquationInterface {
-	static String friendlyName;
+
+	public String friendlyName;
+	public Properties[][] modes;
 
 	@Override
 	public double calculate(int mode, double... is) {
