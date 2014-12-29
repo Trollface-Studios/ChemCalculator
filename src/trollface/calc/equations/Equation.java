@@ -6,9 +6,9 @@ public class Equation implements EquationInterface {
 	public Properties[][] modes;
 
 	@Override
-	public double calculate(int mode, double... is) {
+	public String calculate(int mode, double... is) {
 
-		return 0;
+		return "This does not make any sense. Call an exorcist. RUN!";
 	}
 
 }
