@@ -31,10 +31,10 @@ public class Info extends BasicGameState {
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
 
-		background = new Image("src/images/calc/core/chemBackground.png");
-		sipka = new Image("src/images/calc/core/gobackbutton1.png");
-		sipka = new Image("src/images/calc/core/gobackbuttonM.jpg");
-		sipkaglow = new Image("src/images/calc/core/gobackbuttonMglow.jpg");
+		background = new Image("src/trollface/calc/images/chemBackground.png");
+		sipka = new Image("src/trollface/calc/images/gobackbutton1.png");
+		sipka = new Image("src/trollface/calc/images/gobackbuttonM.jpg");
+		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.jpg");
 	}
 
 	public void update(GameContainer c, StateBasedGame game, int delta)

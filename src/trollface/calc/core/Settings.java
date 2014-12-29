@@ -25,10 +25,10 @@ public class Settings extends BasicGameState {
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
 
-		background = new Image("src/images/calc/core/chemBackground.png");
-		sipka = new Image("src/images/calc/core/gobackbuttonM.jpg");
-		sipkaglow = new Image("src/images/calc/core/gobackbuttonMglow.jpg");
-		backgroundM = new Image ("src/images/calc/core/chemBackgroundM.png");
+		background = new Image("src/trollface/calc/images/chemBackground.png");
+		sipka = new Image("src/trollface/calc/images/gobackbuttonM.jpg");
+		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.jpg");
+		backgroundM = new Image("src/trollface/calc/images/chemBackgroundM.png");
 	}
 
 	public void update(GameContainer c, StateBasedGame game, int delta)

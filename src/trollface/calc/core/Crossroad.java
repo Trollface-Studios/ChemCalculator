@@ -23,16 +23,16 @@ public class Crossroad extends BasicGameState {
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
 
-		background = new Image("src/images/calc/core/chemBackground.png");
-		backgroundM = new Image("src/images/calc/core/chemBackgroundM.png");
-		buttonone = new Image("src/images/calc/core/singlecompoundbutton.png");
+		background = new Image("src/trollface/calc/images/chemBackground.png");
+		backgroundM = new Image("src/trollface/calc/images/chemBackgroundM.png");
+		buttonone = new Image("src/trollface/calc/images/singlecompoundbutton.png");
 		buttononeglow = new Image(
-				"src/images/calc/core/singlecompoundbuttonglow.png");
-		buttontwo = new Image("src/images/calc/core/equationsbutton.png");
+				"src/trollface/calc/images/singlecompoundbuttonglow.png");
+		buttontwo = new Image("src/trollface/calc/images/equationsbutton.png");
 		buttontwoglow = new Image(
-				"src/images/calc/core/equationsbuttonglow.png");
-		sipka = new Image("src/images/calc/core/gobackbuttonM.jpg");
-		sipkaglow = new Image("src/images/calc/core/gobackbuttonMglow.jpg");
+				"src/trollface/calc/images/equationsbuttonglow.png");
+		sipka = new Image("src/trollface/calc/images/gobackbuttonM.jpg");
+		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.jpg");
 
 	}
 
