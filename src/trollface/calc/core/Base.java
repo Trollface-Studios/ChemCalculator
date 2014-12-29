@@ -66,17 +66,14 @@ public class Base extends StateBasedGame {
 	}
 
 	public void initStatesList(GameContainer c) throws SlickException {
-		addState(new Calculations3(this));
+
 		addState(new Menu(this));
 		addState(new Info(this));
 		addState(new Settings(this));
 		addState(new Calculations(this));
 		addState(new Crossroad(this));
 		addState(new Calculations2(this));
-
-	}
-
-	public void ChangeState() {
+		addState(new Calculations3(this));
 
 	}
 

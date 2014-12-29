@@ -40,7 +40,7 @@ public class Calculations3 extends BasicGameState {
 	MouseOverArea[] modeButtons;
 
 	// Declare images and fonts
-	Image backgroundM, sipka, plusbutton, genericButton;
+	Image backgroundM, sipka, plusbutton, genericButton, i_sendButton;
 	TrueTypeFont f_heading, f_subheading, f_answer, f_rest;
 
 	// Remember whether we're already rendering, and what we're rendering
@@ -70,6 +70,8 @@ public class Calculations3 extends BasicGameState {
 		genericButton = new Image(
 				"src/trollface/calc/images/generic_button.png")
 				.getScaledCopy(0.35f);
+		i_sendButton = new Image("src/trollface/calc/images/send_button.png");
+
 		rendering = true;
 
 		// Load fonts
@@ -96,7 +98,8 @@ public class Calculations3 extends BasicGameState {
 				50));
 
 		// Send button
-		sendButton = new MouseOverArea(c, sipka, new Rectangle(50, 550, 50, 50));
+		sendButton = new MouseOverArea(c, i_sendButton, new Rectangle(50, 550,
+				50, 50));
 
 	}
 
@@ -121,8 +124,12 @@ public class Calculations3 extends BasicGameState {
 			returnButton.render(c, g);
 
 			if (inSelection) {
-				for (MouseOverArea button : buttons) {
+				for (int a = 0; a < buttons.length; a++) {
+					MouseOverArea button = buttons[a];
 					button.render(c, g);
+					g.drawString(equations[a].friendlyName, button.getX(),
+							button.getY());
+
 				}
 
 			} else {
@@ -138,7 +145,7 @@ public class Calculations3 extends BasicGameState {
 							activeVars[a].field.render(c, g);
 
 							g.drawString(activeVars[a].name,
-									activeVars[a].field.getX() - 135,
+									activeVars[a].field.getX() - 200,
 									activeVars[a].field.getY() + 5);
 							g.drawString(activeVars[a].units,
 									activeVars[a].field.getX() + 105,
@@ -171,6 +178,9 @@ public class Calculations3 extends BasicGameState {
 
 				for (int a = 0; a < modeButtons.length; a++) {
 					MouseOverArea button = modeButtons[a];
+					if (a == ModeEnabled) {
+						g.setColor(Color.orange);
+					}
 					g.fill(new Rectangle(button.getX(), button.getY(), button
 							.getWidth(), button.getHeight()));
 					g.setColor(Color.green);
@@ -180,8 +190,12 @@ public class Calculations3 extends BasicGameState {
 				}
 
 				// Answer
+				g.setFont(f_subheading);
+				g.drawString("ANSWER:",
+						width / 2 - f_subheading.getWidth("ANSWER:") / 2, 560);
 				g.setFont(f_answer);
-				g.drawString(answer, c.getWidth() / 2, 600);
+				g.drawString(answer, width / 2 - f_answer.getWidth(answer) / 2,
+						600);
 
 			}
 		} else
@@ -212,15 +226,19 @@ public class Calculations3 extends BasicGameState {
 			// Not in selection
 			if (returnButton.isMouseOver()) {
 				flipSelection();
+				clearFields();
 			}
 			if (sendButton.isMouseOver()) {
 				calculate();
 
 			}
-			for (int a = 0; a < modeButtons.length; a++) {
-				if (modeButtons[a].isMouseOver()) {
-					switchVars(EquationEnabled, a);
+			try {
+				for (int a = 0; a < modeButtons.length; a++) {
+					if (modeButtons[a].isMouseOver()) {
+						switchVars(EquationEnabled, a);
+					}
 				}
+			} catch (Exception e) {
 			}
 		}
 
@@ -290,6 +308,12 @@ public class Calculations3 extends BasicGameState {
 
 	}
 
+	void clearFields() {
+		ModeEnabled = -2;
+		modeButtons = null;
+
+	}
+
 	void flipSelection() {
 		inSelection = !inSelection;
 
@@ -297,6 +321,18 @@ public class Calculations3 extends BasicGameState {
 			button.setAcceptingInput(!button.isAcceptingInput());
 		}
 
+	}
+
+	void purgeVars() {
+		for (int a = 0; a < activeVars.length; a++) {
+			try {
+				activeVars[a].destroyField();
+			} catch (Exception e) {
+				;
+			}
+			activeVars[a] = null;
+
+		}
 	}
 
 	public void switchVars(int equation, int mode) {
@@ -326,15 +362,7 @@ public class Calculations3 extends BasicGameState {
 				EquationEnabled = equation;
 
 				// Clear out the vars
-				for (int a = 0; a < activeVars.length; a++) {
-					try {
-						activeVars[a].destroyField();
-					} catch (Exception e) {
-						;
-					}
-					activeVars[a] = null;
-
-				}
+				purgeVars();
 
 				// Set new vars
 
@@ -346,7 +374,7 @@ public class Calculations3 extends BasicGameState {
 				}
 
 				// Create fields for new vars
-				int initX = 210, initY = 350, count = 0;
+				int initX = 300, initY = 350, count = 0;
 				for (int a = 0; a < activeVars.length; a++) {
 					if (activeVars[a] != null) {
 						activeVars[a].field.setLocation(initX, initY
@@ -369,7 +397,7 @@ public class Calculations3 extends BasicGameState {
 	}
 
 	public int getID() {
-		return 6;
+		return 5;
 	}
 
 }

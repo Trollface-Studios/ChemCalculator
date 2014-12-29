@@ -10,30 +10,32 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Calculations2 extends BasicGameState{
+public class Calculations2 extends BasicGameState {
 	private static AppGameContainer app;
 	Base game;
 	Image backgroundM, sipka, sipkaglow;
 	boolean glowactive;
-	
-	public Calculations2(Base game){
+
+	public Calculations2(Base game) {
 		this.game = game;
 	}
+
 	public void init(GameContainer c, StateBasedGame game)
 			throws SlickException {
-		
-		backgroundM = new Image ("src/trollface/calc/images/chemBackgroundM.png");
+
+		backgroundM = new Image("src/trollface/calc/images/chemBackgroundM.png");
 		sipka = new Image("src/trollface/calc/images/gobackbuttonM.jpg");
 		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.jpg");
 	}
+
 	public void update(GameContainer c, StateBasedGame game, int delta)
 			throws SlickException {
-		
+
 		Input input = c.getInput();
 
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
-		
+
 		if (((Base) game).renderingSmall) {
 			if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
 				glowactive = true;
@@ -49,8 +51,8 @@ public class Calculations2 extends BasicGameState{
 			}
 		}
 
-	
 	}
+
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
 		backgroundM.draw();
@@ -59,25 +61,23 @@ public class Calculations2 extends BasicGameState{
 			sipkaglow.draw(50, 600);
 
 		}
-	
+
 	}
-		public void mouseClicked(int button, int x, int y, int clickCount) {	
 
-			int posX = Mouse.getX();
-			int posY = Mouse.getY();
-			
-			if (glowactive == true) {
+	public void mouseClicked(int button, int x, int y, int clickCount) {
 
-				game.enterState(4);
-			}
-			}
-		public int GetID() {
-			return 5;
+		int posX = Mouse.getX();
+		int posY = Mouse.getY();
+
+		if (glowactive == true) {
+
+			game.enterState(4);
 		}
+	}
 
-		public int getID() {
-			// TODO Auto-generated method stub
-			return 5;
-		}
+	public int getID() {
+		// TODO Auto-generated method stub
+		return 50;
+	}
 
 }
