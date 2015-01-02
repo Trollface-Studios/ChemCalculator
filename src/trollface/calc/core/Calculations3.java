@@ -15,7 +15,8 @@ import org.newdawn.slick.gui.MouseOverArea;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-import trollface.calc.equations.Concentration;
+import trollface.calc.equations.HHpH;
+import trollface.calc.equations.Molarity;
 import trollface.calc.equations.Efficiency;
 import trollface.calc.equations.Equation;
 import trollface.calc.equations.Properties;
@@ -23,7 +24,7 @@ import trollface.calc.equations.Properties;
 public class Calculations3 extends BasicGameState {
 
 	// IMPORTANT: ADD 1 TO THIS EVERY TIME YOU ADD AN EQUATION
-	public static final int equationCount = 2;
+	public static final int equationCount = 3;
 
 	// Keep track of globals
 	Base game;
@@ -87,7 +88,8 @@ public class Calculations3 extends BasicGameState {
 
 		// Load equations
 		equations[0] = new Efficiency();
-		equations[1] = new Concentration();
+		equations[1] = new Molarity();
+		equations[2] = new HHpH();
 
 		// Selection buttons
 		for (int a = 0; a < equationCount; a++) {

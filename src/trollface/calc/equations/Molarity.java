@@ -1,11 +1,11 @@
 package trollface.calc.equations;
 
-public class Concentration extends Equation {
+public class Molarity extends Equation {
 
-	public Concentration() {
+	public Molarity() {
 
 		
-		friendlyName = "Concentration";
+		friendlyName = "Molarity";
 
 
 		modes = new Properties[][] {
