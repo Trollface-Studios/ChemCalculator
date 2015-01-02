@@ -21,7 +21,9 @@ import trollface.calc.equations.Equation;
 import trollface.calc.equations.Properties;
 
 public class Calculations3 extends BasicGameState {
-	public static final int equationCount = 3;
+
+	// IMPORTANT: ADD 1 TO THIS EVERY TIME YOU ADD AN EQUATION
+	public static final int equationCount = 2;
 
 	// Keep track of globals
 	Base game;
@@ -85,9 +87,7 @@ public class Calculations3 extends BasicGameState {
 
 		// Load equations
 		equations[0] = new Efficiency();
-		equations[1] = new Efficiency();
-		equations[2] = new Concentration();
-				
+		equations[1] = new Concentration();
 
 		// Selection buttons
 		for (int a = 0; a < equationCount; a++) {
@@ -343,6 +343,7 @@ public class Calculations3 extends BasicGameState {
 		// Ensure we're actually switching
 		if (!(ModeEnabled == mode && EquationEnabled == equation)) {
 			if (mode == -1) {
+				EquationEnabled = equation;
 				modeButtons = new MouseOverArea[equations[equation].modes.length];
 
 				for (int a = 0; a < modeButtons.length; a++) {
