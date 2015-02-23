@@ -111,8 +111,8 @@ public class Calculations extends BasicGameState {
 		System.out.println("Creating clickBox");
 
 		background = new Image("src/trollface/calc/images/chemBackground.png");
-		sipka = new Image("src/trollface/calc/images/gobackbuttonM.jpg");
-		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.jpg");
+		sipka = new Image("src/trollface/calc/images/gobackbuttonM.png");
+		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.png");
 		clickboxM = new Image("src/trollface/calc/images/clickboxM.png");
 		clickedM = new Image("src/trollface/calc/images/clickedM.png");
 		settings = new Image("src/trollface/calc/images/CalSet.png");

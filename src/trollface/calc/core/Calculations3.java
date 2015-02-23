@@ -69,7 +69,7 @@ public class Calculations3 extends BasicGameState {
 
 		// Create images
 		backgroundM = new Image("src/trollface/calc/images/chemBackgroundM.png");
-		sipka = new Image("src/trollface/calc/images/gobackbuttonM.jpg");
+		sipka = new Image("src/trollface/calc/images/gobackbuttonM.png");
 		plusbutton = new Image("src/trollface/calc/images/plusbutton.png");
 		genericButton = new Image(
 				"src/trollface/calc/images/generic_button.png")

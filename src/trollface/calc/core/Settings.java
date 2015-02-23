@@ -26,8 +26,8 @@ public class Settings extends BasicGameState {
 			throws SlickException {
 
 		background = new Image("src/trollface/calc/images/chemBackground.png");
-		sipka = new Image("src/trollface/calc/images/gobackbuttonM.jpg");
-		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.jpg");
+		sipka = new Image("src/trollface/calc/images/gobackbuttonM.png");
+		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.png");
 		backgroundM = new Image("src/trollface/calc/images/chemBackgroundM.png");
 	}
 

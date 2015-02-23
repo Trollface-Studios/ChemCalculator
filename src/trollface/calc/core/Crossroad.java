@@ -31,8 +31,8 @@ public class Crossroad extends BasicGameState {
 		buttontwo = new Image("src/trollface/calc/images/equationsbutton.png");
 		buttontwoglow = new Image(
 				"src/trollface/calc/images/equationsbuttonglow.png");
-		sipka = new Image("src/trollface/calc/images/gobackbuttonM.jpg");
-		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.jpg");
+		sipka = new Image("src/trollface/calc/images/gobackbuttonM.png");
+		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.png");
 
 	}
 
