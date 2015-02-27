@@ -9,9 +9,9 @@ public class HHpH extends Equation {
 
 
 		modes = new Properties[][] {
-				{ Properties.con1, Properties.mol1, Properties.vol1 },
-				{ Properties.mol1, Properties.vol1, Properties.con1 },
-				{ Properties.vol1, Properties.mol1, Properties.con1 } };
+				{ Properties., Properties., Properties. },
+				{ Properties., Properties., Properties. },
+				{ Properties., Properties., Properties. } };
 
 	}
 
