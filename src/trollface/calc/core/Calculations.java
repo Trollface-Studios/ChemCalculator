@@ -55,7 +55,6 @@ public class Calculations extends BasicGameState {
 	// ----------------------------------------------------------------------------------
 	// // METHODS
 
-	@SuppressWarnings("static-access")
 	public void switchVars(String target) {
 
 		if (!varsEnabled.contentEquals(target)) {
