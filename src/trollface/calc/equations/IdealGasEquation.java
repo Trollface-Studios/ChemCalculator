@@ -7,14 +7,14 @@ public class IdealGasEquation extends Equation {
 		friendlyName = "Ideal gas equation";
 
 		modes = new Properties[][] {
-				{ Properties.Pre1, Properties.Mol1, Properties.TempK1,
-						Properties.Vol1 },
-				{ Properties.Vol1, Properties.Mol1, Properties.TempK1,
-						Properties.Pre1 },
-				{ Properties.Mol1, Properties.Pre1, Properties.Vol1,
-						Properties.TempK1 },
-				{ Properties.TempK1, Properties.Pre1, Properties.Vol1,
-						Properties.Mol1 } };
+				{ Properties.pre1, Properties.mol1, Properties.tempk1,
+						Properties.vol1 },
+				{ Properties.vol1, Properties.mol1, Properties.tempk1,
+						Properties.pre1 },
+				{ Properties.mol1, Properties.pre1, Properties.vol1,
+						Properties.tempk1 },
+				{ Properties.tempk1, Properties.pre1, Properties.vol1,
+						Properties.mol1 } };
 
 	}
 
