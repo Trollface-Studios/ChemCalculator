@@ -41,12 +41,12 @@ public class Menu extends BasicGameState {
 		background = new Image("src/trollface/calc/images/chemBackground.png");
 		buttonCalcM = new Image("src/trollface/calc/images/buttonCalcM.png");
 		buttonInfoM = new Image("src/trollface/calc/images/buttonInfoM.png");
-		buttonSetM = new Image("src/trollface/calc/images/buttonSetM.png");
+		buttonSetM = new Image("src/trollface/calc/images/buttonCredM.png");
 		buttonExitM = new Image("src/trollface/calc/images/buttonExitM.png");
 		buttonExitMglow = new Image("src/trollface/calc/images/buttonExitMglow.png");
 		buttonCalcMglow = new Image("src/trollface/calc/images/buttonCalcMglow.png");
 		buttonInfoMglow = new Image("src/trollface/calc/images/buttonInfoMglow.png");
-		buttonSetMglow = new Image("src/trollface/calc/images/buttonSetMglow.png");
+		buttonSetMglow = new Image("src/trollface/calc/images/buttonCredMglow.png");
 		backgroundM = new Image("src/trollface/calc/images/chemBackgroundM.png");
 		// font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 		// java.awt.Font.ITALIC, 26));

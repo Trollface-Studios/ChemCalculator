@@ -69,7 +69,7 @@ public class Base extends StateBasedGame {
 
 		addState(new Menu(this));
 		addState(new Info(this));
-		addState(new Settings(this));
+		addState(new Credits(this));
 		addState(new Calculations(this));
 		addState(new Crossroad(this));
 		addState(new Calculations2(this));

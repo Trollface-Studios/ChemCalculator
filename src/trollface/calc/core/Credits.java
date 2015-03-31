@@ -10,7 +10,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Settings extends BasicGameState {
+public class Credits extends BasicGameState {
 
 	private static AppGameContainer app;
 
@@ -18,7 +18,7 @@ public class Settings extends BasicGameState {
 	boolean glowactive = false;
 	Base game;
 
-	public Settings(Base game) {
+	public Credits (Base game) {
 		this.game = game;
 	}
 
