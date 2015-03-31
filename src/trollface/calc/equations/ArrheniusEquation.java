@@ -4,7 +4,7 @@ public class ArrheniusEquation extends Equation {
 
 	public ArrheniusEquation() {
 
-		friendlyName = "ArrheniusEquation";
+		friendlyName = "Arrhenius Equation";
 
 		modes = new Properties[][] {
 				{ Properties.rc1, Properties.pef1, Properties.ea1, Properties.tempk1 },

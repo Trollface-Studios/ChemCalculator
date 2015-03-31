@@ -4,28 +4,28 @@ public enum Properties {
 
 	// Efficiency - demonstration
 	Input("Energy Input", "W"), Output("Useful Energy Output", "W"), Efficiency(
-			"Efficiency", "%", 'e'), vol1("Volume of first substance", " dm^-3"), mol1(
-			"Amount of first substance", " mol"), con1(
-			"Concentration of first substance", " mol*dm^-3", 'c'), mass1(
-			"Mass of first substance", " g", 'm'), mass2(
-			"Mass of second substance", " g", 'm'), mmass1(
-			"Molar mass of first substance", " g*mol^-3"), mmass2(
-			"Molar mass of second substance", " g*mol^-3"), vol2(
-			"Volume of second substance", " dm^-3"), mol2(
-			"Amount of second substance", " mol"), con2(
-			"Concentration of second substance", " mol*dm^-3", 'c'), comp(
-			"Percentage composition", "%"), tempk1(
-			"Temperature of first substance", "K", 'T'), tempc1(
-			"Temperature of first substance", "°C", 'T'), tempf1(
-			"Temperature of first substance", "°F", 'T'), tempk2(
-			"Temperature of second substance", "K", 'T'), tempc2(
-			"Temperature of second substance", "°C", 'T'), tempf2(
-			"Temperature of second substance", "°F", 'T'), pre1(
-			"Pressure of first substance", "Pa"), pre2(
-			"Pressure of second substance", "Pa"), q1("Quantity of heat", "J"), shc1(
+			"Efficiency", "%", 'e'), vol1("Volume of 1st substance", " dm^-3"), mol1(
+			"Amount of 1st substance", " mol"), con1(
+			"Conc. of 1st substance", " mol*dm^-3", 'c'), mass1(
+			"Mass of 1st substance", " g", 'm'), mass2(
+			"Mass of 2nd substance", " g", 'm'), mmass1(
+			"Molar mass of 1st substance", " g*mol^-3"), mmass2(
+			"Molar mass of 2nd substance", " g*mol^-3"), vol2(
+			"Volume of 2nd substance", " dm^-3"), mol2(
+			"Amount of 2nd substance", " mol"), con2(
+			"Conc. of 2nd substance", " mol*dm^-3", 'c'), comp(
+			" % composition", "%"), tempk1(
+			"Temp. of 1st substance", "K", 'T'), tempc1(
+			"Temp. of 1st substance", "°C", 'T'), tempf1(
+			"Temp. of 1st substance", "°F", 'T'), tempk2(
+			"Temp. of 2nd substance", "K", 'T'), tempc2(
+			"Temp. of 2nd substance", "°C", 'T'), tempf2(
+			"Temp. of 2nd substance", "°F", 'T'), pre1(
+			"Pressure of 1st substance", "Pa"), pre2(
+			"Pressure of 2nd substance", "Pa"), q1("Quantity of heat", "J"), shc1(
 			"Specific heat capacity", "J*K^-1"), dtempc1(
-			"Change in temperature", "°C"), dtempk1("Change in temperature",
-			"K"), dtempf1("Change in temperature", "°F"), rc1("Rate constant",
+			"Change in temp.", "°C"), dtempk1("Change in temp.",
+			"K"), dtempf1("Change in temp.", "°F"), rc1("Rate constant",
 			"sec^-1"), pef1("Pre-exponential factor", "sec^-1", 'A'), ea1(
 			"Activation energy", "J*mol^-1");
 

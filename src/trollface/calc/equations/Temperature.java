@@ -5,7 +5,7 @@ public class Temperature extends Equation {
 	public Temperature() {
 
 		
-		friendlyName = "Temperature";
+		friendlyName = "Temperature Conversions";
 
 
 		modes = new Properties[][] {
