@@ -4,7 +4,7 @@ public class HHpH extends Equation {
 
 	public HHpH() {
 
-		friendlyName = "Henderson-Hasselbach (pH-pKa)";
+		friendlyName = "Henderson-Hasselbalch (pH-pKa)";
 
 		/*
 		 * modes = new Properties[][] { { Properties., Properties., Properties.

@@ -21,7 +21,7 @@ public class PercentageCompositionMass extends Equation {
 	public String calculate(int mode, double... arguments) {
 		switch (mode) {
 		case 0:
-			return arguments[1] / arguments[2] * 100 + "%";
+			return arguments[1] / arguments[2] * 100 + " %";
 		case 1:
 			return arguments[1] * arguments[2] / arguments[3] * 100 + "%";
 		case 2:
