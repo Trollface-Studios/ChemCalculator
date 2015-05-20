@@ -9,12 +9,12 @@ public class Temperature extends Equation {
 
 
 		modes = new Properties[][] {
-				{ Properties.tempk1, Properties.tempc1 },
-				{ Properties.tempk1, Properties.tempf1 },
-				{ Properties.tempc1, Properties.tempk1 },
-				{ Properties.tempc1, Properties.tempf1 },
-				{ Properties.tempf1, Properties.tempc1 },
-				{ Properties.tempf1, Properties.tempk1 }, };
+				{ Properties.ctok, Properties.tempc },
+				{ Properties.ftok, Properties.tempf },
+				{ Properties.ktoc, Properties.tempk },
+				{ Properties.ftoc, Properties.tempf },
+				{ Properties.ctof, Properties.tempc },
+				{ Properties.ktof, Properties.tempk }, };
 
 	}
 
