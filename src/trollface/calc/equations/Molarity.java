@@ -9,9 +9,9 @@ public class Molarity extends Equation {
 
 
 		modes = new Properties[][] {
-				{ Properties.con1, Properties.mol1, Properties.vol1 },
-				{ Properties.mol1, Properties.vol1, Properties.con1 },
-				{ Properties.vol1, Properties.mol1, Properties.con1 } };
+				{ Properties.con, Properties.mol, Properties.vol },
+				{ Properties.mol, Properties.vol, Properties.con },
+				{ Properties.vol, Properties.mol, Properties.con } };
 
 	}
 

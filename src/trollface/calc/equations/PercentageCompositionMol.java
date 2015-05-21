@@ -9,11 +9,9 @@ public class PercentageCompositionMol extends Equation {
 
 
 		modes = new Properties[][] {
-				{ Properties.comp, Properties.mol1, Properties.mol2 },
-				{ Properties.comp, Properties.mass1, Properties.mmass1, Properties.mol2 },
-				{ Properties.comp, Properties.con1, Properties.vol1, Properties.mol2 },
-				{ Properties.comp, Properties.mass2, Properties.mmass2, Properties.mol1 },
-				{ Properties.comp, Properties.con2, Properties.vol2, Properties.mol1 } };
+				{ Properties.comp1, Properties.mol, Properties.molt },
+				{ Properties.comp2, Properties.mass, Properties.mmass, Properties.molt },
+				{ Properties.comp3, Properties.con, Properties.vol, Properties.molt } };
 
 	}
 
@@ -23,13 +21,9 @@ public class PercentageCompositionMol extends Equation {
 		case 0:
 			return arguments[0] / arguments[1] * 100 + " %";
 		case 1:
-			return arguments[0] / arguments[1] / arguments[2] * 100 + " %";
+			return (arguments[0] / arguments[1]) / arguments[2] * 100 + " %";
 		case 2:
-			return arguments[0] * arguments[1] / arguments[2] * 100 + " %";
-		case 3:
-			return arguments[2] / arguments[0] * arguments[1] * 100 + " %";
-		case 4:
-			return arguments[2]	/ arguments[0] * arguments[1] * 100 + " %";
+			return (arguments[0] * arguments[1]) / arguments[2] * 100 + " %";
 		default:
 			System.out.printf("ERROR: WRONG MODE SPECIFIED: %d\n", mode);
 			return "ERROR. LOL";
