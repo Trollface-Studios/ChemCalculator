@@ -8,8 +8,12 @@ public enum Properties {
 	vol1("Volume of 1st substance", " dm^-3"), 
 =======
 	Input("Energy Input", "W"), Output("Useful Energy Output", "W"), Efficiency("Efficiency", "%", 'e'), 
+<<<<<<< HEAD
 	vol1("Volume of 1st substance", " dm^3"), 
 >>>>>>> origin/master
+=======
+	vol1("Volume of 1st substance", " dm^-3"), 
+>>>>>>> af23009e1f13e634357bb2dc20be5794f2ec8aea
 	mol1("Amount of 1st substance", " mol"), 
 	con1("Conc. of 1st substance", " mol*dm^-3", 'c'),
 	mass1("Mass of 1st substance", " g", 'm'),
@@ -94,6 +98,7 @@ public enum Properties {
 	ktoc("From Kelvin to Celsius", "°C", 'T'),
 	ftoc("From Farenheit to Celsius", "°C", 'T'),
 	ctof("From Celsius to Farenheit", "°F", 'T'),
+<<<<<<< HEAD
 	ktof("From Kelvin to Farenheit", "°F", 'T'),
 	cacid("Concentration of acid", " mol*dm^-3" ),
 	cbase("Concentration of base", " mol*dm^-3"),
@@ -102,6 +107,10 @@ public enum Properties {
 	
 	
 >>>>>>> origin/master
+=======
+	ktof("From Kelvin to Farenheit", "°F", 'T');
+
+>>>>>>> af23009e1f13e634357bb2dc20be5794f2ec8aea
 	public final String name;
 	public final String units;
 	public final char shortened;
