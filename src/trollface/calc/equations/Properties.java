@@ -61,7 +61,15 @@ public enum Properties {
 	cacid("Concentration of acid", " mol*dm^-3" ),
 	cbase("Concentration of base", " mol*dm^-3"),
 	pka("pKa",""),
-	ph ("   pH  ", "");
+	ph("pH", ""), ph1("pH of buffer", " "), ph2("pH from H+ concentration"," "),
+	poh("pOH", ""), poh1("pOH of buffer", " "), poh2("pOH from OH- concentration", " "),
+	ka("Acid dissociation constant", ""),
+	kb("Base dissociation cosntant", ""),
+	pkb("pKb", ""),
+	hcon("Concentration of H+ ions", " mol*dm^-3"),
+	ohcon("Concentration of OH- ions", " mol*dm^-3"),
+	;
+	
 	
 	public final String name;
 	public final String units;
