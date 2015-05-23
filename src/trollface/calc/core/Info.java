@@ -20,7 +20,7 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Info extends BasicGameState {
 	private static AppGameContainer app;
 
-	Image background, sipka, sipkaglow, backgroundM;
+	Image background, sipka, sipkaglow, backgroundM_PTE;
 	boolean glowactive = false;
 	Base gam;
 
@@ -34,6 +34,7 @@ public class Info extends BasicGameState {
 		background = new Image("src/trollface/calc/images/chemBackground.png");
 		sipka = new Image("src/trollface/calc/images/gobackbuttonM.png");
 		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.png");
+		backgroundM_PTE = new Image("src/trollface/calc/images/chemBackgroundM_PTE.png");
 	}
 
 	public void update(GameContainer c, StateBasedGame game, int delta)
@@ -75,7 +76,7 @@ public class Info extends BasicGameState {
 			}
 		} else {
 			
-			backgroundM.draw();
+			backgroundM_PTE.draw();
 			sipka.draw(50, 600);
 			if (glowactive == true) {
 				sipkaglow.draw(50, 600);

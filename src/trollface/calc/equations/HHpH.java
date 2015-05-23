@@ -8,9 +8,9 @@ public class HHpH extends Equation {
 
 		modes = new Properties[][] {
 				{ Properties.ph1, Properties.pka, Properties.cacid, Properties.cbase },
+				{ Properties.poh1, Properties.pkb, Properties.cacid, Properties.cbase },
 				{ Properties.ph2, Properties.hcon },
 				{ Properties.pka, Properties.ka },
-				{ Properties.poh1, Properties.pkb, Properties.cacid, Properties.cbase },
 				{ Properties.poh2, Properties.ohcon },
 				{ Properties.pkb, Properties.kb },
 				
@@ -24,11 +24,11 @@ public class HHpH extends Equation {
 		case 0:
 				return arguments[0] + Math.log10(arguments[2] / arguments[1]) + " ";
 		case 1:
-				return -Math.log10(arguments[0]) + " ";
+				return arguments[0] + Math.log(arguments[1]  / arguments[2]) + " ";
 		case 2:
 				return -Math.log10(arguments[0]) + " ";
 		case 3:
-				return arguments[0] + Math.log(arguments[1]  / arguments[2]) + " ";
+				return -Math.log10(arguments[0]) + " ";
 		case 4:
 				return -Math.log10(arguments[0]) + " ";
 		case 5:
