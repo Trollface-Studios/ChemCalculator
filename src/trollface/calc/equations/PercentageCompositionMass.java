@@ -5,7 +5,7 @@ public class PercentageCompositionMass extends Equation {
 	public PercentageCompositionMass() {
 
 		
-		friendlyName = "Percentage composition by mass";
+		friendlyName = "% composition by mass";
 
 
 		modes = new Properties[][] {
