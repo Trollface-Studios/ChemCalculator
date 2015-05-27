@@ -14,7 +14,7 @@ public class Credits extends BasicGameState {
 
 	private static AppGameContainer app;
 
-	Image background, sipka, sipkaglow, backgroundM;
+	Image background, sipka, sipkaglow, backgroundM_credits;
 	boolean glowactive = false;
 	Base game;
 
@@ -28,7 +28,7 @@ public class Credits extends BasicGameState {
 		background = new Image("src/trollface/calc/images/chemBackground.png");
 		sipka = new Image("src/trollface/calc/images/gobackbuttonM.png");
 		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.png");
-		backgroundM = new Image("src/trollface/calc/images/chemBackgroundM.png");
+		backgroundM_credits = new Image("src/trollface/calc/images/chemBackgroundM_credits.png");
 	}
 
 	public void update(GameContainer c, StateBasedGame game, int delta)
@@ -67,7 +67,7 @@ public class Credits extends BasicGameState {
 				sipkaglow.draw(10, 420);
 			}
 		} else {
-			backgroundM.draw();
+			backgroundM_credits.draw();
 			sipka.draw(50, 600);
 			if (glowactive == true) {
 				sipkaglow.draw(50, 600);
