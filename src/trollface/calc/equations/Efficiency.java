@@ -1,5 +1,7 @@
 package trollface.calc.equations;
 
+import trollface.calc.core.Base;
+
 public class Efficiency extends Equation {
 
 	
@@ -27,7 +29,7 @@ public class Efficiency extends Equation {
 		case 3:
 			return (Math.pow(arguments[4],arguments[5]) * Math.pow(arguments[6],arguments[7])) / (Math.pow(arguments[0],arguments[1]) * Math.pow(arguments[2],arguments[3])) + "";
 		default:
-			System.out.printf("ERROR: WRONG MODE SPECIFIED: %d\n", mode);
+			Base.log(String.format("ERROR: WRONG MODE SPECIFIED: %d\n", mode));
 			return "ERROR. LOL";
 		}
 

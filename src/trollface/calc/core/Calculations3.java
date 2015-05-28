@@ -103,12 +103,12 @@ public class Calculations3 extends BasicGameState {
 		equations[5] = new IdealGasEquation();
 		equations[6] = new PercentageCompositionMass();
 		equations[7] = new PercentageCompositionMol();
-		equations[8] = new Temperature(); 
+		equations[8] = new Temperature();
 
 		// Selection buttons
 		for (int a = 0; a < equationCount; a++) {
-			buttons[a] = new MouseOverArea(c, buttonEquations1, new Rectangle(500,
-					160 + 50 * a, 230, 20));
+			buttons[a] = new MouseOverArea(c, buttonEquations1, new Rectangle(
+					500, 160 + 50 * a, 230, 20));
 			buttons[a].setMouseOverImage(buttonEquations2);
 		}
 
@@ -211,7 +211,8 @@ public class Calculations3 extends BasicGameState {
 				// Answer
 				g.setFont(f_subheading);
 				g.drawString("Your answer:",
-						width / 2 - f_subheading.getWidth("Your answer:") / 2, 560);
+						width / 2 - f_subheading.getWidth("Your answer:") / 2,
+						560);
 				g.setFont(f_answer);
 				g.drawString(answer, width / 2 - f_answer.getWidth(answer) / 2,
 						600);
@@ -337,11 +338,11 @@ public class Calculations3 extends BasicGameState {
 						Double.parseDouble(activeVars[6].field.getText()))
 						+ "";
 				break;
-				
-				
-				
+
 			default:
-				System.out.printf("Unsupported parameter count: %d, sorry.\n", equations[EquationEnabled].modes[ModeEnabled].length);
+				Base.log(String.format(
+						"Unsupported parameter count: %d, sorry.\n",
+						equations[EquationEnabled].modes[ModeEnabled].length));
 
 			}
 
@@ -401,7 +402,7 @@ public class Calculations3 extends BasicGameState {
 
 			} else {
 
-				System.out.println("Switching to " + equation + " " + mode);
+				Base.log("Switching to " + equation + " " + mode);
 				ModeEnabled = mode;
 				EquationEnabled = equation;
 
@@ -429,7 +430,7 @@ public class Calculations3 extends BasicGameState {
 				}
 			}
 		} else {
-			System.out.println("The type " + equation + " " + mode
+			Base.log("The type " + equation + " " + mode
 					+ " is already selected!");
 		}
 

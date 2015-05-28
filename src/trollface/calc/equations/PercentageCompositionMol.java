@@ -1,5 +1,7 @@
 package trollface.calc.equations;
 
+import trollface.calc.core.Base;
+
 public class PercentageCompositionMol extends Equation {
 	
 	public PercentageCompositionMol() {
@@ -25,7 +27,7 @@ public class PercentageCompositionMol extends Equation {
 		case 2:
 			return (arguments[0] * arguments[1]) / arguments[2] * 100 + " %";
 		default:
-			System.out.printf("ERROR: WRONG MODE SPECIFIED: %d\n", mode);
+			Base.log(String.format("ERROR: WRONG MODE SPECIFIED: %d\n", mode));
 			return "ERROR. LOL";
 		}
 

@@ -1,5 +1,7 @@
 package trollface.calc.equations;
 
+import trollface.calc.core.Base;
+
 public class IdealGasEquation extends Equation {
 
 	public IdealGasEquation() {
@@ -27,7 +29,7 @@ public class IdealGasEquation extends Equation {
 		case 3:
 			return arguments[0] * arguments[1] / arguments[2] * 8.3145 + " K";
 		default:
-			System.out.printf("ERROR: WRONG MODE SPECIFIED: %d\n", mode);
+			Base.log(String.format("ERROR: WRONG MODE SPECIFIED: %d\n", mode));
 			return "ERROR. LOL";
 		}
 

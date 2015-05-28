@@ -25,8 +25,6 @@ public class Textbox {
 			@Override
 			public void componentActivated(AbstractComponent arg0) {
 
-				TextField field = (TextField) arg0;
-
 			}
 		});
 		field.setConsumeEvents(false);

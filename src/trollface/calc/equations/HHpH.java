@@ -1,5 +1,7 @@
 package trollface.calc.equations;
 
+import trollface.calc.core.Base;
+
 public class HHpH extends Equation {
 
 	public HHpH() {
@@ -32,7 +34,7 @@ public class HHpH extends Equation {
 		case 4:
 				return Math.pow(10, -arguments[0]) +" ";
 		default:
-			System.out.printf("ERROR: WRONG MODE SPECIFIED: %d\n", mode);
+			Base.log(String.format("ERROR: WRONG MODE SPECIFIED: %d\n", mode));
 			return "ERROR. LOL";
 		}
 

@@ -1,5 +1,7 @@
 package trollface.calc.equations;
 
+import trollface.calc.core.Base;
+
 public class ArrheniusEquation extends Equation {
 
 	public ArrheniusEquation() {
@@ -30,7 +32,7 @@ public class ArrheniusEquation extends Equation {
 			return -(Math.log(arguments[0]/arguments[2]) * 8.3145) / (1/arguments[1] - 1/arguments[3]) + " J*K^-1";
 		
 		default:
-			System.out.printf("ERROR: WRONG MODE SPECIFIED: %d\n", mode);
+			Base.log(String.format("ERROR: WRONG MODE SPECIFIED: %d\n", mode));
 			return "ERROR. LOL";
 		}
 

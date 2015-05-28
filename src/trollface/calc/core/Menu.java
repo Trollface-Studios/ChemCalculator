@@ -1,25 +1,18 @@
 package trollface.calc.core;
 
 import org.lwjgl.input.Mouse;
-import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Font;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
-import org.newdawn.slick.Input;
-import org.newdawn.slick.InputListener;
 import org.newdawn.slick.MouseListener;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.UnicodeFont;
-import org.newdawn.slick.gui.AbstractComponent;
-import org.newdawn.slick.gui.ComponentListener;
 import org.newdawn.slick.gui.TextField;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Menu extends BasicGameState {
-	private static AppGameContainer app;
 	Image background, buttonCalcM, buttonInfoM, buttonSetM, buttonExitM,
 			buttonExitMglow, buttonCalcMglow, buttonInfoMglow, buttonSetMglow,
 			backgroundM;
@@ -43,10 +36,14 @@ public class Menu extends BasicGameState {
 		buttonInfoM = new Image("src/trollface/calc/images/buttonInfoM.png");
 		buttonSetM = new Image("src/trollface/calc/images/buttonCredM.png");
 		buttonExitM = new Image("src/trollface/calc/images/buttonExitM.png");
-		buttonExitMglow = new Image("src/trollface/calc/images/buttonExitMglow.png");
-		buttonCalcMglow = new Image("src/trollface/calc/images/buttonCalcMglow.png");
-		buttonInfoMglow = new Image("src/trollface/calc/images/buttonInfoMglow.png");
-		buttonSetMglow = new Image("src/trollface/calc/images/buttonCredMglow.png");
+		buttonExitMglow = new Image(
+				"src/trollface/calc/images/buttonExitMglow.png");
+		buttonCalcMglow = new Image(
+				"src/trollface/calc/images/buttonCalcMglow.png");
+		buttonInfoMglow = new Image(
+				"src/trollface/calc/images/buttonInfoMglow.png");
+		buttonSetMglow = new Image(
+				"src/trollface/calc/images/buttonCredMglow.png");
 		backgroundM = new Image("src/trollface/calc/images/chemBackgroundM.png");
 		// font = new UnicodeFont(new java.awt.Font(java.awt.Font.SANS_SERIF,
 		// java.awt.Font.ITALIC, 26));
@@ -62,17 +59,17 @@ public class Menu extends BasicGameState {
 
 	public void update(GameContainer c, StateBasedGame game, int delta)
 			throws SlickException {
-		Input input = c.getInput();
+		c.getInput();
 
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
 
 		if (Base.printRoutineDebug) {
 
-			System.out.println(posX + "   " + posY);
+			Base.log(posX + "   " + posY);
 		}
 
-		if (((Base) game).renderingSmall) {
+		if (Base.renderingSmall) {
 			if ((posX > 220 && posY > 90) && (posX < 400 && posY < 135)) {
 				glowactive = true;
 
@@ -95,7 +92,7 @@ public class Menu extends BasicGameState {
 				glowactive3 = false;
 			}
 			if (Base.printRoutineDebug) {
-				System.out.println(glowactive);
+				Base.log(glowactive + "");
 			}
 		} else {
 			if ((posX > 1000 && posY < 170) && (posX < 1060 && posY > 137)) {
@@ -120,7 +117,7 @@ public class Menu extends BasicGameState {
 				glowactive3 = false;
 			}
 			if (Base.printRoutineDebug) {
-				System.out.println(glowactive);
+				Base.log("" + glowactive);
 			}
 		}
 	}
@@ -129,7 +126,7 @@ public class Menu extends BasicGameState {
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
 
-		if (((Base) game).renderingSmall) {
+		if (Base.renderingSmall) {
 			background.draw();
 			buttonCalcM.draw(220, 140);
 			buttonInfoM.draw(220, 205);
@@ -172,11 +169,6 @@ public class Menu extends BasicGameState {
 
 	}
 
-	private void scale(int i, int j) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public int GetID() {
 		return 0;
 	}
@@ -190,7 +182,8 @@ public class Menu extends BasicGameState {
 	public void mouseClicked(int button, int x, int y, int clickCount) {
 
 		if (glowactive == true) {
-			app.exit();
+			System.out.print("Exiting. Bye.");
+			System.exit(0);
 		}
 		if (glowactive1 == true) {
 			game.enterState(4);

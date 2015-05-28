@@ -10,7 +10,7 @@ public class VarChoice {
 		switch (name) {
 		case "Concentration":
 
-			System.out.println("AHOOOOJJ");
+			Base.log("AHOOOOJJ");
 			// n, V, M, n, name
 
 			break;
@@ -25,7 +25,7 @@ public class VarChoice {
 			// n,M
 			break;
 		default:
-			System.out.println("sup");
+			Base.log("sup");
 			break;
 		}
 

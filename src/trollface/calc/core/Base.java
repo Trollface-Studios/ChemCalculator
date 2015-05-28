@@ -2,22 +2,20 @@ package trollface.calc.core;
 
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.state.GameState;
 import org.newdawn.slick.state.StateBasedGame;
-import org.newdawn.slick.util.Log;
 
 public class Base extends StateBasedGame {
+	private static final boolean LOG_ENABLED = false;
 	public static boolean renderingSmall = false;
 	public static boolean printErrors = false;
 	public static boolean printRoutineDebug = false;
 
-	private AppGameContainer container;
 	private static AppGameContainer app;
 
 	public static void main(String[] args) {
 		try {
+			System.out.println("Running ChemCalc v1.0...");
 			app = new AppGameContainer(new Base("calculator"));
 		} catch (SlickException e) {
 
@@ -49,8 +47,8 @@ public class Base extends StateBasedGame {
 		try {
 			app.start();
 		} catch (SlickException e) {
-			System.out.println("App didn't start for some goddamn reason. ");
-			System.out.println("Here, catch this trace: ");
+			Base.log("App didn't start for some goddamn reason. ");
+			Base.log("Here, catch this trace: ");
 			if (Base.printErrors) {
 				if (Base.printErrors) {
 					if (Base.printErrors) {
@@ -58,6 +56,12 @@ public class Base extends StateBasedGame {
 					}
 				}
 			}
+		}
+	}
+
+	public static void log(String string) {
+		if (LOG_ENABLED) {
+			System.out.print(string);
 		}
 	}
 
@@ -70,9 +74,7 @@ public class Base extends StateBasedGame {
 		addState(new Menu(this));
 		addState(new Info(this));
 		addState(new Credits(this));
-		addState(new Calculations(this));
 		addState(new Crossroad(this));
-		addState(new Calculations2(this));
 		addState(new Calculations3(this));
 
 	}

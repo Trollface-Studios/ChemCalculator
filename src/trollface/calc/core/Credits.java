@@ -1,24 +1,20 @@
 package trollface.calc.core;
 
 import org.lwjgl.input.Mouse;
-import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
-import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Credits extends BasicGameState {
 
-	private static AppGameContainer app;
-
 	Image background, sipka, sipkaglow, backgroundM_credits;
 	boolean glowactive = false;
 	Base game;
 
-	public Credits (Base game) {
+	public Credits(Base game) {
 		this.game = game;
 	}
 
@@ -28,19 +24,20 @@ public class Credits extends BasicGameState {
 		background = new Image("src/trollface/calc/images/chemBackground.png");
 		sipka = new Image("src/trollface/calc/images/gobackbuttonM.png");
 		sipkaglow = new Image("src/trollface/calc/images/gobackbuttonMglow.png");
-		backgroundM_credits = new Image("src/trollface/calc/images/chemBackgroundM_credits.png");
+		backgroundM_credits = new Image(
+				"src/trollface/calc/images/chemBackgroundM_credits.png");
 	}
 
 	public void update(GameContainer c, StateBasedGame game, int delta)
 			throws SlickException {
-		Input input = c.getInput();
+		c.getInput();
 
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
 
-		System.out.println(posX + " " + posY);
+		Base.log(posX + " " + posY);
 		// 10, 78 60 18
-		if (((Base) game).renderingSmall) {
+		if (Base.renderingSmall) {
 			if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
 				glowactive = true;
 
@@ -60,7 +57,7 @@ public class Credits extends BasicGameState {
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
 
-		if (((Base) game).renderingSmall) {
+		if (Base.renderingSmall) {
 			background.draw();
 			sipka.draw(10, 420);
 			if (glowactive == true) {

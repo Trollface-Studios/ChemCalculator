@@ -4,7 +4,6 @@ import org.lwjgl.input.Mouse;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
-import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
@@ -25,7 +24,8 @@ public class Crossroad extends BasicGameState {
 
 		background = new Image("src/trollface/calc/images/chemBackground.png");
 		backgroundM = new Image("src/trollface/calc/images/chemBackgroundM.png");
-		buttonone = new Image("src/trollface/calc/images/singlecompoundbutton.png");
+		buttonone = new Image(
+				"src/trollface/calc/images/singlecompoundbutton.png");
 		buttononeglow = new Image(
 				"src/trollface/calc/images/singlecompoundbuttonglow.png");
 		buttontwo = new Image("src/trollface/calc/images/equationsbutton.png");
@@ -38,15 +38,15 @@ public class Crossroad extends BasicGameState {
 
 	public void update(GameContainer c, StateBasedGame game, int delta)
 			throws SlickException {
-		Input input = c.getInput();
+		c.getInput();
 
 		int posX = Mouse.getX();
 		int posY = Mouse.getY();
 
 		if (Base.printRoutineDebug) {
-			System.out.println(posX + "   " + posY);
+			Base.log(posX + "   " + posY);
 		}
-		if (((Base) game).renderingSmall) {
+		if (Base.renderingSmall) {
 			if ((posX > 220 && posY > 90) && (posX < 400 && posY < 135)) {
 				glowactive = true;
 
@@ -73,10 +73,10 @@ public class Crossroad extends BasicGameState {
 				glowactive2 = false;
 			}
 			if (Base.printRoutineDebug) {
-				System.out.println(glowactive);
+				Base.log(glowactive + "");
 			}
 		}
-		if (((Base) game).renderingSmall) {
+		if (Base.renderingSmall) {
 			if ((posX > 10 && posY > 18) && (posX < 78 && posY < 60)) {
 				glowactive1 = true;
 
@@ -97,7 +97,7 @@ public class Crossroad extends BasicGameState {
 	public void render(GameContainer c, StateBasedGame game, Graphics g)
 			throws SlickException {
 
-		if (((Base) game).renderingSmall) {
+		if (Base.renderingSmall) {
 			background.draw();
 			buttonone.draw(220, 335);
 			buttontwo.draw(220, 205);
@@ -114,7 +114,7 @@ public class Crossroad extends BasicGameState {
 
 			backgroundM.draw();
 			sipka.draw(50, 600);
-//			buttonone.draw(520, 410);
+			// buttonone.draw(520, 410);
 			buttontwo.draw(520, 270);
 
 			if (glowactive1 == true) {
@@ -123,7 +123,7 @@ public class Crossroad extends BasicGameState {
 			}
 
 			if (glowactive == true) {
-//				buttononeglow.draw(520, 410);
+				// buttononeglow.draw(520, 410);
 			}
 
 			if (glowactive2 == true) {
@@ -134,18 +134,13 @@ public class Crossroad extends BasicGameState {
 
 	}
 
-	private void scale(int i, int j) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public int GetID() {
 		return 4;
 	}
 
 	@Override
 	public int getID() {
-		// TODO Auto-generated method stub
+
 		return 4;
 	}
 

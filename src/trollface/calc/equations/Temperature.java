@@ -1,15 +1,14 @@
 package trollface.calc.equations;
 
+import trollface.calc.core.Base;
+
 public class Temperature extends Equation {
 
 	public Temperature() {
 
-		
 		friendlyName = "Temperature Conversions";
 
-
-		modes = new Properties[][] {
-				{ Properties.ctok, Properties.tempc },
+		modes = new Properties[][] { { Properties.ctok, Properties.tempc },
 				{ Properties.ftok, Properties.tempf },
 				{ Properties.ktoc, Properties.tempk },
 				{ Properties.ftoc, Properties.tempf },
@@ -24,17 +23,17 @@ public class Temperature extends Equation {
 		case 0:
 			return arguments[0] + 273.15 + " K";
 		case 1:
-			return (arguments[0] - 32) * (5/9) + 273.15 + " K";
+			return (arguments[0] - 32) * (5 / 9) + 273.15 + " K";
 		case 2:
 			return arguments[0] - 273.15 + " °C";
 		case 3:
-			return (arguments[0] - 32) * (5/9) + " °C";
+			return (arguments[0] - 32) * (5 / 9) + " °C";
 		case 4:
-			return arguments[0] * (9/5) + 32 + " °F";
+			return arguments[0] * (9 / 5) + 32 + " °F";
 		case 5:
-			return (arguments[0] - 273.15) * (9/5) +32 + " °F";
+			return (arguments[0] - 273.15) * (9 / 5) + 32 + " °F";
 		default:
-			System.out.printf("ERROR: WRONG MODE SPECIFIED: %d\n", mode);
+			Base.log(String.format("ERROR: WRONG MODE SPECIFIED: %d\n", mode));
 			return "ERROR. LOL";
 		}
 

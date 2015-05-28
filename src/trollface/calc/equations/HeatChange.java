@@ -1,5 +1,7 @@
 package trollface.calc.equations;
 
+import trollface.calc.core.Base;
+
 public class HeatChange extends Equation {
 
 	public HeatChange() {
@@ -28,7 +30,7 @@ public class HeatChange extends Equation {
 		case 4:
 			return arguments[0] / (arguments[1] * arguments[2]) + " °C/K";
 		default:
-			System.out.printf("ERROR: WRONG MODE SPECIFIED: %d\n", mode);
+			Base.log(String.format("ERROR: WRONG MODE SPECIFIED: %d\n", mode));
 			return "ERROR. LOL";
 		}
 
