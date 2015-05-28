@@ -114,7 +114,7 @@ public class Crossroad extends BasicGameState {
 
 			backgroundM.draw();
 			sipka.draw(50, 600);
-			buttonone.draw(520, 410);
+//			buttonone.draw(520, 410);
 			buttontwo.draw(520, 270);
 
 			if (glowactive1 == true) {
@@ -123,7 +123,7 @@ public class Crossroad extends BasicGameState {
 			}
 
 			if (glowactive == true) {
-				buttononeglow.draw(520, 410);
+//				buttononeglow.draw(520, 410);
 			}
 
 			if (glowactive2 == true) {
