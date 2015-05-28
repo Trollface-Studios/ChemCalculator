@@ -316,8 +316,32 @@ public class Calculations3 extends BasicGameState {
 						Double.parseDouble(activeVars[4].field.getText()))
 						+ "";
 				break;
+			case 7:
+				answer = equations[EquationEnabled].calculate(ModeEnabled,
+						Double.parseDouble(activeVars[0].field.getText()),
+						Double.parseDouble(activeVars[1].field.getText()),
+						Double.parseDouble(activeVars[2].field.getText()),
+						Double.parseDouble(activeVars[3].field.getText()),
+						Double.parseDouble(activeVars[4].field.getText()),
+						Double.parseDouble(activeVars[5].field.getText()))
+						+ "";
+				break;
+			case 8:
+				answer = equations[EquationEnabled].calculate(ModeEnabled,
+						Double.parseDouble(activeVars[0].field.getText()),
+						Double.parseDouble(activeVars[1].field.getText()),
+						Double.parseDouble(activeVars[2].field.getText()),
+						Double.parseDouble(activeVars[3].field.getText()),
+						Double.parseDouble(activeVars[4].field.getText()),
+						Double.parseDouble(activeVars[5].field.getText()),
+						Double.parseDouble(activeVars[6].field.getText()))
+						+ "";
+				break;
+				
+				
+				
 			default:
-				System.out.println("Unsupported parameter count, sorry.");
+				System.out.printf("Unsupported parameter count: %d, sorry.\n", equations[EquationEnabled].modes[ModeEnabled].length);
 
 			}
 
