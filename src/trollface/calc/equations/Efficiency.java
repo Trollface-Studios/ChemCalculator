@@ -12,7 +12,7 @@ public class Efficiency extends Equation {
 				{ Properties.rea1pro1, Properties.rea1, Properties.coef, Properties.pro1, Properties.coef1 },
 				{ Properties.rea1pro2, Properties.rea1, Properties.coef, Properties.pro1, Properties.coef1, Properties.pro2, Properties.coef2 },
 				{ Properties.rea2pro1, Properties.rea1, Properties.coef, Properties.rea2, Properties.coef1, Properties.pro1, Properties.coef2 },
-				{ Properties.rea2pro2, Properties.rea1, Properties.coef, Properties.rea2, Properties.coef1, Properties.pro1, Properties.coef2, Properties.pro2, Properties.coef3 }	
+				{ Properties.rea2pro2, Properties.rea1, Properties.coef, Properties.rea2 , Properties.coef1, Properties.pro1, Properties.coef2, Properties.pro2, Properties.coef3 }	
 				};
 	}
 
