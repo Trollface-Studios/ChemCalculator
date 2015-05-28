@@ -10,7 +10,7 @@ import org.newdawn.slick.util.Log;
 
 public class Base extends StateBasedGame {
 	public static boolean renderingSmall = false;
-	public static boolean printErrors = true;
+	public static boolean printErrors = false;
 	public static boolean printRoutineDebug = false;
 
 	private AppGameContainer container;
