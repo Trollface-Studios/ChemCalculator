@@ -3,7 +3,6 @@ package trollface.calc.equations;
 public enum Properties {
 
 	// Efficiency - demonstration
-	Input("Energy Input", " W"), Output("Useful Energy Output", " W"), Efficiency("Efficiency", " %", 'e'), 
 	tempk("Temperature", " K", 'T'), 
 	tempc("Temperature", " °C", 'T'), 
 	tempf("Temperature", " °F", 'T'),
@@ -44,13 +43,36 @@ public enum Properties {
 	cacid("Concentration of acid", " mol*dm^-3" ),
 	cbase("Concentration of base", " mol*dm^-3"),
 	pka("pKa",""),
-	ph("pH", ""), ph1("pH of buffer", " "), ph2("pH from H+ concentration"," "),
-	poh("pOH", ""), poh1("pOH of buffer", " "), poh2("pOH from OH- concentration", " "),
+	ph("pH", ""),
+	ph1("pH of buffer", " "),
+	ph2("pH or pOH"," "),
+	poh("pOH", ""),
+	poh1("pOH of buffer", " "),
+	poh2("pOH from OH- concentration", " "),
 	ka("Acid dissociation constant", ""),
 	kb("Base dissociation cosntant", ""),
 	pkb("pKb", ""),
-	hcon("Concentration of H+ ions", " mol*dm^-3"),
+	hcon("[H+] or [OH-]", " mol*dm^-3"),
 	ohcon("Concentration of OH- ions", " mol*dm^-3"),
+	pka1("pKa or pKb", ""),
+	ka1("Ka or Kb",""),
+	rea1pro1("1 Reactant & 1 Product", ""),
+	rea1pro2("1 Reactant & 2 Products", ""),
+	rea2pro1("2 Reactants & 1 Product", ""),
+	rea2pro2("2 Reactants & 2 Products", ""),
+	rea1("1st reactant", " mol*dm^-3"),
+	rea2("2nd reactant", " mol*dm^3" ),
+	pro1("1st product", " mol*dm^-3"),
+	pro2("2nd product", " mol*dm&^-3"),
+	coef("Coefficient", ""),
+	coef1("Coefficient", ""),
+	coef2("Coefficient", ""),
+	coef3("Coefficient", ""),
+	coef4("Coefficient", ""),
+	coef5("Coefficient", ""),
+	
+	
+	
 	;
 	
 	

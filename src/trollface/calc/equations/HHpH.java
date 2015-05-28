@@ -10,9 +10,9 @@ public class HHpH extends Equation {
 				{ Properties.ph1, Properties.pka, Properties.cacid, Properties.cbase },
 				{ Properties.poh1, Properties.pkb, Properties.cacid, Properties.cbase },
 				{ Properties.ph2, Properties.hcon },
-				{ Properties.pka, Properties.ka },
-				{ Properties.poh2, Properties.ohcon },
-				{ Properties.pkb, Properties.kb },
+				{ Properties.pka1, Properties.ka1 },
+				{ Properties.hcon, Properties.ph2 },
+		
 				
 		} ;
 
@@ -30,9 +30,7 @@ public class HHpH extends Equation {
 		case 3:
 				return -Math.log10(arguments[0]) + " ";
 		case 4:
-				return -Math.log10(arguments[0]) + " ";
-		case 5:
-				return -Math.log10(arguments[0]) + " ";
+				return Math.pow(10, -arguments[0]) +" ";
 		default:
 			System.out.printf("ERROR: WRONG MODE SPECIFIED: %d\n", mode);
 			return "ERROR. LOL";

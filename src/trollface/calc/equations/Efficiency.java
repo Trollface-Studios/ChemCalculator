@@ -2,58 +2,30 @@ package trollface.calc.equations;
 
 public class Efficiency extends Equation {
 
-	/*
-	 * Takovejhle komentar se vzdycky vztahuje k tomu co je pod nim. Celou
-	 * classu si zkopirujte, jen ji zmente jmeno (tady Efficiency), a casti u
-	 * kterejch to pisu. DK
-	 */
+	
 	public Efficiency() {
 
-		/*
-		 * Akorat zmente to v uvozovkach na titul oblasti ve ktery se pocita -
-		 * Concentration, Temperature change, atd
-		 */
-		friendlyName = "Efficiency (ex.)";
+	
+		friendlyName = "Equillibrium constant";
 
-		/*
-		 * Ma to vypadat presne stejne, jeden radek: jeden mod kalkulacky. Prvni
-		 * parametr (Properties.XXX) je vzdycky co tenhle mod umi spocitat, a
-		 * zbytek (muze jich bejt i vic, treba 5) jsou udaje ktery k tomu
-		 * potrebujem, aby nam uzivatel poskytnul.
-		 * 
-		 * Zase - 1 radek na jeden mod, takze kdyz jsme schopny spocitat treba 6
-		 * ruznejch veci, bude tam sest radku.
-		 */
 		modes = new Properties[][] {
-				{ Properties.Efficiency, Properties.Input, Properties.Output },
-				{ Properties.Output, Properties.Input, Properties.Efficiency },
-				{ Properties.Input, Properties.Output, Properties.Efficiency } };
-
+				{ Properties.rea1pro1, Properties.rea1, Properties.coef, Properties.pro1, Properties.coef1 },
+				{ Properties.rea1pro2, Properties.rea1, Properties.coef, Properties.pro1, Properties.coef1, Properties.pro2, Properties.coef2 },
+				{ Properties.rea2pro1, Properties.rea1, Properties.coef, Properties.rea2, Properties.coef1, Properties.pro1, Properties.coef2 },
+				{ Properties.rea2pro2, Properties.rea1, Properties.coef, Properties.rea2, Properties.coef1, Properties.pro1, Properties.coef2, Properties.pro2, Properties.coef3 }	
+				};
 	}
 
-	/*
-	 * Tady se pise ta samotna matematika, co ma kalkulacka udelat v jakym modu.
-	 * Ridi se to radkama definovanejma nahore v modes. case 0: je prvni radek,
-	 * case 1: je druhej, a tak dale. A argumenty jdou od [0] vejs, podle toho,
-	 * v jakym poradi jsou zadefinovany v tom odpovidajicim radku.
-	 * 
-	 * Takze arguments[0] znamena druhej ten Properties.XXX v odpovidajicim
-	 * radku, protoze prvni rika co bude vysledek a pocitac pocita od 0.
-	 * arguments[1] bude znamenat treti na tom radku a tak dal a tak dal.
-	 * 
-	 * Pracujte s nima jako s normalnima cislama, a proste pisete matematicky
-	 * rovnice a hodnota ty rovnice co mate za "return" se rekne uzivateli. Nic
-	 * vic.
-	 */
-	@Override
 	public String calculate(int mode, double... arguments) {
 		switch (mode) {
 		case 0:
-			return arguments[1] / arguments[0] * 100 + "%";
+			return  Math.pow(arguments[2],arguments[3]) / Math.pow(arguments[0],arguments[1]) + "";
 		case 1:
-			return arguments[0] * arguments[1] / 100f + " W";
+			return (Math.pow(arguments[2],arguments[3]) * Math.pow(arguments[4],arguments[5])) / Math.pow(arguments[0],arguments[1]) + "" ;
 		case 2:
-			return arguments[0] * (1 / (arguments[1] / 100)) + " W";
+			return Math.pow(arguments[4],arguments[5]) / (Math.pow(arguments[0],arguments[1]) * Math.pow(arguments[2],arguments[3])) + "";
+		case 3:
+			return (Math.pow(arguments[4],arguments[5]) * Math.pow(arguments[6],arguments[7])) / (Math.pow(arguments[0],arguments[1]) * Math.pow(arguments[2],arguments[3])) + "";
 		default:
 			System.out.printf("ERROR: WRONG MODE SPECIFIED: %d\n", mode);
 			return "ERROR. LOL";
