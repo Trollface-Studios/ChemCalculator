@@ -20,10 +20,10 @@ public class IdealGasEquation extends Equation {
 	public String calculate(int mode, double... arguments) {
 		switch (mode) {
 		case 0:
-			return arguments[0] * arguments[1] / arguments[2] * 8.3145 + " Pa";
+			return arguments[0] * arguments[1] / arguments[2] * 8.3145 + " kPa";
 		case 1:
 			return arguments[0] * arguments[1] / arguments[2] * 8.3145
-					+ " dm-3";
+					+ " dm3";
 		case 2:
 			return arguments[0] * arguments[1] / arguments[2] * 8.3145 + " mol";
 		case 3:
