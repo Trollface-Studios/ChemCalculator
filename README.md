@@ -23,7 +23,7 @@ Currently the data is there about each element and its properties, but the app d
 * To launch ChemCalculator, download the .rar, extract it and run ChemCalculator.bat
 
 ##Contributors
- * **xCabbage** - myself - Head of development------------------[GitHub](https://github.com/xcabbage)
+ * **dkambersky** - myself - Head of development------------------[GitHub](https://github.com/dkambersky)
  * **MatyasBubna** - Design, chemistry content------------------[GitHub](https://github.com/matyasbubna)
  * **N1c** - Programming, early design ------------------------------[GitHub](https://github.com/nic727)
  * **Dima** - Resident chemistry monkey, chemical accuracy--[GitHub](https://github.com/pepsicadima)
